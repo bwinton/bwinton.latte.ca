@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clientConfig>
+  <emailProvider id="imappop.latte.ca">
+    <domain>imappop.latte.ca</domain>
+    <displayName>Latte.ca with an imap and a pop server.</displayName>
+    <displayShortName>Latte.ca</displayShortName>
+    <incomingServer type="imap">
+       <hostname>imap.latte.ca</hostname>
+       <port>993</port>
+       <socketType>SSL</socketType>
+       <username>%EMAILADDRESS%</username>
+       <authentication>plain</authentication>
+    </incomingServer>
+    <incomingServer type="pop3">
+       <hostname>pop.latte.ca</hostname>
+       <port>143</port>
+       <socketType>SSL</socketType>
+       <username>%EMAILADDRESS%</username>
+       <authentication>plain</authentication>
+    </incomingServer>
+    <outgoingServer type="smtp">
+       <hostname>smtp.latte.ca</hostname>
+       <port>465</port>
+       <socketType>SSL</socketType>
+       <username>%EMAILADDRESS%</username>
+       <authentication>plain</authentication>
+       <addThisServer>true</addThisServer>
+       <useGlobalPreferredServer>false</useGlobalPreferredServer>
+    </outgoingServer>
+  </emailProvider>
+</clientConfig>

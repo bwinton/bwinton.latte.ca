@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="article.xsl" type="text/xsl"?>
+<?cocoon-process type="xslt"?>
+
+<!DOCTYPE article PUBLIC "-//OASIS//DTD Simplified DocBook XML V4.1.2.5//EN"
+     "sdocbook.dtd">
+
+<!-- 
+  Phantom Coding Standards DocBook 
+  Copyright (c) 2002 - Phantom Fiber, Inc. All Rights Reserved.
+  
+  The contents of this file are the property of Phantom Fiber Inc.
+  Any reproduction or redistribution of the code in whole or in part
+  without expressed written consent is prohibited.
+  
+  $Header:$
+-->
+
+<article>
+    <articleinfo>
+        <title>Phantom Coding Standards Document</title>
+        <author>
+            <firstname>Blake</firstname>
+            <surname>Winton</surname>
+        </author>
+        <authorinitials>bw</authorinitials>
+        <revhistory>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>Jan. 15th, 2002</date>
+                <authorinitials>bw</authorinitials>
+                <revremark>Initial Draft.</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>Jan. 16th, 2002</date>
+                <authorinitials>bw</authorinitials>
+                <revremark>Start filling in sections.</revremark>
+            </revision>
+        </revhistory>
+        <copyright>
+            <year>2002</year> <holder>Phantom Fiber, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            The contents of this file are the property of Phantom Fiber Inc.
+            Any reproduction or redistribution of the code in whole or in part
+            without expressed written consent is prohibited.
+        </legalnotice>                                                                                                                                            
+    </articleinfo>
+
+    <section>
+        <title>Overview and Miscellania</title>
+        <para>
+            The coding standard is based on <ulink
+                url="http://g.oswego.edu/dl/html/javaCodingStd.html">a
+                Java coding standard</ulink>, which Colin found
+            on the web.
+        </para>
+        <para>
+            Our coding standard attempts to maintain consistency
+            between Java and C++, as much as is possible.
+        </para>
+        <para>All Java and C++ files start with our copyright header:
+            <programlisting>/**
+ * Copyright (c) 2002 - Phantom Fiber, Inc. All Rights Reserved.
+ * 
+ * The contents of this file are the property of Phantom Fiber Inc.
+ * Any reproduction or redistribution of the code in whole or in part
+ * without expressed written consent is prohibited.
+ *
+ * $Header:$
+ **/</programlisting>
+        </para>
+        <para>All HTML and XML files also start with our copyright header:
+            <programlisting>&lt;!-- 
+  Phantom Book Title DocBook 
+  Copyright (c) 2002 - Phantom Fiber, Inc. All Rights Reserved.
+  
+  The contents of this file are the property of Phantom Fiber Inc.
+  Any reproduction or redistribution of the code in whole or in part
+  without expressed written consent is prohibited.
+  
+  $Header:$
+--&gt;</programlisting>
+        </para>
+    </section>
+
+    <section>
+        <title>Naming Things</title>
+        <para>
+            Classes and variables are named with nouns.  Methods are named with
+            verbs.  Hungarian Notation is punishable by death!  If in doubt as
+            to the proper name for something, ask someone else, preferably Colin
+            or Blake.  The names of things are very important, as they suggest
+            the usage to users of your classes and methods.  Names should
+            attempt to use terms from the Design Patterns book if possible.  If
+            multiple words are concatenated to form a name use StudlyCaps to
+            demarcate the words.  The initial letter of classes is Capitalized.
+            The initial letter of methods and variables is lowercased.  </para>
+    </section>
+
+    <section>
+        <title>C++ Namespaces</title>
+        <para>
+            C++ namespaces are all in lowercase, to mimic the Java package
+            naming standard.  An example would be:
+            <programlisting>namespace phantom {
+namespace utility {
+
+    // Code Goes Here.
+
+}} // namespaces.</programlisting>
+        </para>
+        <para>
+            All the code Phantom Fiber employees write will go into the
+            <literal>phantom</literal> package.  The code will actually go into
+            a subpackage off of the <literal>phantom</literal> package, such as
+            <literal>phantom::utility</literal>, or
+            <literal>phantom::MVC</literal>.
+        </para>
+    </section>
+    <section>
+        <title>C++ Include Files</title>
+        <para>
+            The syntax for include files is
+            <programlisting>#include &lt;Package\Name.h&gt;</programlisting>
+            Include files should not include other include files, as much as
+            possible.  Every include file should end with lines using the
+            objects they've defined, such as
+            <programlisting>using phantom::utility::Observer;
+using phantom::utility::ObserverPtr;</programlisting>
+        </para>
+    </section>
+
+    <section>
+        <title>Java Packages</title>
+        <para>
+            Java Packages are all in lowercase, as per the standard.  All code
+            written by Phantom Fiber employees will go in a subpackage of the
+            <literal>com.phantom</literal> package, for example
+            <literal>com.phantom.utility</literal>,    or
+            <literal>com.phantom.mvc</literal>.
+        </para>
+    </section>
+
+    <section>
+        <title>VSS Directory Structure</title>
+        <para>
+            The document root is <filename
+                class="directory">V:\Phantom\</filename>.
+            In the document root, we have:
+            <filename class="directory">Documents</filename> for documents we write,
+            <filename class="directory">Output</filename> is where the files we generate go to.
+            <filename class="directory">Source</filename> is where all our source lives.
+            <filename class="directory">Vendor</filename> is for packages we download.
+            In <filename class="directory">Source</filename>, we have:
+            <filename class="directory">C++</filename> for C++ source.
+            <filename class="directory">Java</filename> for Java source.
+            <filename class="directory">Other</filename> for non-(C++ or Java) sources.
+                    Under each of these we can have:
+                    <filename class="directory">Framework</filename> for our framework code.
+                    <filename class="directory">Projects</filename> for things we're working on for clients.
+                    <filename class="directory">Tools</filename> for things to build our source.
+
+        </para>
+    </section>
+</article>
+

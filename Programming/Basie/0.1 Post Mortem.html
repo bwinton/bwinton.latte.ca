@@ -1,0 +1,409 @@
+<h1>Basie 0.1 Post-Mortem Notes.</h1>
+
+<h2>Positive Stuff.</h2>
+
+<h3>People.</h3>
+<ul>
+ <li><p>Everyone did a freaking incredible job.
+</p>
+
+ </li>
+
+ <li><p>Everybody gave more than the expected/requested/paid for hours.
+</p>
+
+ </li>
+
+ <li><p>The team produced some remarkably clean code in a very short time,
+     given its prior lack of exposure to Django.
+</p>
+
+ </li>
+
+ <li><p>Distributed collaboration worked much better than expected (much
+     better than many professional/open source teams).
+</p>
+
+ </li>
+
+ <li><p>It was good that Greg stayed above the programming part, and swooped
+     in when we needed him.
+</p>
+
+ </li>
+
+ <li><p>Having outstanding expertise on some of the features (i.e. on mail
+     from Blake)
+</p>
+
+ </li>
+</ul>
+
+<h3>Meetings.</h3>
+<ul>
+ <li><p>Weekly Meetings: I liked the idea of weekly meetings in irc, i think
+     it helped keep things on track and provided an update as to what
+     every one was doing. It also provide a time when you knew every one
+     would be online if you needed information from them.
+</p>
+
+ </li>
+
+ <li><p>Meetings were run well, with good organization and speed.
+</p>
+
+ </li>
+
+ <li><p>Meetings were useful. Let's keep them up.
+</p>
+
+ </li>
+</ul>
+
+<h3>Communication.</h3>
+<ul>
+ <li>
+     Mail list: The mail list was a rather effective means of
+       communicating with the rest of the team and seemed to work nicely.
+ </li>
+</ul>
+
+<h3>Tools and Supporting Code.</h3>
+<ul>
+ <li><p>Regular, frequent, small commits went well/were a good idea.
+</p>
+
+ </li>
+
+ <li><p>pyflakes and pep8: Both where a great tool for checking code and
+     style however it would have been nice if we had a script to run both
+     on all files in Basie in one command.
+</p>
+
+ </li>
+
+ <li><p>Tests: Very useful :)
+</p>
+
+ </li>
+
+ <li><p>pep8 and pyflakes, mail list and irc
+</p>
+
+ </li>
+</ul>
+
+<h3>Code Reviews.</h3>
+<ul>
+ <li><p>Code reviews threw the mailing list: Having mailman automatically
+     send an e-mail when there is a commit and reviews replied to it
+     seemed to work very well. It also was a good indication of what was
+     being worked on at the moment and how active things where. The down
+     side was it cluttered up my inbox rather fast.
+</p>
+
+ </li>
+
+ <li><p>Assigning some one to code reviews: I think code reviews worked well
+     when some one was assigned to just work on doing reviews and leaving
+     the other developers time to code. It lead to better reviews as the
+     person doing the reviews did not worry about having time to finish
+     the code they are working on and could take the time to go threw all
+     the commits.
+</p>
+
+ </li>
+
+ <li><p>Reviews: Great job with the reviews. It should be maintained next
+     term.
+</p>
+
+ </li>
+
+ <li><p>Code reviews were very helpful when they explained what was wrong.
+</p>
+
+ </li>
+
+ <li><p>Blake's code reviews set a great example; it was even greater that
+     so many people followed suit and created a culture of continuous
+     feedback.
+</p>
+
+ </li>
+
+ <li><p>Code review was really good in theory but the way we were doing it
+     was suck.
+</p>
+
+ </li>
+</ul>
+<hr />
+
+
+<h2>Negative</h2>
+
+<h3>Code Reviews.</h3>
+<ul>
+ <li><p>Code review was really good in theory but the way we were doing it
+     was suck.
+</p>
+
+ </li>
+
+ <li><p>My biggest disappointment was that the mail application was code
+     reviewed and merged several times into the beta branch. Then, near
+     the end, suddenly it turns out that some of the people weren't
+     satisfied with it. So, I guess, no last minute out-of-the-blue code
+     reviews of the past would help.
+</p>
+
+ </li>
+
+ <li><p>Code reviews often had "do this 'cause i say so" mentality. We all
+     have different coding styles or even ways at how we approach a
+     problem. Bending to someone's else's wishes without being given a
+     reason does not constitute learning and, that's what army is for.
+</p>
+
+ </li>
+
+ <li><p>Tempers were strained occasionally during reviews and design
+     discussions (more considerate language should have been used).
+</p>
+
+ </li>
+</ul>
+
+<h3>People.</h3>
+<ul>
+ <li><p>I wish I wasn't so killed with school/work/etc.
+</p>
+
+ </li>
+
+ <li><p>We thought that the final meeting would just be a small basie
+     gathering, disappointed that so many outsiders were there.
+</p>
+
+ </li>
+
+ <li><p>Our distributed team made it hard for the less experienced to ramp
+     up their knowledge; part of this was a hesitance to ask for feedback
+     on the list, but the lack of immediacy hampered them as well.  Someone
+     wishes they had more give and take that you get in face to face
+     discussions.
+</p>
+
+ </li>
+
+ <li><p>Juggling project members. I think that the team that starts working
+     on an application should finish it.  It was unfair to take people
+     out cold leaving their work undone and for other people to clean up
+     and finish. So, if this happens in the future, it would be nice to
+     give a little time at least for the person to finish up something
+     that works or is easier to manage.
+</p>
+
+ </li>
+
+ <li><p>Greg was over-optimistic: set goals that were unachievable given how
+     new most of the dev team was, was too willing to believe that people
+     had finished things and were ready to move on.
+</p>
+
+ </li>
+
+ <li><p>Greg was too indulgent: should not have given ground on support for
+     multiple version control systems (if those hours had gone into
+     building a wiki, we'd have had one for 0.1).
+</p>
+
+ </li>
+
+ <li><p>Greg didn't (and doesn't) understand the technology that the project
+     was (and is) using, which meant he could only wave his hands and
+     pontificate when hard decisions needed to be made.
+</p>
+
+ </li>
+</ul>
+
+<h3>Branches and Merging.</h3>
+<ul>
+ <li><p>We ended up having too many stale branches; we were moving to new
+     features with finishing what we started.
+</p>
+
+ </li>
+
+ <li><p>svnmerge was a pain
+</p>
+
+ </li>
+
+ <li><p>svnmerge: The svnmerge.py script was a massive pain to work with and
+     i think it often lead to more work then it saved.
+</p>
+
+ </li>
+
+ <li><p>Merges: In the last part we had several problems to merge the
+     different branches. I do not know if someone discovered the cause,
+     but perhaps the problem was not to follow the rule: parent --&gt; child
+     branch and child --&gt; parent branch. Next term we probably should
+     merge only trunk --&gt; branch and branch --&gt; trunk.
+</p>
+
+ </li>
+
+ <li><p>Effort put into svnmerge etc. outweighed value returned.
+</p>
+
+ </li>
+
+ <li><p>It'll be obvious who this is coming from, but subversion is not the
+     ideal tool for our situation.  We're an open source, distributed
+     team using lots of branches and svn does not help us with that
+     workflow.  Serious consideration should be put into looking at other
+     systems, how they'd benefit our collaboration, and the drawbacks
+     from devs learning an unfamiliar system and reworking our habits.
+</p>
+
+ </li>
+</ul>
+
+<h3>Communication.</h3>
+<ul>
+ <li><p>Should have more discussion on list, don't be afraid to ask.  Those
+     with experience want to share their knowledge, but it's hard if we
+     don't know the problem.  Reviews should not be the time for
+     discovering that you don't understand something.
+</p>
+
+ </li>
+
+ <li><p>Blog: I found that the blog was not used very effectively and just
+     added a layer of confusion about where to post to.
+</p>
+
+ </li>
+
+ <li><p>Blog: We could increase the use of the blog. It will be nice if we
+     document the main features of the apps. I had the opportunity to see
+     the development of some apps, but there are others which I don't
+     know almost nothing.
+</p>
+
+ </li>
+
+ <li><p>A lot of times people seemed to be waffling around without knowing
+     what to do.  That could partially be caused by the newness of what
+     we were doing, but I think the newer devs could use more focused
+     direction (akin to class assignments).  Having faster iterations on
+     branches could help here as well.
+</p>
+
+ </li>
+</ul>
+
+<h3>The Release.</h3>
+<ul>
+ <li>
+     The release process kind of fell apart, the code freeze never really
+       happened.  We should have been more willing to cut code, and
+       refactoring shouldn't be put off.
+ </li>
+</ul>
+
+<h3>Tools and Supporting Code.</h3>
+<ul>
+ <li><p>Basie has too much code without tests, and too many bugs got fixed
+     without an accompanying test.  Some people complained about spending too
+     much time fixing the tests, but I think that problem stemmed
+     from tests that copied too much instead of making a function, not
+     keeping the tests focused, and also their newness at writing tests.
+</p>
+
+ </li>
+
+ <li><p>Dependencies: I know the virtualenv works for you but I have to
+     download the dependencies one by one (I can't use buildout). It will
+     be nice if you also document (if they are not in
+     http://basieproject.org/eggs/) where I can find them.
+</p>
+
+ </li>
+</ul>
+<hr />
+
+
+<h2>Suggestions</h2>
+
+<h3>Code Reviews.</h3>
+<ul>
+ <li><p>Reviews are awesome, but we need more reviewers.  It may not be easy
+     at first, but gets easier with practice.  You learn how to read
+     faster, you get more familiar with the code you're reading.
+</p>
+
+ </li>
+
+ <li><p>Don't skip the reviews that aren't specifically for you.  Reviews
+     are for everyone to learn, I'm wasting my time with involved
+     explanations if only 1 other person is reading it.  Reviewers don't
+     want to correct the same problems over and over, it's boring and
+     frustrating.
+</p>
+
+ </li>
+
+ <li><p>We need a better review process (I despise the email conv on a diff
+     patch)...but this likely won't be fixed until we get a code review
+     tool we can dog feed ourselves.
+</p>
+<ul>
+ <li><p>Do you have any ideas on what sorts of things you'ld like from a
+     review tool?
+</p>
+
+ </li>
+
+ <li><p>I'm impressed with a lot of what Google Code has...but a code
+     review tool is a feature on Greg's radar that I'll likely be
+     involved with, so it's just a waiting game there.
+</p>
+
+ </li>
+</ul>
+
+ </li>
+
+ <li><p>More people designated to be review-only.  Blake can't do everything
+     ;).
+</p>
+
+ </li>
+</ul>
+
+<h3>Branches.</h3>
+<ul>
+ <li>
+     Have quicker turn around; try to shoot for branches less than 1 week
+       old, max 2 weeks.  We'll be better prepared for a release, people
+       will have a better sense of forward progress.
+ </li>
+</ul>
+
+<h3>Dogfood!</h3>
+<ul>
+ <li><p>We could increase the use of tickets for the next term.
+</p>
+
+ </li>
+
+ <li><p>Start using Basie! Self-hosting!
+</p>
+
+ </li>
+</ul>

@@ -1,0 +1,241 @@
+Adding handler for Hello.
+Adding handler for Comics.
+Adding handler for Grunnerkrigg.
+2006/04/19 10:15:44 CONFIG INFO Server parameters:
+2006/04/19 10:15:44 CONFIG INFO   server.environment: production
+2006/04/19 10:15:44 CONFIG INFO   server.logToScreen: True
+2006/04/19 10:15:44 CONFIG INFO   server.logFile: 
+2006/04/19 10:15:44 CONFIG INFO   server.protocolVersion: HTTP/1.0
+2006/04/19 10:15:44 CONFIG INFO   server.socketHost: 
+2006/04/19 10:15:44 CONFIG INFO   server.socketPort: 8080
+2006/04/19 10:15:44 CONFIG INFO   server.socketFile: 
+2006/04/19 10:15:44 CONFIG INFO   server.reverseDNS: False
+2006/04/19 10:15:44 CONFIG INFO   server.socketQueueSize: 5
+2006/04/19 10:15:44 CONFIG INFO   server.threadPool: 10
+2006/04/19 10:15:44 HTTP INFO Serving HTTP on http://localhost:8080/
+2006/04/19 10:15:51 HTTP INFO 127.0.0.1 - GET / HTTP/1.1
+127.0.0.1 - - [2006/04/19 10:15:51] "GET / HTTP/1.1" 200 165
+2006/04/19 10:15:55 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/19 10:16:29] "GET /Comics/ HTTP/1.1" 200 878
+2006/04/19 13:07:42 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/19 13:08:10] "GET /Comics/ HTTP/1.1" 200 802
+2006/04/19 14:12:56 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/04/19 14:12:56] "GET /robots.txt HTTP/1.1" 200 36
+2006/04/19 14:12:57 HTTP INFO 127.0.0.1 - GET / HTTP/1.1
+127.0.0.1 - - [2006/04/19 14:12:57] "GET / HTTP/1.1" 200 165
+2006/04/19 16:51:34 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/19 16:52:17] "GET /Comics/ HTTP/1.1" 200 635
+2006/04/20 07:55:29 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/04/20 07:55:29] "GET /robots.txt HTTP/1.1" 200 36
+2006/04/20 07:55:29 HTTP INFO 127.0.0.1 - GET /Hello/ HTTP/1.1
+127.0.0.1 - - [2006/04/20 07:55:29] "GET /Hello/ HTTP/1.1" 200 146
+2006/04/20 09:21:56 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/20 09:22:16] "GET /Comics/ HTTP/1.1" 200 635
+2006/04/20 09:36:15 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/20 09:36:46] "GET /Comics/ HTTP/1.1" 200 727
+2006/04/20 11:30:29 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/20 11:31:35] "GET /Comics/ HTTP/1.1" 200 635
+2006/04/20 12:02:42 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/20 12:03:18] "GET /Comics/ HTTP/1.1" 200 635
+2006/04/21 02:34:03 HTTP INFO 127.0.0.1 - HEAD / HTTP/1.1
+127.0.0.1 - - [2006/04/21 02:34:03] "HEAD / HTTP/1.1" 200 165
+2006/04/21 10:51:36 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/21 10:56:03] "GET /Comics/ HTTP/1.1" 200 736
+2006/04/21 17:31:15 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/21 17:31:44] "GET /Comics/ HTTP/1.1" 200 821
+2006/04/21 18:14:13 HTTP INFO 127.0.0.1 - GET /Grunnerkrigg/ HTTP/1.1
+127.0.0.1 - - [2006/04/21 18:14:14] "GET /Grunnerkrigg/ HTTP/1.1" 200 8553
+2006/04/21 18:14:15 HTTP INFO 127.0.0.1 - GET /favicon.ico HTTP/1.1
+127.0.0.1 - - [2006/04/21 18:14:15] "GET /favicon.ico HTTP/1.1" 200 37
+2006/04/21 18:15:05 HTTP INFO 127.0.0.1 - GET /favicon.ico HTTP/1.1
+127.0.0.1 - - [2006/04/21 18:15:05] "GET /favicon.ico HTTP/1.1" 200 37
+2006/04/21 18:48:35 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/04/21 18:48:35] "GET /robots.txt HTTP/1.1" 200 36
+2006/04/21 18:48:35 HTTP INFO 127.0.0.1 - GET / HTTP/1.1
+127.0.0.1 - - [2006/04/21 18:48:35] "GET / HTTP/1.1" 200 165
+2006/04/21 21:26:01 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/04/21 21:26:01] "GET /robots.txt HTTP/1.1" 200 36
+2006/04/21 21:26:02 HTTP INFO 127.0.0.1 - GET /Hello/showMessage HTTP/1.1
+127.0.0.1 - - [2006/04/21 21:26:02] "GET /Hello/showMessage HTTP/1.1" 200 19
+2006/04/21 22:33:21 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/04/21 22:33:21] "GET /robots.txt HTTP/1.1" 200 36
+2006/04/21 22:33:21 HTTP INFO 127.0.0.1 - GET /Hello/showMassage/foo/bar?baz=qux&yadda=yadda&yadda=more%20yadda HTTP/1.1
+127.0.0.1 - - [2006/04/21 22:33:21] "GET /Hello/showMassage/foo/bar?baz=qux&yadda=yadda&yadda=more%20yadda HTTP/1.1" 200 1047
+2006/04/22 08:58:46 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/22 08:59:16] "GET /Comics/ HTTP/1.1" 200 727
+2006/04/22 08:59:17 HTTP INFO 127.0.0.1 - GET /favicon.ico HTTP/1.1
+127.0.0.1 - - [2006/04/22 08:59:17] "GET /favicon.ico HTTP/1.1" 200 37
+2006/04/23 01:47:23 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/04/23 01:47:23] "GET /robots.txt HTTP/1.1" 200 36
+2006/04/23 01:47:27 HTTP INFO 127.0.0.1 - GET / HTTP/1.1
+127.0.0.1 - - [2006/04/23 01:47:27] "GET / HTTP/1.1" 200 165
+2006/04/24 09:43:04 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/24 09:43:29] "GET /Comics/ HTTP/1.1" 200 635
+2006/04/24 09:43:29 HTTP INFO 127.0.0.1 - GET /favicon.ico HTTP/1.1
+127.0.0.1 - - [2006/04/24 09:43:29] "GET /favicon.ico HTTP/1.1" 200 37
+2006/04/24 09:44:55 HTTP INFO 127.0.0.1 - GET /favicon.ico HTTP/1.1
+127.0.0.1 - - [2006/04/24 09:44:55] "GET /favicon.ico HTTP/1.1" 200 37
+2006/04/24 09:48:52 HTTP INFO 127.0.0.1 - GET /favicon.ico HTTP/1.1
+127.0.0.1 - - [2006/04/24 09:48:52] "GET /favicon.ico HTTP/1.1" 200 37
+2006/04/25 10:31:58 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/25 10:32:49] "GET /Comics/ HTTP/1.1" 200 635
+2006/04/25 10:32:49 HTTP INFO 127.0.0.1 - GET /favicon.ico HTTP/1.1
+127.0.0.1 - - [2006/04/25 10:32:49] "GET /favicon.ico HTTP/1.1" 200 37
+2006/04/25 10:33:09 HTTP INFO 127.0.0.1 - GET / HTTP/1.1
+127.0.0.1 - - [2006/04/25 10:33:09] "GET / HTTP/1.1" 200 165
+2006/04/25 10:33:10 HTTP INFO 127.0.0.1 - GET /Grunnerkrigg/ HTTP/1.1
+127.0.0.1 - - [2006/04/25 10:33:13] "GET /Grunnerkrigg/ HTTP/1.1" 200 8631
+2006/04/25 12:12:13 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/25 12:12:54] "GET /Comics/ HTTP/1.1" 200 635
+2006/04/26 09:31:02 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/26 09:31:36] "GET /Comics/ HTTP/1.1" 200 635
+2006/04/26 12:19:21 HTTP INFO 127.0.0.1 - GET /Grunnerkrigg/ HTTP/1.1
+127.0.0.1 - - [2006/04/26 12:19:30] "GET /Grunnerkrigg/ HTTP/1.1" 200 8631
+2006/04/26 15:25:10 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/04/26 15:25:10] "GET /robots.txt HTTP/1.1" 200 36
+2006/04/26 15:25:10 HTTP INFO 127.0.0.1 - GET / HTTP/1.1
+127.0.0.1 - - [2006/04/26 15:25:10] "GET / HTTP/1.1" 200 165
+2006/04/26 17:28:44 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/26 17:29:14] "GET /Comics/ HTTP/1.1" 200 727
+2006/04/27 09:45:13 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/27 09:46:49] "GET /Comics/ HTTP/1.1" 200 727
+2006/04/27 18:37:41 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/27 18:39:09] "GET /Comics/ HTTP/1.1" 200 727
+2006/04/27 22:30:49 HTTP INFO 127.0.0.1 - GET /Grunnerkrigg/ HTTP/1.1
+127.0.0.1 - - [2006/04/27 22:30:50] "GET /Grunnerkrigg/ HTTP/1.1" 200 8709
+2006/04/27 22:30:51 HTTP INFO 127.0.0.1 - GET /favicon.ico HTTP/1.1
+127.0.0.1 - - [2006/04/27 22:30:51] "GET /favicon.ico HTTP/1.1" 200 37
+2006/04/28 09:36:12 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/28 09:36:44] "GET /Comics/ HTTP/1.1" 200 727
+2006/04/29 07:46:16 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/29 07:46:49] "GET /Comics/ HTTP/1.1" 200 727
+2006/04/29 07:46:49 HTTP INFO 127.0.0.1 - GET /favicon.ico HTTP/1.1
+127.0.0.1 - - [2006/04/29 07:46:49] "GET /favicon.ico HTTP/1.1" 200 37
+2006/04/29 07:52:40 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/04/29 07:52:40] "GET /robots.txt HTTP/1.1" 200 36
+2006/04/29 07:52:40 HTTP INFO 127.0.0.1 - GET / HTTP/1.1
+127.0.0.1 - - [2006/04/29 07:52:40] "GET / HTTP/1.1" 200 165
+2006/04/29 17:15:01 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/04/29 17:15:01] "GET /robots.txt HTTP/1.1" 200 36
+2006/04/29 17:16:19 HTTP INFO 127.0.0.1 - GET / HTTP/1.1
+127.0.0.1 - - [2006/04/29 17:16:19] "GET / HTTP/1.1" 200 165
+2006/04/29 17:20:14 HTTP INFO 127.0.0.1 - GET /Hello/ HTTP/1.1
+127.0.0.1 - - [2006/04/29 17:20:14] "GET /Hello/ HTTP/1.1" 200 146
+2006/04/29 17:25:41 HTTP INFO 127.0.0.1 - GET /Grunnerkrigg/ HTTP/1.1
+127.0.0.1 - - [2006/04/29 17:25:47] "GET /Grunnerkrigg/ HTTP/1.1" 200 8709
+2006/04/29 17:27:00 HTTP INFO 127.0.0.1 - GET /Hello/showMessage HTTP/1.1
+127.0.0.1 - - [2006/04/29 17:27:00] "GET /Hello/showMessage HTTP/1.1" 200 19
+2006/04/29 17:29:18 HTTP INFO 127.0.0.1 - GET /Hello/showMassage/foo/bar?baz=qux&yadda=yadda&yadda=more%20yadda HTTP/1.1
+127.0.0.1 - - [2006/04/29 17:29:18] "GET /Hello/showMassage/foo/bar?baz=qux&yadda=yadda&yadda=more%20yadda HTTP/1.1" 200 974
+2006/04/29 19:29:23 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/04/29 19:29:23] "GET /robots.txt HTTP/1.1" 200 36
+2006/04/29 19:29:25 HTTP INFO 127.0.0.1 - GET / HTTP/1.1
+127.0.0.1 - - [2006/04/29 19:29:25] "GET / HTTP/1.1" 200 165
+2006/04/29 23:51:33 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/04/29 23:51:33] "GET /robots.txt HTTP/1.1" 200 36
+2006/04/29 23:51:33 HTTP INFO 127.0.0.1 - GET /Grunnerkrigg/ HTTP/1.1
+2006/04/29 23:51:34  INFO Traceback (most recent call last):
+  File "/usr/local/lib/python2.4/site-packages/CherryPy-2.1.1-py2.4.egg/cherrypy/_cphttptools.py", line 274, in run
+    finalize()
+  File "/usr/local/lib/python2.4/site-packages/CherryPy-2.1.1-py2.4.egg/cherrypy/_cphttptools.py", line 576, in finalize
+    content = ''.join([chunk for chunk in response.body])
+  File "/usr/local/lib/python2.4/site-packages/CherryPy-2.1.1-py2.4.egg/cherrypy/_cphttptools.py", line 645, in flattener
+    for x in input:
+  File "build/bdist.freebsd-4.8-RELEASE-i386/egg/Grunnerkrigg.py", line 17, in index
+ValueError: invalid literal for int(): ing</b>:  mysql_connect(): Lost connection to MySQL server during query in <b>/home/.fennel/gunner/gunnerkrigg.com/includes/adodb/drivers/adodb-mysql.inc.php</b> on line <b>346</b><br />
+<br />
+<b>War
+
+127.0.0.1 - - [2006/04/29 23:51:34] "GET /Grunnerkrigg/ HTTP/1.1" 500 707
+2006/04/29 23:51:34 HTTP INFO 127.0.0.1 - GET /Hello/ HTTP/1.1
+127.0.0.1 - - [2006/04/29 23:51:34] "GET /Hello/ HTTP/1.1" 200 146
+2006/04/30 01:30:28 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/04/30 01:30:28] "GET /robots.txt HTTP/1.1" 200 36
+2006/04/30 01:30:29 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/30 01:31:02] "GET /Comics/ HTTP/1.1" 200 727
+2006/04/30 09:37:35 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/04/30 09:37:35] "GET /robots.txt HTTP/1.1" 200 36
+2006/04/30 09:37:35 HTTP INFO 127.0.0.1 - GET /Hello/showMassage/foo/bar?baz=qux&yadda=yadda&yadda=more%20yadda HTTP/1.1
+127.0.0.1 - - [2006/04/30 09:37:35] "GET /Hello/showMassage/foo/bar?baz=qux&yadda=yadda&yadda=more%20yadda HTTP/1.1" 200 1074
+2006/04/30 09:51:44 HTTP INFO 127.0.0.1 - GET /Hello/showMessage HTTP/1.1
+127.0.0.1 - - [2006/04/30 09:51:44] "GET /Hello/showMessage HTTP/1.1" 200 19
+2006/04/30 10:14:45 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/30 10:15:01] "GET /Comics/ HTTP/1.1" 200 635
+2006/04/30 10:15:01 HTTP INFO 127.0.0.1 - GET /favicon.ico HTTP/1.1
+127.0.0.1 - - [2006/04/30 10:15:01] "GET /favicon.ico HTTP/1.1" 200 37
+2006/04/30 12:00:29 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/04/30 12:00:29] "GET /robots.txt HTTP/1.1" 200 36
+2006/04/30 12:00:43 HTTP INFO 127.0.0.1 - GET /Hello/ HTTP/1.1
+127.0.0.1 - - [2006/04/30 12:00:43] "GET /Hello/ HTTP/1.1" 200 146
+2006/04/30 13:45:49 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/04/30 13:46:38] "GET /Comics/ HTTP/1.1" 200 727
+2006/04/30 23:28:02 HTTP INFO 127.0.0.1 - GET /Hello/showMessage HTTP/1.1
+127.0.0.1 - - [2006/04/30 23:28:03] "GET /Hello/showMessage HTTP/1.1" 200 19
+2006/05/01 01:08:50 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/05/01 01:08:50] "GET /robots.txt HTTP/1.1" 200 36
+2006/05/01 01:08:50 HTTP INFO 127.0.0.1 - GET / HTTP/1.1
+127.0.0.1 - - [2006/05/01 01:08:50] "GET / HTTP/1.1" 200 165
+2006/05/01 07:28:44 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/05/01 07:28:44] "GET /robots.txt HTTP/1.1" 200 36
+2006/05/01 07:28:45 HTTP INFO 127.0.0.1 - GET /Hello/showMassage/foo/bar?baz=qux&yadda=yadda&yadda=more%20yadda HTTP/1.1
+127.0.0.1 - - [2006/05/01 07:28:45] "GET /Hello/showMassage/foo/bar?baz=qux&yadda=yadda&yadda=more%20yadda HTTP/1.1" 200 1022
+2006/05/01 08:49:05 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/01 08:49:28] "GET /Comics/ HTTP/1.1" 200 727
+2006/05/01 08:58:28 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/01 09:04:17] "GET /Comics/ HTTP/1.1" 200 727
+2006/05/01 09:07:32 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/01 09:07:49] "GET /Comics/ HTTP/1.1" 200 727
+2006/05/01 16:03:06 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/01 16:04:10] "GET /Comics/ HTTP/1.1" 200 727
+2006/05/01 16:24:12 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/01 16:24:46] "GET /Comics/ HTTP/1.1" 200 727
+2006/05/01 16:39:26 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/01 16:40:17] "GET /Comics/ HTTP/1.1" 200 727
+2006/05/01 16:54:25 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/01 16:54:47] "GET /Comics/ HTTP/1.1" 200 635
+2006/05/02 00:23:00 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/02 00:23:54] "GET /Comics/ HTTP/1.1" 200 727
+2006/05/02 03:53:27 HTTP INFO 127.0.0.1 - GET /Grunnerkrigg/ HTTP/1.1
+127.0.0.1 - - [2006/05/02 03:53:28] "GET /Grunnerkrigg/ HTTP/1.1" 200 8787
+2006/05/02 09:16:15 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/02 09:18:20] "GET /Comics/ HTTP/1.1" 200 727
+2006/05/02 14:00:20 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/05/02 14:00:20] "GET /robots.txt HTTP/1.1" 200 36
+2006/05/02 14:00:21 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/02 14:00:49] "GET /Comics/ HTTP/1.1" 200 727
+2006/05/02 15:51:12 HTTP INFO 127.0.0.1 - GET /Grunnerkrigg/ HTTP/1.1
+127.0.0.1 - - [2006/05/02 15:51:17] "GET /Grunnerkrigg/ HTTP/1.1" 200 8787
+2006/05/02 17:48:20 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+2006/05/02 17:48:26 HTTP INFO 127.0.0.1 - GET /Grunnerkrigg/ HTTP/1.1
+127.0.0.1 - - [2006/05/02 17:48:40] "GET /Grunnerkrigg/ HTTP/1.1" 200 8787
+127.0.0.1 - - [2006/05/02 17:48:52] "GET /Comics/ HTTP/1.1" 200 727
+2006/05/03 09:17:27 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/03 09:18:05] "GET /Comics/ HTTP/1.1" 200 635
+2006/05/03 13:58:03 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/05/03 13:58:03] "GET /robots.txt HTTP/1.1" 200 36
+2006/05/03 13:58:03 HTTP INFO 127.0.0.1 - GET / HTTP/1.1
+127.0.0.1 - - [2006/05/03 13:58:03] "GET / HTTP/1.1" 200 165
+2006/05/03 14:55:10 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/03 14:55:52] "GET /Comics/ HTTP/1.1" 200 727
+2006/05/03 18:13:54 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/03 18:14:45] "GET /Comics/ HTTP/1.1" 200 727
+2006/05/04 04:19:37 HTTP INFO 127.0.0.1 - GET /robots.txt HTTP/1.1
+127.0.0.1 - - [2006/05/04 04:19:37] "GET /robots.txt HTTP/1.1" 200 36
+2006/05/04 04:19:38 HTTP INFO 127.0.0.1 - GET / HTTP/1.1
+127.0.0.1 - - [2006/05/04 04:19:38] "GET / HTTP/1.1" 200 165
+2006/05/04 09:15:15 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/04 09:16:35] "GET /Comics/ HTTP/1.1" 200 727
+2006/05/04 12:19:41 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/04 12:20:24] "GET /Comics/ HTTP/1.1" 200 727
+2006/05/04 12:41:44 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+2006/05/04 12:41:47 HTTP INFO 127.0.0.1 - GET /Grunnerkrigg/ HTTP/1.1
+127.0.0.1 - - [2006/05/04 12:42:00] "GET /Grunnerkrigg/ HTTP/1.1" 200 8865
+127.0.0.1 - - [2006/05/04 12:42:14] "GET /Comics/ HTTP/1.1" 200 727
+2006/05/05 09:15:01 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/05 09:15:46] "GET /Comics/ HTTP/1.1" 200 878
+2006/05/05 09:15:48 HTTP INFO 127.0.0.1 - GET /favicon.ico HTTP/1.1
+127.0.0.1 - - [2006/05/05 09:15:48] "GET /favicon.ico HTTP/1.1" 200 37
+2006/05/05 09:16:15 HTTP INFO 127.0.0.1 - GET /Grunnerkrigg/ HTTP/1.1
+127.0.0.1 - - [2006/05/05 09:16:18] "GET /Grunnerkrigg/ HTTP/1.1" 200 8865
+2006/05/05 19:15:49 HTTP INFO 127.0.0.1 - GET /Comics/ HTTP/1.1
+127.0.0.1 - - [2006/05/05 19:16:22] "GE

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id = "g1" x1 = "0%" y1 = "5%" x2 = "75%" y2 = "75%">
+      <stop stop-color = "red" offset = "0%"/>
+      <stop stop-color = "yellow" offset = "35%"/>
+    </linearGradient>
+  </defs>
+  <text fill="url(#g1)" x="50" y="50" font-size="50">J</text>
+</svg>

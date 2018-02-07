@@ -1,0 +1,1214 @@
+<HTML>
+
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="GENERATOR" content="TSE Pro 4.0 32-bit Editor, visit http://www.semware.com">
+    <title>Icon Info For Developers</title>
+    <style>
+      td        { font-size: 80% }
+      .red      { color: #cc0000 }
+      .courier  { font-family: "courier new", courier, monospace }
+    </style>
+    </head>
+
+    <BODY TOPMARGIN=0 LEFTMARGIN=10 BGCOLOR="white" LINK="#0000cc" VLINK="#660066" TEXT="#000000">
+    <FONT FACE="verdana,arial,helvetica,geneva" SIZE=2>
+
+
+
+<h1>Icon Info For Developers</h1>
+
+<p>
+<b>Contents:</b><br>
+
+<p>
+<a href="#Definition">Definition Of An Icon Set</a><br>
+<a href="#HowToOpen">How To Open An Icon Set</a><br>
+<a href="#HowToDraw">How To Draw Icons</a><br>
+<a href="#IDvsIndex">Icon ID vs. Icon Index</a><br>
+<a href="#Selecting">Allowing Users To Select Icons</a><br>
+<a href="#16bit">16-bit Color</a><br>
+<a href="#HowToCreate">How To Create Icons</a><br>
+<a href="#Formats">Icon Set Resource And File Formats</a><br>
+<a href="#ClieCode">Sony Clie OS 4.x High Resolution Devices</a><br>
+
+<p>
+
+
+
+<hr>
+
+
+
+<a name="Definition">
+<h2>Definition Of An Icon Set</h2>
+</a>
+
+<p>
+Agendus (formerly known as Action Names) popularized this definition of an
+icon set, and now several other apps use it as well.  This document explains
+how you can make your app use it too.  After your app opens an icon set, it
+can use WinDrawBitmap() to draw icons from the icon set.
+
+<p>
+An icon set is a resource database that conforms to the following:
+
+<ul>
+<li>Each resource is a 'Tbmp' resource (bitmap family) whose low density
+dimensions are 10x9 (so the high density dimensions are 20x18).
+<li>Creator ID is 'Actn'
+<li>Type ID is 'Rsrc'
+</ul>
+
+<p>
+The Creator ID and Type ID identify the resource database as an icon set, and
+allow apps to "see" the icon set (assuming the apps are aware of customizable
+icon sets).  For example, these icon sets will show up in <a
+href="http://www.palmgear.com/software/showsoftware.cfm?prodID=47054">Icon
+Manager</a> for editing.
+
+<p>
+<b>Note:</b>  Do not label a resource database as 'Actn' and 'Rsrc' unless it
+really is an icon set (contains only 'Tbmp' resources whose dimensions are
+10x9 for low density or 20x18 for high density).  Otherwise you may cause
+incompatibilities with apps, and will very likely cause users' devices to
+crash mysteriously.
+
+<p>
+
+
+
+<a name="HowToOpen">
+<h2>How To Open An Icon Set</h2>
+</a>
+
+<p>
+You can open the "default" icon set by using DmOpenDatabaseByTypeCreator().
+You can open a specific named icon set by using DmFindDatabase() and
+DmOpenDatabase(), and you should fall back on using
+DmOpenDatabaseByTypeCreator() if the named icon set doesn't exist or isn't the
+right creator/type.
+
+<p>
+The "default" icon set is somewhat ambiguous.  Icon Manager has a command
+<b>Set as Default</b> that enables a user to force a particular icon set to be
+the default one.  Aside from that, the DmOpenDatabaseByTypeCreator() API picks
+whichever icon set was installed first.  This can lead to a rather confusing
+experience for users, so apps are encouraged to look for an icon set by name
+and only use the default icon set if the named one isn't available.  The
+sample code below does this.
+
+<p>
+<a name="OpenIconSet">
+<table bgcolor="#cccccc" cellpadding="8">
+<tr>
+<td>
+<listing>
+/*
+ * OpenIconSet - returns a DmOpenRef to an icon set
+ *
+ * Arguments:
+ *  name            = Optional name of icon set to open (can be NULL).
+ *  canUseDefault   = Indicates if it's ok to open a default icon set if
+ *                    the named icon set isn't available.
+ *
+ * Returns:
+ *  NULL            = Unable to open an icon set.
+ *  non-NULL        = DmOpenRef to the icon set database.
+ *
+ * Remarks:         If OpenIconSet() returns a valid DmOpenRef, the caller
+ *                  is required to call DmCloseDatabase() to close it when
+ *                  the caller is finished with it.
+ */
+
+DmOpenRef OpenIconSet(const Char *name, Boolean canUseDefault)
+{
+    DmOpenRef pdb = 0;
+
+    // If 'name' was specified, try to open it.
+
+    if (name && *name)
+    {
+        const UInt16 card = 0;
+        const LocalID lid = DmFindDatabase(card, name);
+
+        if (lid)
+        {
+            UInt32 type;
+            UInt32 creator;
+
+            // Double check the type and creator.
+
+            DmDatabaseInfo(card, lid, 0, 0, 0, 0, 0, 0, 0, 0, 0, &type, &creator);
+
+            if ('Rsrc' == type && 'Actn' == creator)
+                pdb = DmOpenDatabase(card, lid, dmModeReadOnly);
+        }
+    }
+
+    // Fall back to the default icon set if we need to.
+
+    if (!pdb && canUseDefault)
+        pdb = DmOpenDatabaseByTypeCreator('Rsrc', 'Actn', dmModeReadOnly);
+
+    // At this point we may or may not have been able to open an icon set.
+    // The return value may be NULL or it may point to an icon set.
+
+    return pdb;
+}
+</listing>
+</td>
+</tr>
+</table>
+</a>
+
+<p>
+
+
+
+<a name="HowToDraw">
+<h2>How To Draw Icons</h2>
+</a>
+
+<p>
+Drawing an icon is done identically to drawing any other bitmap resource.  Use
+DmGetResource() to get a BitmapPtr, and if the pointer is non-NULL you can use
+WinDrawBitmap() to draw it.
+
+<p>
+<table bgcolor="#cccccc" cellpadding="8">
+<tr>
+<td>
+<listing>
+void DrawBitmap(UInt16 iconID, Coord x, Coord y)
+{
+    BitmapPtr pbmp = DmGetResource(iconID);
+
+    if (pbmp)
+        WinDrawBitmap(pbmp, x, y);
+}
+</listing>
+</td>
+</tr>
+</table>
+
+<p>
+Do not assume that an icon will draw its own background:  Icons are
+rectangular, but they can use transparency so that parts of the icon are not
+drawn (just like you see with icons on desktop computers).  So you need to
+make sure the background has been drawn already before drawing an icon.
+Usually that's done by using WinEraseRectangle(), but you can do it however
+you like as long as the background is drawn somehow.
+
+<p>
+Do not assume that icons always contain low density images:  Icons are 'Tbmp'
+resources, so they are bitmap families.  A bitmap family can contain any
+combination of low density, high density, monochrome, grayscale, 8-bit color,
+or 16-bit color images.  Do not use BmpXxx() APIs assuming that they will find
+the "best image" for the current device and screen mode -- they do not.  The
+BmpXxx() APIs use the specific image the BitmapPtr points to, which is the
+first image in the bitmap family.  For example, if you use BmpGetDimensions()
+to get the width and height of the image so that you can center the image
+within a rectangle, it will yield unexpected results for icons that do not
+contain any low density images.
+
+<p>
+The 'Actn' icon set standard requires all icons to be 10x9 for low density
+images and 20x18 for high density images.  So you can safely assume this, and
+you don't need to use BmpGetDimensions() to check the dimensions.  If an icon
+is improperly sized, then whoever created it goofed and the icon is
+effectively "corrupt".  So that's not your problem and you don't need to guard
+against it (you can if you want to, but it's a lot of complicated work that
+just makes your app run slower).
+
+<p>
+
+
+
+<a name="IDvsIndex">
+<h2>Icon ID vs. Icon Index</h2>
+</a>
+
+<p>
+If you refer to icons by ID number (resource ID), it allows the user to
+rearrange their icon set without damaging the icon associations.  Agendus,
+DateBk5, HandyShopper, etc. currently use this approach, though some used to
+refer to icons by record index in the icon set.  '0' is both a valid ID and a
+valid index, but for example Agendus treats '0' as a magic 'no icon' value
+(most other apps use '-1' as the magic 'no icon' value).
+
+<p>
+The caveat is that the Palm OS gets bitmaps from the most-recently opened
+resource database.  So if an icon overrides a resource ID from some other
+'Tbmp' resource then the icon will win.  The Palm OS reserves the entire range
+10,000..65535 (though it uses only a small scattered portion of that range).
+You can be nice to users by shifting your apps' bitmap resource IDs into the
+9000..9999 range or something like that, to give them a big range of icon ID
+numbers to work with.  The idea is to keep your app bitmap IDs high to avoid
+overlap between your app bitmaps and users' icons (which are numbered starting
+from 0).
+
+<p>
+<table bgcolor="#cccccc" cellpadding="8">
+<tr>
+<td>
+<listing>
+/* Getting an icon by ID */
+BitmapPtr pbmp = DmGetResource(iconID);
+
+/* Getting an icon by index */
+BitmapPtr pbmp = DmGetResourceIndex(pdb, iconIndex);
+</listing>
+</td>
+</tr>
+</table>
+
+<p>
+<b>Note:</b>   DateBk5 chose to document a few of its internal bitmap resource
+ID numbers to allow users to do some visual customization of certain things.
+HandyShopper and Icon Manager take extra precautions to prevent conflicts
+(either accidental or intentional) between their internal bitmap resources and
+users' icons.
+
+<p>
+
+
+
+<a name="Selecting">
+<h2>Allowing Users To Select Icons</h2>
+</a>
+
+<p>
+Agendus, HandyShopper, and DataShield use popup icon selectors that present a
+vertical list (with a scrollbar) with 8 icons per row.  This is handy because
+users can create "section headings" (by making a row of custom icons) to help
+organize their icon set.  DateBk5 fits as many icons on the screen as possible
+by using a horizontal list of 10 columns with 13 icons per column (no
+scrollbar).
+
+<p>
+I recommend using the 8-icons-per-row approach because of its usefulness
+(scrollbar, section headings, etc), and to be consistent with the majority of
+other apps.
+
+<ul>
+<li>To get the number of icons in the icon set, use DmNumResources() with the
+DmOpenRef you got back from the <a href="#OpenIconSet">OpenIconSet()</a>
+function.
+<li>To draw the list of icons, use DmGetResourceIndex() to get the icons by
+index.
+</ul>
+
+<p>
+
+
+
+<a name="16bit">
+<h2>16-bit Color</h2>
+</a>
+
+<p>
+<b>Q:  Why don't 16-bit icons show up?  The device specifications claim the
+device supports 16-bit color.</b>
+
+<p>
+<b>A:</b>  Because you haven't told the Palm OS to use 16-bit color mode.
+Unless you used WinScreenMode() to explicitly set 16-bit color mode, the
+device uses 8-bit color mode.  In which case the OS uses the 8-bit image from
+the bitmap family.  If the bitmap family does not contain an 8-bit image, then
+it looks for a 4-bit (grayscale) image or a 1-bit (monochrome) image.  If none
+of these exist, then the Palm OS automatically converts the 16-bit color image
+down to 8-bit color (conversion doesn't always produce good results, which is
+why the Palm OS prefers to find an existing compatible image before trying to
+convert an incompatible image).
+
+<p>
+<b>Q:  Why don't Palm devices use 16-bit color mode by default?</b>
+
+<p>
+<b>A:</b>  Because 16-bit color mode uses twice as much memory, is slower when
+drawing, and because in most cases nobody can tell the difference anyway.
+Also, just because an app supports 8-bit color does not mean it will work in
+16-bit color mode (some apps draw things incorrectly, and some apps crash).
+Sometimes it can take very significant modifications for an app to work in
+16-bit color mode.
+
+<p>
+
+
+
+<a name="HowToCreate">
+<h2>How To Create Icons</h2>
+</a>
+
+<p>
+You can use <a
+href="http://www.palmgear.com/software/showsoftware.cfm?prodID=47054">Icon
+Manager</a> to draw icons on your handheld.
+
+<p>
+You can also use tools like <a
+href="http://www.djw.org/product/palm/par/">PAR</a> and <a
+href="http://www.ardiri.com/index.php?redir=palm&cat=pilrc">PilRC</a>
+to build an icon set from bitmap files on your PC (both of these are included
+with CodeWarrior R9 for the Palm OS).
+
+<p>
+
+
+
+<a name="Formats">
+<h2>Icon Set Resource And File Formats</h2>
+</a>
+
+<p>
+An icon set is just a resource database (.prc file) containing 'Tbmp' (bitmap
+family) resources.  The format specifications for .prc files and bitmap
+families are detailed in the Palm OS SDK documentation.
+
+<p>
+Here is a quick description of the bitmap family format.  Images in a bitmap
+family must be in sorted order.  Any combination of images may exist, but the
+ones that exist must be in the following order:
+
+<ul>
+<li>Low density 1-bit (monochrome)
+<li>Low density 4-bit (grayscale)
+<li>Low density 8-bit (color)
+<li>Low density 16-bit (color)
+<li>Dummy marker -- if one or more high density images exist, the following
+16 byte marker must immediately precede the first high density image:<br>
+<font face="courier new, courier">00 00 00 00 00 00 00 00 FF 01 00 00 00 00 00 00</font>
+<li>High density 1-bit (monochrome)
+<li>High density 4-bit (grayscale)
+<li>High density 8-bit (color)
+<li>High density 16-bit (color)
+</ul>
+
+<p>
+For more detail, please refer to the Palm OS SDK documentation.
+
+<p>
+
+
+
+<a name="ClieCode">
+<h2>Sony Clie OS 4.x High Resolution Devices</h2>
+</a>
+
+<p>
+High density images use the updated Palm OS 5.0 BitmapType Version 3 format,
+also known as "V3" bitmaps (version 3 of the BitmapType format, not version 3
+of the Palm OS).  Sony Clie OS 4.x devices don't support the V3 bitmap format,
+but by adding appropriate code you can enable your app to draw V3 high density
+bitmaps on Sony OS 4.x devices.
+
+<p>
+The following code implements a __WinDrawBitmap() function, which works just
+like the native WinDrawBitmap() API.  Call the __WinDrawBitmap() function from
+any place where you want to support V3 high density bitmaps on Sony OS 4.x
+devices.  Because it can draw any V3 bitmap family, it might even help you
+simplify your Palm OS 5.x versus Sony OS 4.x high resolution support in
+general.  <a
+href="http://www.palmgear.com/software/showsoftware.cfm?prodID=47054">Icon
+Manager</a>, <a
+href="http://www.palmgear.com/software/showsoftware.cfm?prodID=1350">HandyShopper</a>,
+and <a
+href="http://www.palmgear.com/software/showsoftware.cfm?prodID=41649">DateBk5</a>
+all use this code.
+
+<p>
+There are a few caveats to the __WinDrawBitmap() function:
+
+<ul>
+<li>In order to use the __WinDrawBitmap() function, you need to include the
+file <b>ScrUtils.c</b> from the Palm OS 4.0 source code.  If you have not yet
+signed the license agreement for access to the Palm OS source code, go to the
+<a href="http://www.palmos.com/dev/support/">PalmSource Development
+Support</a> page and look under the "Palm OS Source Code" heading to get
+started.  <b>Note:</b>  This file is required (and must be from Palm OS 4.0,
+not an earlier version) because otherwise your app will crash when it tries to
+draw compressed high density icons.
+<li>The function uses global variables, so you can only use it when globals
+are available (e.g. don't call it inside Alarm handlers, Exchange Manager
+callbacks, the global Find launch code, etc).  You can of course modify the
+code to use the Feature Manager directly and get rid of the globals, at the
+cost of some speed.
+<li>The function doesn't work for bitmaps that are 64kb or larger.
+</ul>
+
+<p>
+The following code should be pretty much a drop-in chunk of code for your app,
+and it compiles clean as either C or C++ code using CodeWarrior.  The only
+external dependencies it has are the external global variables listed near the
+top of the file (below), and the ScrUtils.c file mentioned above.  See the
+comment blocks near the top of the file (below) for usage information and more
+details.
+
+<p>
+<table bgcolor="#cccccc" cellpadding="8">
+<tr>
+<td>
+<listing>
+///////////////////////////////////////////////////////////////////////////
+// BmpHelpers.c
+
+#ifndef __PALMOS_H__
+#include "PalmOS.h"
+#endif
+
+#ifndef __SONYHIGHRESLIB_H__
+#include "sonyhrlib.h"
+#endif
+
+
+/*
+ * __WinDrawBitmap
+ *
+ * This is an alternative to the Palm OS API function WinDrawBitmap.  Call
+ * this whenever you want to draw a bitmap that may have a V3 bitmap in it.
+ *
+ * But be careful to call this only when globals are available!
+ *
+ * On Sony OS 4.x high resolution devices, this function automatically scans
+ * the bitmap family to find the best image.  If the best image is a V3 (OS5)
+ * bitmap, then this function automatically generates a temporary copy using
+ * V2 (OS3.5 and higher) bitmap format.  The resulting bitmap is then drawn
+ * using the Palm OS API function WinDrawBitmap.
+ *
+ * On all other devices, this function simply calls the Palm OS API fucntion
+ * WinDrawBitmap.
+ *
+ * NOTE:  This function works not only for 'Actn' format icons, but also for
+ * any other bitmaps (as long as the V2 image will be less than 64k).
+ * HandyShopper uses this function to draw all of its OS5 high density bitmap
+ * families on Sony OS 4.x devices.
+ */
+
+void __WinDrawBitmap(const BitmapType *pbmp, Coord x, Coord y);
+
+
+/*
+ * ScrUtils.c external dependency for decompression
+ *
+ * Copy the ScrUtils.c file from the Palm OS 4.0 source code and add it to
+ * your application.  It must be the OS 4.0 (or higher) file, or your app will
+ * crash when it tries to draw certain kinds of compressed icons.
+ */
+
+typedef struct CompStateType { UInt8 data[8]; } CompStateType;
+extern Int32 ScrDecompress(BitmapCompressionType compressionMethod, UInt8* srcP,
+                           UInt32 /*srcBufLen*/, UInt8* dstP, UInt32 dstBufLen,
+                           CompStateType* decompStateP);
+
+
+/*
+ * Global variables
+ *
+ * Initialize these before using __WinDrawBitmap.
+ *
+ * NOTE:  These are globals, so you mustn't call this function if globals are
+ * not available, such as during alarms or the global Find.  Or you can modify
+ * the code to use the Feature Manager directly, at the cost of some speed.
+ */
+
+extern Boolean g_fOS35;         // must be true if the OS version is 3.5 or higher
+extern Boolean g_fOS40;         // must be true if the OS version is 4.0 or higher
+extern Boolean g_fOS50;         // must be true if the OS version is 5.0 or higher
+extern Boolean g_fHighDensity;  // must be true if the device has a high density screen (Sony OS 4.x high resolution, or Palm OS 5.0 high density)
+
+extern Boolean g_fSonyHires;    // must be true if the device is Sony OS 4.x with high resolution screen
+extern UInt16 g_refNum;         // refNum for the Sony HR library
+
+
+/*
+ * Compile-time assertion macro
+ *
+ * This causes compilation to fail if 'expression' is not true at compilation
+ * time (or also if 'expression' cannot be evaluated at compilation time).
+ */
+
+#define CASSERT(expression)     extern int dummy_array[(expression) ? 1 : -1]
+
+
+/*
+ * Debugging macros
+ *
+ * These are placeholders, in case you have a separate debug build, you can
+ * enable some extra debugging code.
+ */
+
+#define syntaxsafe do {} while (0)      // avoid accidental syntactic changes due to the trailing semicolon, when defining away debug macros
+
+#ifdef DEBUG
+#define DbgMsg(args) // your debugging output definition here
+#define Assert(expression) // your assertion definition here
+#else
+#define DbgMsg(args) syntaxsafe
+#define Assert(expression) syntaxsafe
+#endif
+
+
+/*
+ * General macros
+ */
+
+#define fFalse 0
+#define fTrue 1
+
+#define OffsetOf0(struc, member) ((UInt32)&(((struc*)0)->member))
+
+
+///////////////////////////////////////////////////////////////////////////
+// Bitmap Functions
+//
+// These custom glue functions work around some deficiencies in the native
+// functions, and also allow Sony OS 4.x devices to use OS 5.0 V3 bitmaps.
+
+// cast to UInt8*
+#define __pixelSize 8
+#define __version 9
+#define __transparentIndex 12
+#define __compressionType 13
+
+// cast to UInt16*
+#define __width 0
+#define __height 1
+#define __rowBytes 2
+#define __flags 3
+#define __nextDepthOffset 5
+
+// cast to UInt32*
+#define __nextBitmapOffset 5
+
+// flags
+#define __compressed 0x8000
+#define __hasColorTable 0x4000
+#define __hasTransparency 0x2000
+#define __indirect 0x1000
+#define __forScreen 0x0800
+#define __directColor 0x0400
+#define __indirectColorTable 0x0200
+#define __noDither 0x0100
+
+
+#ifndef DO_NOT_ALLOW_ACCESS_TO_INTERNALS_OF_STRUCTS
+CASSERT(OffsetOf0(BitmapType, pixelSize) == __pixelSize);
+CASSERT(OffsetOf0(BitmapType, version) == __version);
+CASSERT(OffsetOf0(BitmapType, transparentIndex) == __transparentIndex);
+
+CASSERT(OffsetOf0(BitmapType, width) == __width * sizeof(UInt16));
+CASSERT(OffsetOf0(BitmapType, height) == __height * sizeof(UInt16));
+CASSERT(OffsetOf0(BitmapType, rowBytes) == __rowBytes * sizeof(UInt16));
+CASSERT(OffsetOf0(BitmapType, flags) == __flags * sizeof(UInt16));
+CASSERT(OffsetOf0(BitmapType, nextDepthOffset) == __nextDepthOffset * sizeof(UInt16));
+
+CASSERT(OffsetOf0(BitmapType, __nextBitmapOffset) == __nextBitmapOffset * sizeof(UInt32));
+#endif
+
+
+typedef UInt16 RawBitmapFlagsType;
+typedef struct CompStateType { UInt8 data[8]; } CompStateType;
+
+
+typedef struct
+{
+    // BitmapType
+    Int16               width;
+    Int16               height;
+    UInt16              rowBytes;
+    RawBitmapFlagsType  flags;                  // see BitmapFlagsType
+    UInt8               pixelSize;              // bits per pixel
+    UInt8               version;                // data structure version 3
+
+    // version 3 fields
+    UInt8               size;                   // size of this structure in bytes (0x16)
+    UInt8               pixelFormat;            // format of the pixel data, see pixelFormatType
+    UInt8               unused;
+    UInt8               compressionType;        // see BitmapCompressionType
+    UInt16              density;                // used by the blitter to scale bitmaps
+    UInt32              transparentValue;       // the index or RGB value of the transparent color
+    UInt32              nextBitmapOffset;       // byte offset to next bitmap in bitmap family
+
+    //  if (flags.hasColorTable)
+    //      {
+    //      if (flags.indirectColorTable)
+    //          ColorTableType* colorTableP;    // pointer to color table
+    //      else
+    //          ColorTableType  colorTable;     // color table, could have 0 entries (2 bytes long)
+    //      }
+    //
+    //  if (flags.indirect)
+    //      void*   bitsP;                      // pointer to actual bits
+    //  else
+    //      UInt8   bits[];                     // or actual bits
+    //
+} RawBitmapTypeV3;
+CASSERT(sizeof(RawBitmapTypeV3) == 24);
+
+
+typedef struct
+{
+    // BitmapType
+    Int16               width;
+    Int16               height;
+    UInt16              rowBytes;
+    RawBitmapFlagsType  flags;                  // see BitmapFlagsType
+    UInt8               pixelSize;              // bits per pixel
+    UInt8               version;                // data structure version 3
+
+    // version 2 fields
+    UInt16              nextDepthOffset;        // offset in longwords
+    UInt8               transparentIndex;
+    UInt8               compressionType;
+    UInt16              reserved;
+
+    //  if (flags.hasColorTable)
+    //      ColorTableType  colorTable          // color table, could have 0 entries (2 bytes long)
+    //
+    //  if (flags.directColor)
+    //      BitmapDirectInfoType    directInfo;
+    //
+    //  if (flags.indirect)
+    //      void*   bitsP;                      // pointer to actual bits
+    // else
+    //      UInt8   bits[];                     // or actual bits
+    //
+} RawBitmapTypeV2;
+CASSERT(sizeof(RawBitmapTypeV2) == 16);
+
+
+static UInt8 __BmpGetActualVersion(const BitmapType *pbmp);
+static UInt8 __BmpGetEffectiveVersion(const BitmapType *pbmp);
+static const BitmapType *__BmpGetNextBitmap(const BitmapType *pbmp);
+static void *__BmpGetBits(BitmapType* pbmp);
+static UInt16 __BmpGetSize(const BitmapType* pbmp);
+static UInt16 __BmpGetSizeUncompressed(const BitmapType* pbmp);
+static BitmapCompressionType __BmpGetCompressionType(const BitmapType* pbmp);
+static UInt8 __BmpGetBitDepth(const BitmapType* pbmp);
+static UInt8 __BmpGetDensity(const BitmapType* pbmp);
+static void __BmpGetDimensions(const BitmapType *pbmp, Coord *pcx, Coord *pcy, UInt16 *pcbRow);
+
+
+static Boolean __BmpCompatible(const BitmapType *pbmp)
+{
+#ifdef DEBUG
+    Char szType[64];
+#endif
+
+    UInt8 version;
+    UInt8 depth;
+    UInt8 density;
+    register UInt16 flags;
+
+    Assert(pbmp);
+
+    // Check the bitmap version.
+
+    version = __BmpGetEffectiveVersion(pbmp);
+
+    if (version > 3)
+    {
+        DbgMsg((20, "unexpected version (%u)", UInt16(version)));
+        return fFalse;
+    }
+
+#ifdef DEBUG
+    StrPrintF(szType, "version = %u", UInt16(version));
+#endif
+
+    // Check the bit depth.
+
+    depth = __BmpGetBitDepth(pbmp);
+
+    if (16 != depth && 8 != depth && 4 != depth && 1 != depth)
+    {
+        DbgMsg((20, "unexpected bit depth (%u)\n\n%s", UInt16(depth), szType));
+        return fFalse;
+    }
+
+    if ((!g_fOS35 && depth > 1) || (!g_fOS40 && depth > 8))
+    {
+        DbgMsg((20, "unexpected bit depth (%u)\n\n%s", UInt16(depth), szType));
+        return fFalse;
+    }
+
+#ifdef DEBUG
+    StrPrintF(szType + StrLen(szType), "\ndepth = %u", UInt16(depth));
+#endif
+
+    // Check the density.
+
+    density = (3 == version) ? 0 : 1;
+
+    if (!density)
+    {
+        register UInt16 rawDensity = ((RawBitmapTypeV3*)pbmp)->density;
+
+        if (kDensityLow == rawDensity)
+            density = 1;
+        else if (kDensityDouble == rawDensity)
+            density = 2;
+
+        if (!density)
+        {
+            DbgMsg((20, "unexpected raw density (%u)\n\n%s", rawDensity, szType));
+            return fFalse;
+        }
+
+        if (density > 1 && !g_fHighDensity)
+        {
+            DbgMsg((20, "high density icon on low density screen\n\n%s", szType));
+            return fFalse;
+        }
+    }
+
+#ifdef DEBUG
+    StrPrintF(szType + StrLen(szType), "\ndensity = %u", UInt16(density));
+#endif
+
+    // Check endian pixel format.
+
+    if (3 == version)
+    {
+        if (((RawBitmapTypeV3*)pbmp)->pixelFormat != pixelFormatIndexed &&
+            ((RawBitmapTypeV3*)pbmp)->pixelFormat != pixelFormat565)
+        {
+            DbgMsg((20, "unexpected pixel format (%u)\n\n%s",
+                    UInt16(((RawBitmapTypeV3*)pbmp)->pixelFormat), szType));
+            return fFalse;
+        }
+    }
+
+    // Check flags.
+
+    flags = ((UInt16*)pbmp)[__flags];
+
+    if (flags & (__indirect|__forScreen|__indirectColorTable))
+    {
+#ifdef DEBUG
+        Char sz[128];
+        StrPrintF(sz, "unexpected flags (%x):", flags);
+        if (fForEditing && (flags & __hasColorTable))
+            StrCat(sz, "\nhasColorTable");
+        if (flags & __indirect)
+            StrCat(sz, "\nindirect");
+        if (flags & __forScreen)
+            StrCat(sz, "\nforScreen");
+        if (flags & __indirectColorTable)
+            StrCat(sz, "\nindirectColorTable");
+        DbgMsg((20, "%s\n\n%s", sz, szType));
+#endif
+        return fFalse;
+    }
+
+#ifdef DEBUG
+    StrPrintF(szType + StrLen(szType), "\nflags = %x", flags);
+#endif
+
+    return fTrue;
+}
+
+
+static UInt8 __BmpGetActualVersion(const BitmapType *pbmp)
+{
+    Assert(pbmp);
+
+    return ((UInt8*)pbmp)[__version];
+}
+
+
+static UInt8 __BmpGetEffectiveVersion(const BitmapType *pbmp)
+{
+    Assert(pbmp);
+
+    if (!((UInt8*)pbmp)[__pixelSize])
+        return 0;
+
+    // Action Names/Angendus and designsbybert have color icons that are
+    // mismarked as V0 bitmaps, but surprisingly WinDrawBitmap() draws them
+    // fine.  Some OS functions get confused and believe it's a V0 bitmap.
+    // Also, the Palm OS tags bitmaps created via BmpCreate as V0.
+
+    if (!((UInt8*)pbmp)[__version])
+        return 2;
+
+    return ((UInt8*)pbmp)[__version];
+}
+
+
+static const BitmapType *__BmpGetNextBitmap(const BitmapType *pbmp)
+{
+    UInt8 version;
+    UInt32 nextOffset = 0;
+
+    Assert(pbmp);
+
+    if (((UInt8*)pbmp)[__pixelSize] == 0xff)
+        return (const BitmapType*)(((UInt8*)pbmp) + sizeof(RawBitmapTypeV2));
+
+    version = __BmpGetEffectiveVersion(pbmp);
+
+    if (!version)
+        return 0;
+
+    if (version <= 2)
+        nextOffset = ((UInt16*)pbmp)[__nextDepthOffset] * sizeof(UInt32);
+    else if (3 == version)
+        nextOffset = ((UInt32*)pbmp)[__nextBitmapOffset];
+
+    if (!nextOffset)
+        return 0;
+
+    pbmp = (const BitmapType*)(((UInt8*)pbmp) + nextOffset);
+
+    // Skip past the special marker between densities, if necessary.
+
+    if (((UInt8*)pbmp)[__pixelSize] == 0xff)
+        pbmp = (const BitmapType*)(((UInt8*)pbmp) + sizeof(RawBitmapTypeV2));
+
+    return pbmp;
+}
+
+
+static void *__BmpGetBits(BitmapType* pbmp)
+{
+    UInt8 version;
+    register UInt8 *pb;
+
+    Assert(pbmp);
+    Assert(__BmpGetBitDepth(pbmp) < 0xff);
+
+    version = __BmpGetEffectiveVersion(pbmp);
+
+    Assert(version <= 3);
+
+    if (3 == version)
+        return ((RawBitmapTypeV3*)pbmp) + 1;
+
+    if (version < 2)
+        return ((UInt8*)pbmp) + sizeof(RawBitmapTypeV2);
+
+    pb = ((UInt8*)pbmp) + sizeof(RawBitmapTypeV2);
+    if (((UInt16*)pbmp)[__flags] & __directColor)
+        pb += sizeof(BitmapDirectInfoType);
+    return pb;
+}
+
+
+static UInt16 __BmpGetSize(const BitmapType* pbmp)
+{
+    UInt8 version;
+    Boolean fV3;
+    UInt16 cb;
+    Coord cy;
+    UInt16 cbRow;
+
+    Assert(pbmp);
+    Assert(__BmpGetBitDepth(pbmp) < 0xff);
+
+    version = __BmpGetEffectiveVersion(pbmp);
+    fV3 = (3 == version);
+    cb = fV3 ? sizeof(RawBitmapTypeV3) : sizeof(RawBitmapTypeV2);
+
+    Assert(version <= 3);
+
+    __BmpGetDimensions(pbmp, 0, &cy, &cbRow);
+
+    if (((UInt16*)pbmp)[__flags] & __compressed)
+    {
+        UInt16 *pw = (UInt16*)__BmpGetBits((BitmapType*)pbmp);
+
+        if (fV3)
+            cb += *(UInt32*)pw;
+        else
+            cb += *pw;
+    }
+    else
+        cb += cy * cbRow;
+
+    if ((2 == version) && (((UInt16*)pbmp)[__flags] & __directColor))
+        cb += sizeof(BitmapDirectInfoType);
+
+    return cb;
+}
+
+
+static UInt16 __BmpGetSizeUncompressed(const BitmapType* pbmp)
+{
+    UInt8 version;
+    Boolean fV3;
+    UInt16 cb;
+    Coord cy;
+    UInt16 cbRow;
+
+    Assert(pbmp);
+    Assert(__BmpGetBitDepth(pbmp) < 0xff);
+
+    version = __BmpGetEffectiveVersion(pbmp);
+    fV3 = (3 == version);
+    cb = fV3 ? sizeof(RawBitmapTypeV3) : sizeof(RawBitmapTypeV2);
+
+    Assert(version <= 3);
+
+    __BmpGetDimensions(pbmp, 0, &cy, &cbRow);
+
+    cb += cy * cbRow;
+
+    if ((2 == version) && (((UInt16*)pbmp)[__flags] & __directColor))
+        cb += sizeof(BitmapDirectInfoType);
+
+    return cb;
+}
+
+
+static BitmapCompressionType __BmpGetCompressionType(const BitmapType* pbmp)
+{
+    Assert(pbmp);
+
+    if (((UInt16*)pbmp)[__flags] & __compressed)
+        return (BitmapCompressionType)(((UInt8*)pbmp)[__compressionType]);
+
+    return BitmapCompressionTypeNone;
+}
+
+
+static UInt8 __BmpGetBitDepth(const BitmapType* pbmp)
+{
+    UInt8 pixelSize;
+
+    Assert(pbmp);
+
+    pixelSize = ((UInt8*)pbmp)[__pixelSize];
+
+    if (!pixelSize)
+        return 1;
+
+    if (!__BmpGetActualVersion(pbmp))
+        return pixelSize;
+
+    return pixelSize;
+}
+
+
+static UInt8 __BmpGetDensity(const BitmapType* pbmp)
+{
+    register UInt8 version;
+    register UInt16 density;
+
+    Assert(pbmp);
+
+    version = __BmpGetActualVersion(pbmp);
+
+    if (version < 3)
+        return 1;
+
+    Assert(3 == version);
+
+    density = ((RawBitmapTypeV3*)pbmp)->density;
+
+    if (kDensityLow == density)
+        return 1;
+    if (kDensityDouble == density)
+        return 2;
+
+    Assert(fFalse);
+
+    return 0;
+}
+
+
+static void __BmpGetDimensions(const BitmapType *pbmp, Coord *pcx, Coord *pcy, UInt16 *pcbRow)
+{
+    Assert(pbmp);
+    Assert(__BmpGetBitDepth(pbmp) < 0xff);
+
+    if (g_fOS40)
+        {
+        BmpGetDimensions(pbmp, pcx, pcy, pcbRow);
+        }
+    else
+        {
+        if (pcx)
+            *pcx = ((UInt16*)pbmp)[__width];
+        if (pcy)
+            *pcy = ((UInt16*)pbmp)[__height];
+        if (pcbRow)
+            *pcbRow = ((UInt16*)pbmp)[__rowBytes];
+        }
+}
+
+
+static void UncompressBits(BitmapPtr pbmpSrc, UInt8 *pbDst, UInt16 cbDst)
+{
+    UInt16 cbHeader = (UInt8*)__BmpGetBits(pbmpSrc) - (UInt8*)pbmpSrc;
+    UInt16 cbCopy = __BmpGetSizeUncompressed(pbmpSrc) - cbHeader;
+    UInt8 version;
+    BitmapCompressionType compressionType;
+    CompStateType compState;
+    Coord cy;
+    UInt16 cbRow;
+    UInt8 *pbSrc;
+
+    ErrFatalDisplayIf(cbDst < cbCopy, "not enough room to uncompress bitmap");
+
+    if (!(((UInt16*)pbmpSrc)[__flags] & __compressed))
+        {
+        MemMove(pbDst, __BmpGetBits(pbmpSrc), cbCopy);
+        return;
+        }
+
+    version = __BmpGetEffectiveVersion(pbmpSrc);
+    compressionType = __BmpGetCompressionType(pbmpSrc);
+
+    __BmpGetDimensions(pbmpSrc, 0, &cy, &cbRow);
+
+    pbSrc = ((UInt8*)__BmpGetBits(pbmpSrc)) + ((3 == version) ? sizeof(UInt32) : sizeof(UInt16));
+
+    MemSet(&compState, sizeof(compState), 0);
+
+    if (BitmapCompressionTypePackBits == compressionType && __BmpGetBitDepth(pbmpSrc) == 16)
+        compState.data[0] = 16;
+
+    while (cy--)
+        {
+        pbSrc += ScrDecompress(compressionType, pbSrc, 0,
+                               pbDst, cbRow, &compState);
+
+        if (cy)
+            MemMove(pbDst + cbRow, pbDst, cbRow);
+
+        pbDst += cbRow;
+        };
+}
+
+
+void __WinDrawBitmap(const BitmapType *pbmp, Coord x, Coord y)
+{
+    if (g_fSonyHires && !g_fOS50)
+        {
+        UInt16 depth;
+        UInt32 screenDepth;
+        const BitmapType *pbmpLow = 0;
+        const BitmapType *pbmpHigh = 0;
+
+        WinScreenMode(winScreenModeGet, 0, 0, &screenDepth, 0);
+
+        while (pbmp)
+            {
+            const BitmapType *pbmpNext = __BmpGetNextBitmap(pbmp);
+
+            depth = __BmpGetBitDepth(pbmp);
+
+            if (depth < 0xff)
+                {
+                if (!__BmpCompatible(pbmp))
+                    break;
+
+                switch (__BmpGetDensity(pbmp))
+                    {
+                    case 1:
+                        if (!pbmpLow || depth <= screenDepth)
+                            pbmpLow = pbmp;
+                        break;
+
+                    case 2:
+                        if (!pbmpHigh || depth <= screenDepth)
+                            pbmpHigh = pbmp;
+                        break;
+
+                    default:
+                        Assert(fFalse);
+                        break;
+                    }
+                }
+
+            pbmp = pbmpNext;
+            }
+
+        pbmp = pbmpHigh ? pbmpHigh : pbmpLow;
+
+        if (pbmp && __BmpGetDensity(pbmp) > 1 && __BmpGetEffectiveVersion(pbmp) == 3)
+            {
+            Boolean f16bpp = (16 == __BmpGetBitDepth(pbmp));
+            UInt16 cb = __BmpGetSizeUncompressed(pbmp) + sizeof(RawBitmapTypeV2) - sizeof(RawBitmapTypeV3);
+            BitmapType *pbmpFree;
+
+            if (f16bpp)
+                cb += sizeof(BitmapDirectInfoType);
+
+            pbmpFree = (BitmapType*)MemPtrNew(cb);
+
+            if (pbmpFree)
+                {
+                // Fill in the V2 bitmap fields.
+
+                RawBitmapTypeV2 *pbmpV2 = (RawBitmapTypeV2*)pbmpFree;
+                RawBitmapTypeV3 *pbmpV3 = (RawBitmapTypeV3*)pbmp;
+                UInt8 *pb;
+                UInt16 cbDst;
+
+                pbmpV2->width = pbmpV3->width;
+                pbmpV2->height = pbmpV3->height;
+                pbmpV2->rowBytes = pbmpV3->rowBytes;
+                pbmpV2->flags = (pbmpV3->flags & ~__compressed);
+                pbmpV2->pixelSize = pbmpV3->pixelSize;
+                pbmpV2->version = 2;
+
+                pbmpV2->nextDepthOffset = 0;
+                pbmpV2->compressionType = BitmapCompressionTypeNone;
+                pbmpV2->transparentIndex = f16bpp ? 0 : pbmpV3->transparentValue;
+                pbmpV2->reserved = 0;
+
+                // Fill in the BitmapDirectInfoType fields if appropriate.
+
+                pb = (UInt8*)(pbmpV2 + 1);
+
+                if (f16bpp)
+                    {
+                    BitmapDirectInfoType *pbdi = (BitmapDirectInfoType*)pb;
+
+                    pbdi->redBits = 5;
+                    pbdi->greenBits = 6;
+                    pbdi->blueBits = 5;
+                    pbdi->reserved = 0;
+
+                    pbdi->transparentColor.index = 0;
+                    pbdi->transparentColor.r = (pbmpV3->transparentValue >> 11) << 3;
+                    pbdi->transparentColor.g = (pbmpV3->transparentValue >> 5) << 2;
+                    pbdi->transparentColor.b = (pbmpV3->transparentValue >> 0) << 3;
+
+                    pb += sizeof(*pbdi);
+                    }
+
+                // Uncompress or copy the bitmap bits.
+
+                cbDst = __BmpGetSizeUncompressed(pbmp) - sizeof(RawBitmapTypeV3);
+                Assert(((UInt8*)pb) - ((UInt8*)pbmpFree) + cbDst == cb);
+
+                UncompressBits((BitmapType*)pbmp, pb, cbDst);
+
+                HRWinDrawBitmap(g_refNum, pbmpFree, x << 1, y << 1);
+
+                MemPtrFree(pbmpFree);
+                return;
+                }
+            }
+        }
+
+    if (pbmp)
+        WinDrawBitmap((BitmapType*)pbmp, x, y);
+}
+</listing>
+</td>
+</tr>
+</table>
+
+
+
+<hr>
+
+    </BODY>
+</HTML>
+
+

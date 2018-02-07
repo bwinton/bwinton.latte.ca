@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="article.xsl" type="text/xsl"?>
+<?xml-stylesheet href="docbook41.css" type="text/css" ?>
+<?cocoon-process type="xslt"?>
+
+<!DOCTYPE article PUBLIC "-//OASIS//DTD Simplified DocBook XML V4.1.2.5//EN"
+     "sdocbook.dtd">
+
+<!-- 
+  Programming Thoughts DocBook 
+  Copyright (c) 2002 - Blake Winton.  All Rights Reserved.
+  
+  The contents of this file are the property of Blake Winton.
+  Any reproduction or redistribution of the code in whole or in part
+  without expressed written consent is prohibited.
+  
+  $Header:$
+-->
+
+<article>
+    <articleinfo>
+        <title>Programming Thoughts</title>
+        <author>
+            <firstname>Blake</firstname>
+            <surname>Winton</surname>
+        </author>
+        <revhistory>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>Feb. 1st, 2002</date>
+                <authorinitials>bw</authorinitials>
+                <revremark>Initial Draft.</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>Feb. 16th, 2002</date>
+                <authorinitials>bw</authorinitials>
+                <revremark>Add my notes on Package Design Documents.</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.3</revnumber>
+                <date>Feb. 18th, 2002</date>
+                <authorinitials>bw</authorinitials>
+                <revremark>Add some notes on CSS, and make sure the document
+                    conforms to the DTD.</revremark>
+            </revision>
+        </revhistory>
+        <copyright>
+            <year>2002</year> <holder>Blake Winton</holder>
+        </copyright>
+        <legalnotice>
+            <para>
+                The contents of this file are the property of Blake Winton.  Any
+                reproduction or redistribution of the code in whole or in part
+                without expressed written consent is prohibited.
+            </para>
+        </legalnotice>                                                                                                                                            
+    </articleinfo>
+
+    <section>
+        <title>Overview</title>
+        <para>
+            Frequently I think about things I'm working on, and how to best
+            accomplish the tasks I've set for myself.  In an attempt to remember
+            these breakthroughs I've had, I decided to start writing them down.
+        </para>
+    </section>
+
+    <section>
+        <title>Language Independant Thoughts</title>
+        <para>
+            If you name your method arguments with an initial underscore (_arg),
+            then you can always tell whether you're using an argument passed in
+            or a member variable of your class.  This seems like a good thing to
+            be able to tell.  Similarly, I've added the single underscore for
+            local variables that I mean to use as I would use arguments.  It
+            also means that I don't need to come up with new names for arguments
+            in setters.  Just prefix the member variable name with an
+            underscore, and we're done.
+        </para>
+
+        <para>
+            If you're trying to test a program, look for inputs that could break
+            it.  This is the kind of testing that QA people can't effectively
+            do, since you'll need to know something about how the program is put
+            together.  Having said that, there are several things that QA people
+            can know about a program, which leads to some tests that they can
+            create.  For instance, if the program has a web-based front-end, try
+            changing your name to the HTML begin-comment tag
+            <literal>&lt;!--</literal>.  If it doesn't get escaped on output, it
+            will comment out the rest of the HTML page, which is bad.  Much more
+            malicious things could also be done with that, by embedding
+            javascript in your name, so this is an important thing to test for.
+            If you know that there is a database on the back end (which most
+            things have if they have a search facility),  then search for things
+            like <literal>' AND otherField = 3</literal> on the chance that the
+            programmer has forgotten to encode his search strings.  This also
+            could be used maliciously, by inserting commands in the SQL to tell
+            the database to delete all the records.  It's ironic that the people
+            most qualified to do QA on a project are the people
+            (stereotypically) least willing to do that QA, the programmers.  I'm
+            currently working on a Blackjack application, and since we don't
+            have any QA, we have to test the application ourselves.  As
+            programmers, we have the most power over the application to do this.
+            While a QA person would potentially have to play the game for hours
+            and hours to uncover a bug in the case that the User splits, busts
+            on the first hand, and wins on the second hand, the Programmer
+            merely has to fix the order of cards in the shuffle method of the
+            Shoe to come up with the desired result, and they can then run the
+            test over and over until they figure out what's happening, and make
+            it work correctly.  Heck,it's even kind of fun to figure out which
+            cards should go where to achieve the deisred result.  The main
+            problem is enumerating all the cases, and even then it's more tedium
+            than actual difficulty.
+        </para>
+
+        <para>
+            Another good idea I've heard was to separate roles from things.
+            What I am to you isn't what I really am.  I am many things to many
+            different people, and sometimes many different things to the same
+            person.  This is a large source of confusion for me, and I still
+            don't think I've fully embraced it, but it has the feel of a very
+            potent idea, and I think it can clean up some of the problems I have
+            encountered.
+        </para>
+
+        <para>
+            Event-based programming is similar to object-oriented programming,
+            but instead of directly calling methods on objects, you merely queue
+            events up onto some sort of queue, and have objects listening to the
+            events and responding to them appropriately.  All of the GUI
+            programming I've done (with the exception of some _very_ early stuff
+            written in Turbo Pascal) has been event-based.  Some of it was at a
+            very high level, where I ran a wizard to generate the code that
+            hooked up my event maps, and I just had to implement the code in the
+            <literal>doMyRandomEvent()</literal> method.  The most recent has
+            been very low level, where I've had to write the loop that gets an
+            event off the top of the queue by hand, and passes it off to the
+            interested parties, but all of the code has had some things in
+            common.  The basic pattern behind them all has been that an Event
+            causes an Action, which generates an Event, which causes an Action,
+            which generates an Event, which causes...  Well,  you get the idea.
+            Of course, some Actions generate more than one Event, and some
+            Events cause more than one Action, but that's all implementation
+            details, right?
+        </para>
+
+        <para>
+            Another whole class of bugs that have seemed to be cropping up a lot
+            recently have been lifecycle issues, where objects have been being
+            destructed before we thought we were done with them, or hanging
+            around long after we actually were done with them.  Perhaps the
+            archetecture we're using, and the eventual move to dynamically
+            linked libraries, is what's complicating our code.  We can't unload
+            a library in our <literal>Exit()</literal> method, because the
+            <literal>Exit()</literal> method is running in the library that we
+            want to unload!  So we have to push an event onto the queue, telling
+            someone else to unload us when they get around to it.  Similar
+            things happen when we switch from one screen to another, especially
+            if we need to propagate data back and forth.  We're hacking around
+            it for the time being, but I'm not really impressed with the
+            solution, as it completely breaks our encapsulation between screens.
+            I'm not sure if there was a false sense of encapsulation there, and
+            whether we really do need to break it because the screens
+            <emphasis>are</emphasis> tied together, or not.
+        </para>
+
+        <para>
+            I've felt about 100 times more productive on Thursday and Friday
+            than I have for the preceeding weeks.  I think I can attribute this
+            to a couple of factors.  Firstly, I've got a big list of things to
+            do, so whenever I finish what I'm working on, and check it in, and
+            test it, it's immediately obvious what I should be doing next.  If I
+            don't want to work on the top thing on the list, I'm free to pick
+            any of the others, since they all need to be done.  Secondly, I've
+            got a good starting point.  Before I started work on Thursday, the
+            application compiled and linked without any errors or memory leaks.
+            I could load it onto my Palm, and it ran.  Not flawlessly, because
+            then there wouldn't have been anything for me to do, but it did most
+            of what it was supposed to do.  The big benefit of this is that I
+            know that if something breaks, it's my fault, and the amount of code
+            I change to fix any bug, or implement any feature, is really quite
+            small when compared to the whole project.  To be completely honest,
+            this did trip me up on the last memory leak I had, since it turned
+            out to be in the libraries we had written, I was just using
+            functionality which hadn't been used before.  But even then, I got a
+            feeling of it all being worth it, because I fixed a bug which could
+            have hit anybody, and now won't.  Also, since the features I'm
+            implementing or bugs I'm fixing are relatively small, the chance
+            that I'll make a mistake in the implementation is fairly small,
+            since I can hold all the logic in my head at the same time.  It's
+            not that I'm a super genius, it's that the stuff I'm doing is simple
+            in its scope.  Thirdly, Colin's not here, so I'm the only person
+            working on the code.  This means that I can change the interface to
+            a class, and not worry about Colin developing against an old
+            version.  I just have to compile the project, and I'll be told
+            what's broken.  then I fix it, and we're done.
+        </para>
+
+        <para>
+            Just a brief note on the preceeding paragraph.  At the end of the
+            following Monday, I had gotten almost nothing done, and was rather
+            frustrated.  I guess I had just done all the easy things on Thursday
+            and Friday, and now only had hard things left.  Although, some of
+            the things that were hard should have been easy.  I guess
+            development is like that sometimes.
+        </para>
+    </section>
+
+    <section>
+        <title>C++ Specific Thoughts</title>
+        <para>
+            One of the ways I've been burned in the past is by inheriting from a
+            class when what I really wanted to do is contain that class.  In
+            Java, I would have an interface that they could both implement (The
+            default class could even be called FooImpl!) and then the
+            composition would work wonderfully.  However, I'm still not sure how
+            to construct interfaces in C++.  There is no native construct in the
+            language to do it simply, so I've got to resort to tricks like
+            having two .cpp files for one .h file, and only linking in one or
+            the other, depending on what I'm trying to do.  While this works, it
+            really doesn't seem like the proper way to achieve what I want.  The
+            other way I've thought of is to have a pure virtual class that
+            specifies all the methods in my interface, and both of the classes
+            could subclass that.  It certainly seems a little cleaner, but I'm
+            not sure what it would do to memory consumption, construction time,
+            and it would almost definately introduce multiple inheritance.
+            Perhaps the pure virtual class could extend another pure virtual
+            class named "Interface".  It would do nothing, but it seems like a
+            good marker class.  I'm not a big enough Java-head to suggest I also
+            <literal>#define implements ,</literal> though.
+        </para>
+    </section>
+
+    <section>
+        <title>How To Write A Package Design Document That Blake Will Like</title>
+        <itemizedlist>
+            <title>Goals</title>
+            <listitem>
+                <para>
+                    Provide an overview of package structure and where this
+                    package fits into the overall structure
+                </para>
+            </listitem>
+            <listitem>
+                <itemizedlist>
+                    <title>Provide a detailed design, including:</title>
+                    <listitem>
+                        <para>
+                            UML Model defining all the methods, classes, and
+                            attributes, as well as their interactions.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            Definitions of all the names used, such as tokens,
+                            resource bundles, tags, and constants.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            Note of the strategy behind the classes, i.e.  This
+                            is implemented as the Subject in an Observer
+                            pattern.  Use Design Pattern terminology.
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem>
+                <itemizedlist>
+                    <title>Provide a detailed description of:</title>
+                    <listitem>
+                        <para>
+                            inputs, such as property files (only the properties
+                            of interest to this package), and what each of the
+                            parameters in a method means.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            processing, which is a description of how each of
+                            the functions works.  It should list what the
+                            function is responsible for, but not how it
+                            accomplishes it.  It should, however, list which
+                            other functions the function calls to accomplish its
+                            task.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            outputs, such as the return values from each
+                            function, and what they mean.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            error processing, describing what the expected
+                            errors are, and what our responses are.
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+        </itemizedlist>
+    </section>
+
+    <section>
+        <title>HTML Thoughts</title>
+        <para>
+            CSS is good.  Why is CSS good?  Firstly because it enables the
+            legendary separation of style from content that has been touted
+            since the beginning of the web (and probably far before, if SGML and
+            LaTeX are any any indication).  If the style is separated from the
+            content, then the style can be updated separate from the content,
+            which is a good thing.  Similarly, client programs are free to
+            ignore any parts of the style that they don't understand, or can't
+            render, thus letting pages degrade gracefully.  While it's never
+            possible to achieve a total separation of style from content ("The
+            medium is the message."), separating them as much as possible does
+            seem to have certain benefits.
+        </para>
+    </section>
+
+
+    <!-- section>
+        <title>Other constructs</title>
+        <para>
+            <programlisting>
+Insert Code Here!
+</programlisting>
+<literal>phantom</literal><br/>
+<filename class="directory">V:\Phantom\</filename>
+        </para>
+    </section -->
+
+</article>
+

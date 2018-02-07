@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <link rel="stylesheet" href="http://bwinton.latte.ca/base.css" type="text/css" />
+  <LINK REL="SHORTCUT ICON" HREF="https://www.latte.ca/favicon.ico">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>OnBoardC Notes</title>
+</head>
+<body id="www-latte-ca">
+  <h1>OnBoardC Notes</h1>
+
+  <div class="content">
+    <h3>Why?</h3>
+    <p>Because I haven't seen any explanations of the internals of
+       OnBoardC yet, and as someone who is trying to modify the
+       behaviour of OnBoardC, I think that there should be more of
+       this information written down.</p>
+
+    <h3>Tracing String Constants.  (From Steve Little)</h3>
+    <p>the function expression(...)  is the place you want to look.</p>
+    <p>it calls compileExpression, which parses and compiles a single
+       expression (recursively, thus dealing with subexpressions etc),
+       generating a tree of Nodes.</p>
+    <p>it then calls getCodeForExpression(), which calls
+       generateCode() to recurse the tree of Nodes, outputting (asm)
+       code to a new document, and cleaning up Nodes as it goes.</p>
+
+    <h3>Merging Adjacent String Constants.  (Also from Steve Little.)</h3>
+    <p>When we find adjacent string constants, they should be chained
+       together in the tree (ie, the second string becomes a child
+       StringConstantNode of the first). This would probably be done
+       inside parseExpression, by calling GetNextToken, checking if
+       it's another DoubleQuote, then adding it on. (in a loop,
+       probably)</p>
+    <p>Then, in codegen.c, inside addCodeStringConstant, loop through
+       the chain of adjacent strings, writing the concatenated result
+       out, and calculating the combined length</p>
+    <p>I've got an initial cut of this seemingly working, and would
+       like other people to test it out, and let me know how it works
+       for them.  You can find it <a href="OnBoardC.prc">here</a>.</p>
+
+    <h3>Macro Expansion.</h3>
+    <p>To be filled in later...</p>
+
+    <h3>Other Stuff.</h3>
+    <p>Please, let me know if there are any other bits of information
+       that might be useful for people who want to add features to
+       OnBoardC to know.</p>
+
+  </div>
+
+  <div class="sidebar">
+    <h3>Other Pages</h3>
+    <ul>
+      <li><a href="http://onboardc.sourceforge.net/">OnBoardC</a></li>
+      <li><a href="http://bwinton.latte.ca/">My Homepage</a></li>
+    </ul>
+  </div>
+</body>
+</html>

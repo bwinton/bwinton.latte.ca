@@ -1,0 +1,43 @@
+BODY
+{
+    background-color:   #FFFFFF;
+}
+
+DIV.header
+{
+    background-color:   #CCCCFF;
+    margin:             -0.5em -0.5em 0em;
+    padding:            0.25em 0.25em 0.25em 0.5em;
+    border-width:       0 0 0.05em;
+    border-style:       none none solid;
+    border-color:       inherit inherit black;
+}
+
+DIV.code
+{
+    background-color:   #CCCCCC;
+    border-style:       solid;
+    border-color:       black;
+    border-width:       0.05em;
+}
+
+TABLE
+{
+    margin-left:        auto;
+    margin-right:       auto;
+    border-collapse:    collapse;
+    border:             0.05em solid black;
+}
+
+TD,TH
+{
+    border:             0.05em solid black;
+    padding:            0.25em;
+}
+
+CAPTION
+{
+    margin-left:        auto;
+    margin-right:       auto;
+    font-weight:        bold;
+}

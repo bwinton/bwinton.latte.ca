@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mozilla Messaging status.</title>
+  <link href="status.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <h1>Mozilla Messaging Status Board</h1>
+  <div id="twitter_container">
+    <div id="twitter"/>
+  </div>
+<script type="text/javascript"
+        src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript"
+        src="jquery.tmpl.js"></script>
+<script type="text/javascript"
+        src="jscroller-0.4-src.js"></script>
+<script type="text/javascript;version=1.8"
+        src="status.js"></script>
+<script type="text/html" id="tweet_tmpl">
+ <div class="tweet"><img src="${profile_image_url}"/> ${from_user}: ${text}</div>
+</script>
+</body></html>

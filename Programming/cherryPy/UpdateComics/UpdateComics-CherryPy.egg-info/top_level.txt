@@ -1,0 +1,2 @@
+updateComics
+ComicsApp

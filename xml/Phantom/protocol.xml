@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="article.xsl" type="text/xsl"?>
+<?cocoon-process type="xslt"?>
+
+<!DOCTYPE article PUBLIC "-//OASIS//DTD Simplified DocBook XML V4.1.2.5//EN"
+     "sdocbook.dtd">
+
+<!-- 
+  Phantom Framework Protocol DocBook 
+  Copyright (c) 2002 - Phantom Fiber, Inc. All Rights Reserved.
+  
+  The contents of this file are the property of Phantom Fiber Inc.
+  Any reproduction or redistribution of the code in whole or in part
+  without expressed written consent is prohibited.
+  
+  $Header:$
+-->
+
+<article class="whitepaper">
+
+    <articleinfo>
+
+        <title>Phantom Framework Protocol Specification</title>
+
+        <author>
+            <firstname>Ian</firstname>
+            <surname>Stevens</surname>
+        </author>
+
+        <copyright>
+            <year>2002</year>
+            <holder>Phantom Fiber, Inc.</holder>
+        </copyright>
+
+        <legalnotice>
+            <para>
+                The contents of this file are the property of Phantom Fiber Inc.
+                Any reproduction or redistribution of the code in whole or in part
+                without expressed written consent is prohibited.
+            </para>
+        </legalnotice>
+        
+        <authorinitials>is</authorinitials>
+
+        <revhistory>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>Jan. 15th, 2002</date>
+                <authorinitials>is</authorinitials>
+                <revremark>Initial Draft</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>Jan. 16th, 2002</date>
+                <authorinitials>is</authorinitials>
+                <revremark>Added part types and subtypes.</revremark>
+            </revision>
+        </revhistory>
+
+    </articleinfo>
+
+    <section>
+        <title>Introduction</title>
+        <para>
+            The Phantom Framework Protocol (PFP) is a simple binary protocol.
+        </para> 
+    </section>
+
+    <section>
+        <title>Message Specification</title>
+        <para>
+            A message in the PFP consists of a header and a number of data
+            parts.  Unless otherwise noted, all information is in network byte
+            ordering.
+        </para>
+
+        <section>
+            <title>The Message Header</title>
+            <para>
+                The message header consists of a four-byte message length
+                followed by one byte each for the message type and subtype.
+                The message length represents the total length of the combined
+                message parts.
+            </para>
+        </section>
+
+        <section>
+            <title>The Message Parts</title>
+            <para>
+                Each part in a message refers to a distinct separation of data
+                which can be recognised out of context.  The part header
+                consists of a four-byte length and one byte each for the part
+                type and subtype.  The part length represents the contents of
+                the part, not including its header.  The part data immediately
+                follows the part header.
+            </para>
+        </section>
+
+        <section>
+            <title>Message Types &amp; Subtypes</title>
+        </section>
+
+        <section>
+            <title>Part Types &amp; Subtypes</title>
+
+            <para>
+
+                The part types and subtypes largely follow the format for MIME
+                media types under <ulink
+                url="http://www.oac.uci.edu/indiv/ehood/MIME/2046/rfc2046.html">RFC2046</ulink>.
+                That is, the part type corresponds to a top-level media type
+                while the part subtype corresponds to a subtype within that
+                media type.  The first five types and their corresponding
+                subtypes are as follows:
+
+                <table frame="all">
+                    <title>Part types and subtypes</title>
+                    <tgroup cols="4" align="left">
+                        <colspec colname="c1"/>
+                        <colspec colname="c2"/>
+                        <colspec colspec="c3"/>
+                        <colspec colspec="c4"/>
+                        <thead>
+                            <row>
+                                <entry align="center">Type</entry>
+                                <entry align="center">Type Name</entry>
+                                <entry align="center">Subtype</entry>
+                                <entry align="center">Subtype Name</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry morerows="2">001</entry>
+                                <entry morerows="2">text</entry>
+                                <entry>001</entry>
+                                <entry>plain</entry>
+                            </row>
+                            <row>
+                                <entry>002</entry>
+                                <entry>xml</entry>
+                            </row>
+                            <row>
+                                <entry>003</entry>
+                                <entry>html</entry>
+                            </row>
+                            <row>
+                                <entry morerows="1">002</entry>
+                                <entry morerows="1">image</entry>
+                                <entry>001</entry>
+                                <entry>gif</entry>
+                            </row>
+                            <row>
+                                <entry>002</entry>
+                                <entry>jpeg</entry>
+                            </row>
+                            <row>
+                                <entry morerows="3">003</entry>
+                                <entry morerows="3">audio</entry>
+                                <entry>001</entry>
+                                <entry>basic</entry>
+                            </row>
+                            <row>
+                                <entry>002</entry>
+                                <entry>midi</entry>
+                            </row>
+                            <row>
+                                <entry>003</entry>
+                                <entry>mpeg</entry>
+                            </row>
+                            <row>
+                                <entry>004</entry>
+                                <entry>x-wav</entry>
+                            </row>
+                            <row>
+                                <entry morerows="1">004</entry>
+                                <entry morerows="1">video</entry>
+                                <entry>001</entry>
+                                <entry>mpeg</entry>
+                            </row>
+                            <row>
+                                <entry>002</entry>
+                                <entry>quicktime</entry>
+                            </row>
+                            <row>
+                                <entry morerows="1">005</entry>
+                                <entry morerows="1">application</entry>
+                                <entry>001</entry>
+                                <entry>pdf</entry>
+                            </row>
+                            <row>
+                                <entry>002</entry>
+                                <entry>msword</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+
+            </para>
+
+        </section>
+
+    </section>
+
+</article>

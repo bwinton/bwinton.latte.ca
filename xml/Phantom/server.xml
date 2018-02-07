@@ -1,0 +1,352 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="article.xsl" type="text/xsl"?>
+<?cocoon-process type="xslt"?>
+
+<!DOCTYPE article PUBLIC "-//OASIS//DTD Simplified DocBook XML V4.1.2.5//EN"
+     "sdocbook.dtd">
+
+<!-- 
+  Phantom Framework Protocol DocBook 
+  Copyright (c) 2002 - Phantom Fiber, Inc. All Rights Reserved.
+  
+  The contents of this file are the property of Phantom Fiber Inc.
+  Any reproduction or redistribution of the code in whole or in part
+  without expressed written consent is prohibited.
+  
+  $Header:$
+-->
+
+<article class="whitepaper">
+
+    <articleinfo>
+
+        <title>Phantom Server Architecture Document</title>
+
+        <author>
+            <firstname>Ian</firstname>
+            <surname>Stevens</surname>
+        </author>
+
+        <copyright>
+            <year>2002</year>
+            <holder>Phantom Fiber, Inc.</holder>
+        </copyright>
+
+        <legalnotice>
+            <para>
+                The contents of this file are the property of Phantom Fiber Inc.
+                Any reproduction or redistribution of the code in whole or in part
+                without expressed written consent is prohibited.
+            </para>
+        </legalnotice>
+        
+        <authorinitials>is</authorinitials>
+
+        <revhistory>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>Feb. 8th, 2002</date>
+                <authorinitials>is</authorinitials>
+                <revremark>Initial Draft</revremark>
+            </revision>
+        </revhistory>
+
+    </articleinfo>
+
+    <section>
+        <title>Introduction</title>
+        <para>
+            The Phantom Server is the link between the wireless application and
+            the application servers which provide them with data.  The Phantom
+            Server routes messages between the applications and the application
+            servers.
+        </para> 
+    </section>
+
+    <section>
+        <title>Components</title>
+
+        <section>
+            <title>Logic Components</title>
+
+            <para>
+                The Phantom Server consists of a PhantomServlet which accepts data
+                from the wireless applications.  This data is then separated into
+                Message objects, each consisting of a MessageHeader and a
+                MessageBody, with the help of MessageHeaderMarshaler
+                objects.  Message objects with the same
+                destination are then grouped together into a MessageAggregate
+                object and sent off to the MessageAggregateDispatcher.  The
+                dispatcher then looks up the appropriate PhantomJeff, sends off the
+                messages and waits for the responses.  MessageAggregate objects
+                returned from the dispatcher are then marshaled and sent back to
+                the client.  
+            </para>
+
+            <section>
+                <title>PhantomServlet</title>
+
+                <para>
+                    The PhantomServlet is as follows:
+                </para>
+
+                <programlisting>
+package com.phantom.servlet;
+
+public class PhantomServlet extends HttpServlet
+{
+    protected void doPost( HttpServletRequest request, HttpServletResponse response )
+        throws javax.servlet.ServletException, java.io.IOException
+}
+                </programlisting>
+
+                <para>
+                    The PhantomServlet accepts an array of bytes as data in a HTTP
+                    POST method.  This array contains a series of messages
+                    consisting of a header and a body.  The first two bytes of the
+                    message header are the size of the header.
+                </para>
+
+            </section>
+
+            <section>
+                <title>MessageAggregateDispatcher</title>
+
+                <para>
+                    The MessageAggregateDispatcher dispatches messages from the
+                    PhantomServlet to the appropriate PhantomJeff object.
+                </para>
+
+                <programlisting>
+package com.phantom.msg;
+
+public class MessageAggregateDispatcher
+{
+    public MessageAggregate dispatch( MessageAggregate messageAggregate ) throws PhantomException;
+}
+                </programlisting>
+
+            </section>
+
+            <section>
+                <title>PhantomJeff</title>
+
+                <para>
+                    All applications extend this class which accepts
+                    MessageAggregate objects from the MessageAggregateDispatcher
+                    and returns responses.
+                </para>
+
+                <programlisting>
+package com.phantom.JEFF;
+
+public class PhantomJeff
+{
+    public MessageAggregate handleMessageAggregate( MessageAggregate messageAggregate ) throws PhantomJeffException;
+}
+                </programlisting>
+
+            </section>
+
+            <section>
+                <title>MessageHeaderMarshaler</title>
+
+                <para>
+                    Marshalers for the MessageHeader extend a
+                    MessageHeaderMarshaler which is as follows:
+                </para>
+
+                <programlisting>
+package com.phantom.msg.marshal;
+
+public class MessageHeaderMarshaler
+{
+    public byte[] marshal( MessageHeader messageHeader ) throws PhantomMessageException;
+    public MessageHeader unmarshal( byte[] byteHeader ) throws PhantomMessageException;
+}
+                </programlisting>
+
+                <para>
+                    The MessageHeaderMarshaler converts a byte array into a
+                    MessageHeader or vice-versa.  Since the Messageheader may
+                    change in size and format with each version, the first two
+                    bytes of the byte array contain the major and minor version the
+                    bytes describe.  This information is used to extract a
+                    MessageHeader.  Likewise, this information is encoded in the
+                    byte array when a MessageHeader is converted into bytes.
+                </para>
+
+            </section>
+        </section>
+
+        <section>
+            <title>Data Components</title>
+
+            <section>
+
+                <title>MessageAggregate</title>
+
+                <para>
+                    A MessageAggregate contains messages which are destined for the
+                    same location.
+                </para>
+
+                <programlisting>
+package com.phantom.msg;
+
+public class MessageAggregate
+{
+    private Vector  messages;
+    private String  destination;
+
+    public MessageAggregate( String destination )
+
+    public void addMessage( Message message ) throws PhantomMessageException
+
+    public Iterator getIterator()
+
+    public int numMessages()
+}
+                </programlisting>
+
+            </section>
+
+            <section>
+
+                <title>Message</title>
+
+                <para>
+                    A Message contains a MessageHeader and a MessageBody:
+                </para>
+
+                <programlisting>
+package com.phantom.msg;
+
+public class Message
+{
+    private MessageHeader header;
+    private MessagEBody   body;
+}
+                </programlisting>
+
+
+            </section>
+
+            <section>
+                <title>MessageHeader</title>
+
+                <para>
+                    The MessageHeader is a data object with the following
+                    properties: 
+                </para>
+
+                <programlisting>
+package com.phantom.msg;
+
+public class MessageHeader
+{
+    private int     majorVersion;
+    private int     minorVersion;
+    private int     modifiers;
+    private String  source;
+    private String  destination;
+    private int     messageBodyLength;
+
+    public int getMajorVersion();
+    public void setMajorVersion( int majorVersion );
+    public int getMinorVersion();
+    public void setMinorVersion( int minorVersion );
+    public int getModifiers();
+    public void setModifiers( int modifiers );
+    public String getSource();
+    public void setSource( String source );
+    public String getDestination();
+    public void setDestination( String destination );
+    public int getMessageBodyLength();
+    public void setMessageBodyLength( int messageBodyLength );
+}
+                </programlisting>
+
+            </section>
+
+            <section>
+
+                <title>MessageBody</title>
+
+                <para>
+                    The MessageBody is a data object with the following properties:
+                </para>
+
+                <programlisting>
+package com.phantom.msg;
+
+public class MessageBody
+{
+    private byte[]  messageBytes;
+
+    public byte[] getMessageBytes();
+    public void setMessageTypes( byte[] messageBytes );
+}
+                </programlisting>
+
+            </section>
+
+            <section>
+
+                <title>PhantomException</title>
+
+                <para>
+                    An exception which is thrown when dealing with any portion of the server.
+                </para>
+
+                <programlisting>
+package com.phantom.lang;
+
+public class PhantomException extends java.io.IOException
+{
+}
+                </programlisting>
+
+            </section>
+
+            <section>
+
+                <title>PhantomMessageException</title>
+
+                <para>
+                    An exception which is thrown when dealing with Message objects.
+                </para>
+
+                <programlisting>
+package com.phantom.lang;
+
+public class PhantomMessageException extends PhantomException
+{
+}
+                </programlisting>
+
+            </section>
+
+            <section>
+
+                <title>PhantomJeffException</title>
+
+                <para>
+                    An exception which is thrown when dealing with PhantomJeff objects.
+                </para>
+
+                <programlisting>
+package com.phantom.lang;
+
+public class PhantomJeffException extends PhantomException
+{
+}
+                </programlisting>
+
+            </section>
+        </section>
+
+    </section>
+
+
+</article>

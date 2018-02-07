@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <link rel="stylesheet" href="../base.css" type="text/css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Future Progect Developments</title>
+</head>
+<body>
+  <h1>Future Progect Developments.</h1>
+
+  <p>
+  Okay, so yes I am intending on doing some _large_ changes, and actually
+  you are welcome to join me in doing it, I'm going to try and give you a
+  brief synopsis of what I'm thinking.
+
+  I want to break things up into 3 major layers (list viewer, adapter if
+  required, and database (iterator)), because lots of stuff is duplicated,
+  I'm in a hurry to describe it, and I've not completely done my groundwork
+  yet but here goes, we may need to change any of this...
+
+  The list display code is duplicated 3 or maybe 4 times (if you include
+  flat mode categories). I would encapuslate the handling somehow, either
+  in a C++ object, or the C equivalent.
+
+  What I'm thinking is that we would have list display code that would call
+  into an iterator to get it's values to display, the object returned would
+  be responsble for drawing itself. The task database would be reformed
+  into an iterator, as would my special database to handle project
+  *categories* et al. Flat mode would be accomplished with an iterator
+  *adapter* that would get plugged in between the database and the list
+  viewer, the project list would simply be passed  an iterator for the
+  project list database.  Categegories would simply be another iterator.
+
+  In each case we would probably have to write a display object to display
+  the data in the appropriate way, but no big deal really.
+
+  You might think it's odd to show something hierachical with a list, but
+  in fact that's the way it's done now, the task knows how to show itself
+  in tree mode, we would simply run with that idea.
+
+  I would start by writing the list viewer as an object say, and then
+  convert the project list to see if it flew, then we would go after tree
+  mode, then flat mode, then category list.
+
+  I'm slightly hesitant to use C++ because I'm not sure how the [I presme
+  there is one] 64k limit would interact with it, but then if we use C++,
+  we would probably drop our code size by 25%, we are already well under
+  64k (most of our size seems to be the compatibility library we link
+  with).
+
+  I also see us allowing *plugins* in the future, so that if you wanted a
+  different *flat mode*, you would simply write the plugin and away we'd
+  go, I'm also concerned about how C++ would affect that. But once we got
+  it into C++, going backwards if we had to might not be that bad really.
+
+  Editing would be handled by the display object in whatever way it had to.
+  The class could either be reused, extended or whatever, but I don't
+  expect that to happen except for low level routines because the screen
+  display is so different in each case.
+  </p>
+
+  <p>
+  [11:34] Coder: Yeah, I love that part of it.  And having things that know
+  how to draw themselves.
+  [11:37] Silicon Valley: Yea, I don't think we can do that exactly,
+  although that would be nice, IE have the objects just do it when they
+  need to, but I want to pass back objects that do indeed know how to draw
+  themselves so the list viewer can just tell them to draw. We might even
+  want to use a drawing wrapper on the object returned by the DB, should
+  think about that, may increase code reuse.
+  [11:37] Silicon Valley: Or make it a descendant, of the object or
+  whatever...
+  [11:38] Silicon Valley: I'm thinking of using interfaces rather than
+  heirarchy per-se, so we can reuse more easily.
+  </p>
+
+  <p>
+  [11:40] Coder: Did you want to continue supporting the memopad versions
+  of icons?
+  [11:41] Silicon Valley: I'm going to try and create the branch this
+  afternoon, I'll tell you the new name, and then we can hack away in their
+  to our heart's content until we have to actually release something.
+  [11:41] Silicon Valley: No, well, I want to rip them out once we support
+  DB5 icons. If someone really wants the old, maybe...
+  [11:42] Coder: Cool.  I might see if I can get the new-format icons
+  working in the old codebase, sort of as a proof of concept, and to help
+  me get familiar with the code, and how it works.
+  [11:42] Coder: (It seems like it wouldn't be that bad to maintain
+  compatibility.  Basically, if you don't have new-style icons, we'll
+  fall-back to old style.)
+  [11:43] Silicon Valley: Okay, actually then, can I create a separate
+  branch for the icons? I think that's better for two reasons, 1) They are
+  separate ideas 2) We can roll your changes in sooner. I like to have one
+  branch per idea, it keeps things simpler.
+  [11:44] Coder: Sure.
+  [11:44] Silicon Valley: If you want to continue to support the old icons,
+  I'm okay with that, but remember most everyone will switch to the new
+  ones and then we will have more code to support... Perhaps EOLife it,
+  and rip it out the release after...
+  </p>
+
+  </body>
+</html>

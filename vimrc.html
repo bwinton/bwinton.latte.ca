@@ -1,0 +1,331 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>~/.vimrc.html</title>
+<meta name="Generator" content="Vim/7.2">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+.Constant { color: #ffc125; }
+.Identifier { color: #458b74; }
+.Normal { color: #7f7f7f; background-color: #1a1a1a; }
+.Special { color: #8a2be2; }
+.String { color: #4a708b; }
+.PreProc { color: #1874cd; }
+.Type { color: #008b8b; font-weight: bold; }
+pre { font-family: monospace; color: #7f7f7f; background-color: #1a1a1a; }
+body { font-family: monospace; color: #7f7f7f; background-color: #1a1a1a; }
+.Comment { color: #7ac5cd; font-style: italic; }
+.Statement { color: #9b30ff; font-weight: bold; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<span class="Comment">&quot; ------------------</span>
+<span class="Comment">&quot; To edit remote files, use :e scp://latte.ca/~/weblog/tech/</span>
+
+
+<span class="Comment">&quot; ------------------</span>
+<span class="Statement">augroup</span> mkd
+  <span class="Statement">autocmd</span> <span class="Type">BufRead</span> *.mkd  <span class="Statement">set</span> <span class="PreProc">ai</span> <span class="PreProc">formatoptions</span>=tcroqn2 <span class="PreProc">comments</span>=n<span class="Statement">:</span>&gt;
+  <span class="Statement">autocmd</span> <span class="Type">BufRead</span> *.md  <span class="Statement">set</span> <span class="PreProc">ai</span> <span class="PreProc">formatoptions</span>=tcroqn2 <span class="PreProc">comments</span>=n<span class="Statement">:</span>&gt;
+  <span class="Statement">autocmd</span> <span class="Type">BufRead</span> *.md~  <span class="Statement">set</span> <span class="PreProc">ai</span> <span class="PreProc">formatoptions</span>=tcroqn2 <span class="PreProc">comments</span>=n<span class="Statement">:</span>&gt;
+  <span class="Statement">autocmd</span> <span class="Type">BufRead</span> *.mkd <span class="Statement">set</span> <span class="PreProc">spell</span>
+  <span class="Statement">autocmd</span> <span class="Type">BufRead</span> *.md <span class="Statement">set</span> <span class="PreProc">spell</span>
+  <span class="Statement">autocmd</span> <span class="Type">BufRead</span> *.md~ <span class="Statement">set</span> <span class="PreProc">spell</span>
+<span class="Statement">augroup</span> END
+
+<span class="Statement">py</span> import sys;<span class="Normal">sys.path.append</span><span class="Special">(</span><span class="String">&quot;/Users/bwinton/.vim/python&quot;</span><span class="Special">)</span>
+<span class="Statement">py</span> import pyblock
+<span class="Statement">py</span> import reviewboard
+<span class="Statement">augroup</span> <span class="Statement">py</span>
+  <span class="Statement">autocmd</span> <span class="Type">BufNewFile</span>,<span class="Type">BufRead</span> *.py <span class="Statement">compiler</span> <span class="Statement">python</span>
+  <span class="Statement">autocmd</span> <span class="Type">FileType</span> python <span class="Statement">runtime</span>! autoload/pythoncomplete<span class="Statement">.</span><span class="Statement">vim</span>
+  <span class="Statement">autocmd</span> <span class="Type">FileType</span> python <span class="Statement">set</span> <span class="PreProc">omnifunc</span>=pythoncomplete#Complete
+
+<span class="Comment">  &quot; Watch out for trailing newlines in any python code</span>
+  <span class="Statement">autocmd</span> <span class="Type">BufNewFile</span>,<span class="Type">BufRead</span> *.py <span class="Identifier">match</span> Error <span class="String">/\s\+$/</span>
+
+  <span class="Identifier">map</span> <span class="Special">(</span> :python <span class="Normal">pyblock.find</span><span class="Special">(</span>forward <span class="Statement">=</span> <span class="Constant">0</span><span class="Special">)</span>^M
+  <span class="Identifier">map</span> ) :<span class="Statement">python</span> pyblock<span class="Statement">.</span><span class="Statement">find</span><span class="Special">()</span>^M
+
+  imap <span class="Special">&lt;</span><span class="Special">c-space</span><span class="Special">&gt;</span> <span class="Special">&lt;</span><span class="Special">c-x</span><span class="Special">&gt;&lt;</span><span class="Special">c-o</span><span class="Special">&gt;</span>
+<span class="Statement">augroup</span> END
+
+
+<span class="Comment">&quot; ------------------</span>
+<span class="Comment">&quot; From <a href="https://github.com/hallettj/jslint.vim">https://github.com/hallettj/jslint.vim</a></span>
+<span class="Statement">filetype</span> <span class="Type">plugin</span> <span class="Type">on</span>
+<span class="Statement">let</span> g:JSLintHighlightErrorLine <span class="Statement">=</span> <span class="Constant">0</span>
+
+
+<span class="Comment">&quot; ------------------</span>
+<span class="Comment">&quot; From lmorchard!</span>
+
+<span class="Statement">map</span> <span class="Special">&lt;</span><span class="Special">leader</span><span class="Special">&gt;</span>s :ConqueTermTab zsh
+
+<span class="Comment">&quot; ------------------</span>
+<span class="Comment">&quot; From <a href="http://blog.sontek.net/2008/05/11/python-with-a-modular-ide-vim/">http://blog.sontek.net/2008/05/11/python-with-a-modular-ide-vim/</a></span>
+
+<span class="Comment">&quot; Use 'gf' to go to a file from an import line.</span>
+<span class="Comment">python &lt;&lt; EOF</span>
+<span class="PreProc">import</span> os
+<span class="PreProc">import</span> sys
+<span class="PreProc">import</span> vim
+<span class="Statement">for</span> p <span class="Statement">in</span> sys.path:
+    <span class="Statement">if</span> p!=<span class="String">&quot;&quot;</span> <span class="Statement">and</span> os.path.isdir(p):
+        vim.command(<span class="String">r&quot;set path+=%s&quot;</span> % (p.replace(<span class="String">&quot; &quot;</span>, <span class="String">r&quot;\ &quot;</span>)))
+<span class="Comment">EOF</span>
+
+<span class="Statement">augroup</span> <span class="Statement">py</span>
+
+<span class="Comment">  &quot; Extra syntax highlighting</span>
+  <span class="Statement">autocmd</span> <span class="Type">BufNewFile</span>,<span class="Type">BufRead</span> *.py <span class="Identifier">match</span> Error <span class="String">/^\s*def\s\+\w\+(.*)\s*$/</span>
+  <span class="Statement">autocmd</span> <span class="Type">BufNewFile</span>,<span class="Type">BufRead</span> *.py <span class="Identifier">match</span> Error <span class="String">/^\s*class\s\+\w\+(.*)\s*$/</span>
+  <span class="Statement">autocmd</span> <span class="Type">BufNewFile</span>,<span class="Type">BufRead</span> *.py <span class="Identifier">match</span> Error <span class="String">/^\s*for\s.*[^:]$/</span>
+  <span class="Statement">autocmd</span> <span class="Type">BufNewFile</span>,<span class="Type">BufRead</span> *.py <span class="Identifier">match</span> Error <span class="String">/^\s*except\s*$/</span>
+  <span class="Statement">autocmd</span> <span class="Type">BufNewFile</span>,<span class="Type">BufRead</span> *.py <span class="Identifier">match</span> Error <span class="String">/^\s*finally\s*$/</span>
+  <span class="Statement">autocmd</span> <span class="Type">BufNewFile</span>,<span class="Type">BufRead</span> *.py <span class="Identifier">match</span> Error <span class="String">/^\s*try\s*$/</span>
+  <span class="Statement">autocmd</span> <span class="Type">BufNewFile</span>,<span class="Type">BufRead</span> *.py <span class="Identifier">match</span> Error <span class="String">/^\s*else\s*$/</span>
+  <span class="Statement">autocmd</span> <span class="Type">BufNewFile</span>,<span class="Type">BufRead</span> *.py <span class="Identifier">match</span> Error <span class="String">/^\s*else\s*[^:].*/</span>
+  <span class="Statement">autocmd</span> <span class="Type">BufNewFile</span>,<span class="Type">BufRead</span> *.py <span class="Identifier">match</span> Error <span class="String">/^\s*if\s.*[^\:]$/</span>
+  <span class="Statement">autocmd</span> <span class="Type">BufNewFile</span>,<span class="Type">BufRead</span> *.py <span class="Identifier">match</span> Error <span class="String">/^\s*except\s.*[^\:]$/</span>
+  <span class="Statement">autocmd</span> <span class="Type">BufNewFile</span>,<span class="Type">BufRead</span> *.py <span class="Identifier">match</span> Error <span class="String">/[;]$/</span>
+
+<span class="Comment">  &quot; Let :make compile python programs</span>
+<span class="Comment">  &quot; And we can use :cn/:cp to move forwards/backwards in the error list.</span>
+  <span class="Statement">autocmd</span> <span class="Type">BufRead</span> *.py <span class="Statement">set</span> makeprg<span class="Statement">=</span><span class="Statement">python</span>\ <span class="Statement">-</span><span class="Statement">c</span>\ \&quot;import\ py_compile,sys;\ sys<span class="Statement">.</span>stderr<span class="Statement">=</span>sys<span class="Statement">.</span>stdout;\ py_compile<span class="Statement">.</span><span class="Statement">compile</span><span class="Special">(</span>r'%<span class="String">'</span><span class="Special">)</span>\&quot;
+  <span class="Statement">autocmd</span> <span class="Type">BufRead</span> *.py <span class="Statement">set</span> <span class="PreProc">efm</span>=%C\ %.%#<span class="Statement">,</span>%A\ \ File\ \&quot;%f\&quot;\\<span class="Statement">,</span>\ line\ %l%.%#<span class="Statement">,</span>%Z%[%^\ ]%\\@=%m
+
+<span class="Comment">  &quot; Select a method/class and execute it by &lt;c-h&gt;</span>
+  <span class="Statement">python</span> <span class="Statement">&lt;&lt;</span> EOL
+from urllib import urlopen
+import <span class="Statement">vim</span>
+
+def EvaluateCurrentRange<span class="Special">()</span>:
+  <span class="Identifier">eval</span><span class="Special">(</span><span class="Normal">compile</span><span class="Special">(</span><span class="String">'\n'</span><span class="Statement">.</span><span class="Identifier">join</span><span class="Special">(</span>vim<span class="Statement">.</span>current<span class="Statement">.</span>range<span class="Special">)</span>,<span class="String">''</span>,<span class="String">'exec'</span><span class="Special">)</span>,<span class="Normal">globals</span><span class="Special">())</span>
+
+
+licenses <span class="Statement">=</span> {
+<span class="Comment">  &quot;cpp&quot;: </span><span class="String">&quot;c&quot;</span><span class="Comment">,</span>
+<span class="Comment">  &quot;css&quot;: </span><span class="String">&quot;c&quot;</span><span class="Comment">,</span>
+<span class="Comment">  &quot;html&quot;: </span><span class="String">&quot;html&quot;</span><span class="Comment">,</span>
+<span class="Comment">  &quot;idl&quot;: </span><span class="String">&quot;c&quot;</span><span class="Comment">,</span>
+<span class="Comment">  &quot;javascript&quot;: </span><span class="String">&quot;c&quot;</span><span class="Comment">,</span>
+<span class="Comment">  &quot;python&quot;: </span><span class="String">&quot;sh&quot;</span><span class="Comment">,</span>
+<span class="Comment">  &quot;xhtml&quot;: </span><span class="String">&quot;html&quot;</span><span class="Comment">,</span>
+<span class="Comment">  &quot;xml&quot;: </span><span class="String">&quot;html&quot;</span><span class="Comment">,</span>
+}
+
+def AddMozillaLicense<span class="Special">()</span>:
+  # Get the current <span class="Statement">filetype</span><span class="Statement">.</span>
+  <span class="Statement">x</span> <span class="Statement">=</span> <span class="Statement">vim</span><span class="Statement">.</span><span class="Identifier">eval</span><span class="Special">(</span><span class="String">&quot;&amp;ft&quot;</span><span class="Special">)</span>
+  url <span class="Statement">=</span> <span class="String">&quot;<a href="http://www.mozilla.org/MPL/boilerplate-1.1/mpl-tri-license-">http://www.mozilla.org/MPL/boilerplate-1.1/mpl-tri-license-</a>&quot;</span> <span class="Statement">+</span> licenses<span class="Statement">.</span><span class="Identifier">get</span><span class="Special">(</span>x, <span class="String">&quot;txt&quot;</span><span class="Special">)</span>
+  data <span class="Statement">=</span> urlopen<span class="Special">(</span>url<span class="Special">)</span><span class="Statement">.</span>readlines<span class="Special">()</span>
+  <span class="Statement">vim</span><span class="Statement">.</span>current<span class="Statement">.</span><span class="Statement">buffer</span>[<span class="Constant">0</span>:<span class="Constant">0</span>] <span class="Statement">=</span> data
+  <span class="Statement">vim</span><span class="Statement">.</span>command<span class="Special">(</span><span class="String">&quot;:1&quot;</span><span class="Special">)</span>
+  <span class="Statement">vim</span><span class="Statement">.</span>command<span class="Special">(</span><span class="String">&quot;/________&quot;</span><span class="Special">)</span>
+  <span class="Statement">vim</span><span class="Statement">.</span>command<span class="Special">(</span><span class="String">&quot;n&quot;</span><span class="Special">)</span>
+
+EOL
+  <span class="Statement">autocmd</span> <span class="Type">FileType</span> python <span class="Identifier">map</span> <span class="Special">&lt;</span><span class="Special">C-h</span><span class="Special">&gt;</span> :<span class="Statement">py</span> EvaluateCurrentRange<span class="Special">()</span>
+<span class="Statement">augroup</span> END
+
+<span class="Comment">&quot; ------------------</span>
+<span class="Comment">&quot; From <a href="http://items.sjbach.com/319/configuring-vim-right">http://items.sjbach.com/319/configuring-vim-right</a></span>
+
+<span class="Statement">let</span> mapleader <span class="Statement">=</span> <span class="String">&quot;,&quot;</span>
+<span class="Statement">set</span> <span class="PreProc">history</span>=1000
+<span class="Statement">set</span> <span class="PreProc">scrolloff</span>=3
+
+<span class="Statement">map</span> <span class="Special">&lt;</span><span class="Special">leader</span><span class="Special">&gt;</span>b :call BlogCheck()<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>
+<span class="Statement">map</span> <span class="Special">&lt;</span><span class="Special">leader</span><span class="Special">&gt;</span>l :py AddMozillaLicense()<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>
+
+<span class="Comment">&quot; ------------------</span>
+<span class="Comment">&quot; Map ,f to take the Weekly Status from Things, and massage it for </span>
+<span class="Comment">&quot; <a href="http://benjamin.smedbergs.us/weekly-updates.fcgi/">http://benjamin.smedbergs.us/weekly-updates.fcgi/</a></span>
+<span class="Comment">python &lt;&lt; EOL</span>
+<span class="PreProc">import</span> vim
+<span class="Statement">def</span> <span class="Identifier">FixupStatusNotes</span>():
+  vim.command(<span class="String">r&quot;/^ *$&quot;</span>)
+  vim.command(<span class="String">r&quot;:1,.s/^- \(.*\)$/  &lt;li&gt;\1&lt;\/li&gt;/&quot;</span>)
+  vim.command(<span class="String">r&quot;:.,$s/^- \(.*\)$/&lt;li&gt;\1&lt;\/li&gt;/&quot;</span>)
+  vim.current.<span class="Identifier">buffer</span>[<span class="Constant">0</span>:<span class="Constant">0</span>] = [<span class="String">&quot;&lt;ul&gt;&lt;li&gt;Account Provisioner:&lt;ul&gt;&quot;</span>]
+  vim.command(<span class="String">r&quot;:%s/^ *$/&lt;\/ul&gt;&lt;\/li&gt;&quot;</span>)
+  vim.current.<span class="Identifier">buffer</span>.append(<span class="String">&quot;&lt;/ul&gt;&quot;</span>)
+<span class="Comment">EOL</span>
+<span class="Statement">map</span> <span class="Special">&lt;</span><span class="Special">leader</span><span class="Special">&gt;</span>f :py FixupStatusNotes()<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>
+
+<span class="Comment">&quot; ------------------</span>
+<span class="Comment">&quot; Use ,- and ,= to make the current line headers in Markdown.</span>
+<span class="Comment">&quot; It actually does it for everything, not just Markdown,</span>
+<span class="Comment">&quot; but there you go, I guess.</span>
+
+<span class="Statement">augroup</span> mkd
+  <span class="Statement">python</span> <span class="Statement">&lt;&lt;</span> EOL
+import <span class="Statement">vim</span>
+def MkdMakeHeader<span class="Special">(</span> headerChar <span class="Special">)</span>:
+  <span class="Statement">buffer</span> <span class="Statement">=</span> <span class="Statement">vim</span><span class="Statement">.</span>current<span class="Statement">.</span><span class="Statement">buffer</span>
+  row, <span class="Identifier">col</span> <span class="Statement">=</span> <span class="Statement">vim</span><span class="Statement">.</span>current<span class="Statement">.</span>window<span class="Statement">.</span><span class="Identifier">cursor</span>
+  <span class="Identifier">line</span> <span class="Statement">=</span> <span class="Statement">vim</span><span class="Statement">.</span>current<span class="Statement">.</span><span class="Identifier">line</span>
+  <span class="Identifier">line</span> <span class="Statement">=</span> <span class="Identifier">line</span><span class="Statement">.</span>decode<span class="Special">(</span><span class="String">'UTF-8'</span><span class="Special">)</span>
+  <span class="Statement">buffer</span>[row:row] <span class="Statement">=</span> [headerChar*<span class="Identifier">len</span><span class="Special">(</span>line<span class="Special">)</span>]
+EOL
+  <span class="Statement">autocmd</span> <span class="Type">FileType</span> mkd <span class="Identifier">map</span> <span class="Statement">&lt;</span>leader<span class="Statement">&gt;-</span> :<span class="Statement">py</span> MkdMakeHeader<span class="Special">(</span> <span class="String">'-'</span> <span class="Special">)</span>^M
+  <span class="Statement">autocmd</span> <span class="Type">FileType</span> mkd <span class="Identifier">map</span> <span class="Statement">&lt;</span>leader<span class="Statement">&gt;=</span> :<span class="Statement">py</span> MkdMakeHeader<span class="Special">(</span> <span class="String">'='</span> <span class="Special">)</span>^M
+  <span class="Statement">autocmd</span> <span class="Type">FileType</span> mkd <span class="Statement">set</span> <span class="PreProc">makeprg</span>=markdown\ %
+  <span class="Statement">autocmd</span> <span class="Type">FileType</span> mkd <span class="Identifier">map</span> <span class="Statement">&lt;</span>leader<span class="Statement">&gt;</span><span class="Statement">m</span> :<span class="Statement">make</span>^M^M
+<span class="Statement">augroup</span> END
+
+<span class="Statement">augroup</span> xml
+  <span class="Statement">autocmd</span> <span class="Type">FileType</span> xml <span class="Statement">set</span> <span class="PreProc">formatprg</span>=xmllint\ --format\ %
+<span class="Statement">augroup</span> END
+
+<span class="Statement">augroup</span> <span class="Statement">nu</span>
+  <span class="Statement">autocmd</span> <span class="Type">FileType</span> nu <span class="Statement">set</span> <span class="PreProc">formatprg</span>=nubile
+  <span class="Statement">autocmd</span> <span class="Type">FileType</span> nu <span class="Statement">set</span> <span class="PreProc">makeprg</span>=nush\ %
+  <span class="Statement">autocmd</span> <span class="Type">FileType</span> nu <span class="Identifier">map</span> <span class="Statement">&lt;</span>leader<span class="Statement">&gt;</span><span class="Statement">m</span> :!nush %^M
+<span class="Statement">augroup</span> END
+
+<span class="Comment">&quot; ------------------</span>
+<span class="Comment">&quot; From <a href="http://weblog.jamisbuck.org/2008/11/17/vim-follow-up">http://weblog.jamisbuck.org/2008/11/17/vim-follow-up</a></span>
+
+<span class="Comment">&quot; Use ack as my grep.</span>
+<span class="Statement">set</span> <span class="PreProc">grepprg</span>=ack\ -H\ --column\ --no-group\ --no-color
+<span class="Statement">set</span> <span class="PreProc">grepformat</span>=%f<span class="Statement">:</span>%l<span class="Statement">:</span>%c<span class="Statement">:</span>%m
+
+<span class="Comment">&quot; Some indentation settings.</span>
+<span class="Statement">set</span> <span class="PreProc">tabstop</span>=4
+<span class="Statement">set</span> <span class="PreProc">smarttab</span>
+<span class="Statement">set</span> <span class="PreProc">shiftwidth</span>=4
+<span class="Statement">set</span> <span class="PreProc">autoindent</span>
+<span class="Statement">set</span> <span class="PreProc">expandtab</span>
+<span class="Statement">set</span> <span class="PreProc">textwidth</span>=75
+
+<span class="Comment">&quot; Modified by <a href="http://www.perlmonks.org/?node_id=333744">http://www.perlmonks.org/?node_id=333744</a></span>
+<span class="Statement">set</span> <span class="PreProc">backspace</span>=start<span class="Statement">,</span>eol<span class="Statement">,</span>indent
+
+<span class="Comment">&quot; Some display settings.</span>
+<span class="Statement">set</span> <span class="PreProc">hlsearch</span>
+<span class="Statement">syntax</span> <span class="Type">on</span>
+
+<span class="Statement">set</span> <span class="PreProc">statusline</span>=%F%m%r%h%w\ %{&amp;ff}\ [0x\%02.2B]%=[%v<span class="Statement">,</span>%l/%L\ %p%%]
+<span class="Statement">set</span> <span class="PreProc">laststatus</span>=2
+
+<span class="Comment">&quot; NERD tree toggle key.</span>
+<span class="Statement">map</span> <span class="Special">&lt;</span><span class="Special">leader</span><span class="Special">&gt;</span>d :execute 'NERDTreeToggle ' . getcwd()<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>
+
+<span class="Statement">function</span>! <span class="Special">s:</span>ToggleScratch<span class="Special">()</span>
+  <span class="Statement">if</span> <span class="Identifier">expand</span><span class="Special">(</span><span class="String">'%'</span><span class="Special">)</span> <span class="Statement">==</span> g:ScratchBufferName
+    <span class="Special">qu</span>it
+  <span class="Statement">else</span>
+    Sscratch
+  <span class="Statement">endif</span>
+<span class="Statement">endfunction</span>
+
+<span class="Comment">&quot; Save ,s for insert stack trace.</span>
+<span class="Comment">&quot; map &lt;leader&gt;s :call &lt;SID&gt;ToggleScratch()&lt;CR&gt;</span>
+
+<span class="Statement">ab</span> #s try {(0)()} catch (e) dump(&quot;Stack Trace:\n&quot;+e.stack.replace(/^.*?\n/,'').replace(/(?:\n@:0)?\s+$/m,'').replace(/^\(/gm,'{anonymous}(').split(&quot;\n&quot;));
+
+<span class="Comment">&quot; ------------------</span>
+<span class="Comment">&quot; from <a href="http://video.google.com/videoplay?docid=2538831956647446078">http://video.google.com/videoplay?docid=2538831956647446078</a></span>
+<span class="Comment">&quot; 7 habits for Effective Text Editing 2.0 by Bram Moolenaar.</span>
+
+<span class="Statement">set</span> <span class="PreProc">incsearch</span>
+
+<span class="Comment">&quot; Ctrl-N will fill in stuff from earlier in the file!</span>
+
+<span class="Comment">&quot; ------------------</span>
+<span class="Comment">&quot; Don't do this until we can get mvim to run on Python 2.5</span>
+<span class="Comment">&quot; This is because I can't (well, don't want to) add pyflakes to Python2.3.</span>
+<span class="Comment">&quot; pyfile ~/.vim/python/check.py</span>
+
+<span class="Comment">&quot; ------------------</span>
+<span class="Comment">&quot; from <a href="http://everything101.sourceforge.net/docs/papers/java_and_vim.html">http://everything101.sourceforge.net/docs/papers/java_and_vim.html</a></span>
+<span class="Comment">&quot; but modified by <a href="http://vimdoc.sourceforge.net/htmldoc/windows.html#CTRL-W_gF">http://vimdoc.sourceforge.net/htmldoc/windows.html#CTRL-W_gF</a></span>
+<span class="Comment">&quot; make gf open with the line number, in a new tab.</span>
+<span class="Statement">map</span> gf <span class="Special">&lt;</span><span class="Special">C-W</span><span class="Special">&gt;</span>gF
+
+<span class="Comment">&quot; from</span>
+<span class="Comment">&quot; <a href="http://osdir.com/ml/linux.debian.packages.vim.devel/2004-04/msg00002.html">http://osdir.com/ml/linux.debian.packages.vim.devel/2004-04/msg00002.html</a></span>
+<span class="Comment">&quot; If we can't find the filename for the gf, then try removing a leading</span>
+<span class="Comment">&quot; </span><span class="String">&quot;a/&quot;</span><span class="Comment"> or </span><span class="String">&quot;b/&quot;</span><span class="Comment">.  Stupid git diff format.</span>
+<span class="Statement">augroup</span> diff
+  <span class="Statement">set</span> <span class="PreProc">includeexpr</span>=substitute(v<span class="Statement">:</span>fname<span class="Statement">,</span>'^[ab]/'<span class="Statement">,</span>''<span class="Statement">,</span>'')
+  <span class="Statement">autocmd</span> <span class="Type">BufNewFile</span>,<span class="Type">BufRead</span> *.diff\|*.patch <span class="Identifier">match</span> Error <span class="String">/^+.\{-}\zs\s\+$/</span>
+  <span class="Statement">autocmd</span> <span class="Type">FileType</span> diff <span class="Identifier">match</span> Error <span class="String">/^+.\{-}\zs\s\+$/</span>
+<span class="Statement">augroup</span> END
+
+<span class="Statement">augroup</span> mozilla
+  <span class="Statement">autocmd</span> <span class="Type">BufNewFile</span>,<span class="Type">BufRead</span> *.c(pp)?\|*.jsm?\|*.dtd\|*.x[mu]l\|*.py <span class="Identifier">match</span> Error <span class="String">/\s\+$/</span>
+  <span class="Statement">autocmd</span> <span class="Type">FileType</span> javascript <span class="Identifier">match</span> Error <span class="String">/\s\+$/</span>
+<span class="Statement">augroup</span> END
+
+<span class="Comment">&quot; ------------------</span>
+<span class="Statement">colorscheme</span> macvim
+<span class="Statement">set</span> <span class="PreProc">background</span>=dark
+
+<span class="Comment">&quot; ------------------</span>
+<span class="Comment">&quot; From <a href="http://writequit.org/blog/?p=195">http://writequit.org/blog/?p=195</a></span>
+<span class="Statement">if</span> <span class="Identifier">has</span><span class="Special">(</span><span class="String">&quot;gui_running&quot;</span><span class="Special">)</span>
+  <span class="Statement">set</span> <span class="PreProc">guioptions</span>-=T       <span class="Comment">&quot; no toolbar</span>
+  <span class="Statement">set</span> <span class="PreProc">cursorline</span>          <span class="Comment">&quot; show the cursor line</span>
+<span class="Statement">end</span>
+<span class="Statement">set</span> <span class="PreProc">modelines</span>=0           <span class="Comment">&quot; no modelines [<a href="http://www.guninski.com/vim1.html]">http://www.guninski.com/vim1.html]</a></span>
+<span class="Statement">set</span> <span class="PreProc">showmatch</span>             <span class="Comment">&quot; show matching bracket.</span>
+
+<span class="Comment">&quot; ------------------</span>
+<span class="Comment">&quot; C-R, &quot; will paste from the kill buffer in insert mode.</span>
+<span class="Comment">&quot;      See also: :help &lt;C-R&gt; for extra cool stuff.&lt;M-Right&gt;&lt;D-Right&gt;</span>
+<span class="Comment">&quot;</span>
+<span class="Comment">&quot; ⌘{ and ⌘} will switch between tabs.  Bleah.</span>
+<span class="Comment">&quot;</span>
+<span class="Comment">&quot; C-n and C-p will auto-complete next and previous in insert mode.</span>
+<span class="Comment">&quot;</span>
+<span class="Comment">&quot;</span>
+<span class="Comment">&quot; ,t will use the really cool file opener!  Seriously, use it!!!</span>
+<span class="Comment">&quot;</span>
+<span class="Comment">&quot;</span>
+<span class="Comment">&quot; ⌘⇧F toggles fullscreen.  The options below control it.</span>
+<span class="Comment">&quot; set fuoptions=maxhorz,maxvert</span>
+<span class="Statement">set</span> fuoptions=maxvert<span class="Statement">,</span>background<span class="Statement">:</span>Normal
+
+<span class="Comment">&quot; ,n and ,p will go forward and back in the error/grep list.</span>
+<span class="Statement">map</span> <span class="Special">&lt;</span><span class="Special">leader</span><span class="Special">&gt;</span>n :cn<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>
+<span class="Statement">map</span> <span class="Special">&lt;</span><span class="Special">leader</span><span class="Special">&gt;</span>p :cp<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>
+
+<span class="Comment">&quot; For use in figuring out what commands I use, when running the custom version.</span>
+<span class="Statement">if</span> <span class="Identifier">has</span><span class="Special">(</span><span class="String">'cmdlog'</span><span class="Special">)</span>
+<span class="Comment">  &quot; cmdlogdir:</span>
+<span class="Comment">  &quot;     The directory which will be used to store logs.</span>
+  <span class="Statement">set</span> cmdlogdir=~/.vim/logs/
+<span class="Comment">  &quot; cmdloginsert:</span>
+<span class="Comment">  &quot;     Log text entered in normal mode.</span>
+<span class="Comment">  &quot;     Disabled by default</span>
+<span class="Comment">  &quot; set cmdloginsert</span>
+<span class="Statement">end</span>
+
+<span class="Comment">&quot; ------------------</span>
+<span class="Comment">&quot; From <a href="http://stanford.edu/~jlebar/blog/2010/2/1/Hacking%2C_part_1%3A_Vim.html">http://stanford.edu/~jlebar/blog/2010/2/1/Hacking%2C_part_1%3A_Vim.html</a></span>
+<span class="Statement">set</span> <span class="PreProc">wildmenu</span>
+<span class="Statement">set</span> <span class="PreProc">wildignore</span>=*.o<span class="Statement">,</span>*.obj<span class="Statement">,</span>*.bak<span class="Statement">,</span>*.exe<span class="Statement">,</span>*.class<span class="Statement">,</span>*.swp
+
+<span class="Statement">set</span> <span class="PreProc">softtabstop</span>=4
+<span class="Statement">set</span> <span class="PreProc">shiftwidth</span>=4
+
+<span class="Comment">&quot; ------------------</span>
+<span class="Comment">&quot; From <a href="http://github.com/itfrombit/nuvim">http://github.com/itfrombit/nuvim</a></span>
+<span class="Comment">&quot; &lt;C-c&gt;n     :  Reindent Nu file</span>
+<span class="Comment">&quot;</span>
+<span class="Comment">&quot; If you've run </span><span class="String">&quot;screen -S nush nush&quot;</span><span class="Comment">, then the following work:</span>
+<span class="Comment">&quot; &lt;C-c&gt;&lt;C-c&gt; :  Send current scope or selection to screen</span>
+<span class="Comment">&quot; &lt;C-c&gt;f     :  Send entire file to screen</span>
+<span class="Comment">&quot; &lt;C-c&gt;c     :  Connect to a different screen session</span>
+
+<span class="Statement">au</span> <span class="Type">BufNewFile</span>,<span class="Type">BufRead</span> *.nu,*.nujson,Nukefile    <span class="Statement">setf</span> <span class="Statement">nu</span>
+
+</pre>
+</body>
+</html>

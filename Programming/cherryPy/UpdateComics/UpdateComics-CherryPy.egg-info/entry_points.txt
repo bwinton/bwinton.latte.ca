@@ -1,0 +1,3 @@
+[cherrypy.app]
+Comics = ComicsApp:UpdateComics
+

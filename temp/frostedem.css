@@ -1,0 +1,261 @@
+a:link, a:visited, a:active, a:hover {
+  }  
+a:link {  
+color: #1a6284;  
+text-decoration: none; 
+background-color: transparent;
+}  
+
+a:visited {  
+color: #1a6284;  
+text-decoration: none; 
+background-color: transparent;
+} 
+ 
+a:active {  
+color: #1a6284;  
+text-decoration: none; 
+background-color: transparent;
+} 
+ 
+a:hover {  
+color: #000000;   
+text-decoration: none; 
+background-color: transparent;
+}  
+
+FONT {
+font-family: Verdana, Helvetica, sans-serif;
+color: #000000;
+background-color: transparent;
+}
+P,TABLE,TD,TR {  
+font-family: Verdana, Helvetica, sans-serif;
+font-size: 1em; 
+}
+
+.onbody a:LINK {
+color: #000000;  
+background-color: transparent;
+}  
+.onbody a:VISITED {
+color: #000000;  
+background-color: transparent;
+}  
+.onbody a:ACTIVE {
+color: #000000;  
+background-color: transparent;
+}  
+
+FORM {  
+display: inline;  
+margin-bottom: 0; 
+}  
+BODY {  
+color: #000000;
+background-color: #e7eff7;
+font-family: Verdana, Helvetica, sans-serif;
+font-size: 100%; 
+margin: 0px; 
+border: 0px; 
+padding: 0px;
+}  
+ 
+.tablesurround {  
+background-color: #ffffff;  
+border-style: solid; 
+border-width: 1px 1px 1px 1px; 
+border-color: #666699 #666699 #666699 #666699; 
+padding: 2px; 
+color: #000000;
+margin: 2px;
+}  
+.tableborders {  
+background-color: #666699;
+color: #000000;  
+}  
+
+.tdheader {  
+font-weight: normal;  
+color: #000000;  
+background-color: #cfe2eb;  
+border-style: solid; 
+border-width: 1px 1px 1px 1px; 
+border-color: #ffffff #ffffff #b5c6d6 #b5c6d6; 
+}  
+
+.menubar{  
+background-color: #e7f5fb;  
+color: #000000;  
+background-color: #cfe2eb;   
+border-style: solid; 
+border-width: 1px 1px 1px 1px; 
+border-color: #ffffff #ffffff #b5c6d6 #b5c6d6; 
+}  
+
+.navigation  {  
+background-color: #e7eff7;  
+color: #000000;  
+font-size: 1em;  
+border-style: solid; 
+border-width: 1px; 
+border-color: #b5c6d6; 
+padding: 1px;  
+margin: 1px;
+}  
+
+.posttime { 
+color: #000000; 
+background-color: #e2ecf6; 
+}  
+.threadtotal {  
+color: #000000;
+background-color: #e2ecf6;  
+}  
+.posttotal {  
+color: #000000;
+background-color: #ffffff;  
+}  
+.modline {  
+color: #000000;
+font-size: 1em;  
+font-style: oblique;
+background-color: transparent;  
+}  
+
+.small {
+  font-weight: normal;
+  font-size:  .8em;
+}
+
+.standouttext {  
+color: #ff0000;
+background-color: transparent;
+}  
+.pollcolor {  
+background-color: red;
+color: #000000;  
+}  
+.welcome {  
+font-weight: normal;  
+color: #000000;  
+background-color: #cfe2eb;  
+border-style: solid; 
+border-width: 1px 1px 1px 1px; 
+border-color: #ffffff #ffffff #b5c6d6 #b5c6d6; 
+}  
+.forumtitle { 
+color: #000000;
+background-color: #ffffff;  
+}  
+.forumdescript {  
+color: #000000;
+background-color: #ffffff; 
+}  
+.lighttable {  
+background-color: #ffffff;  
+color: #000000;  
+}  
+.darktable {  
+background-color: #ffffff;  
+color: #000000;  
+}  
+.newlighttable {
+color: #000000;  
+background-color: #e7f5fb;  
+font-weight: bold;  
+}  
+.newdarktable {  
+color: #000000;
+background-color: #baeaf8;  
+font-weight: bold;  
+}  
+.newpostsincat {  
+color: #000000;
+background-color: yellow;  
+}  
+.cleartable {  
+color: #000000;
+background-color: #ffffff;  
+}  
+.alternatetable {  
+color: #000000;
+background-color: #ffffff;  
+}  
+.newsubjecttable { 
+color: #000000; 
+background-color: #baeaf8; /* <!-- Used on the showflat/showthreaded screens --> */
+font-weight: bold;  
+}  
+.subjecttable { 
+color: #000000; 
+background-color: #ffffff;  
+color: #000000;  
+}  
+.footertable {  
+color: #000000;
+background-color: #ffffff;  
+}  
+.formboxes{  
+color: #000000; 
+background-color: #dff4ff; 
+border: 1px; 
+border-style: solid; 
+border-color: #5c7084; 
+font-size: 1em; 
+  
+}  
+.buttons {  
+color: #000000; 
+background-color: #dff4ff; 
+border: 1px; 
+border-style: solid; 
+border-color: #5C7084; 
+font-size: 1em; 
+  
+}  
+
+blockquote {  
+background-color: #ffffff; 
+font-size: .9em; 
+border:1px solid #e6e6e6;  
+margin:0px 20px;  
+padding:0px 10 px;
+color: #000000;
+}  
+blockquote .small {  
+background-color: #e6e6e6;  
+margin-left:-11px; 
+padding: 1px 2px; 
+color: #000000;
+} 
+ 
+blockquote hr {
+   visibility:hidden;
+   height: 1px
+}
+
+FORM { 
+margin: 0px; 
+border: 0px; 
+padding: 0px; 
+} 
+  
+SELECT { 
+font-size: 1em; 
+font-family: Verdana, 
+Helvetica, sans-serif;  
+font-weight: normal; 
+color: #000000; 
+background-color: #dff4ff; 
+}
+
+.spoiler {
+  background:  #ffffff;
+  color:  #ffffff;
+}
+    
+    
+    
+    
+    

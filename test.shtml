@@ -1,0 +1,3 @@
+<html><head><title>include test</title></head><body>
+<!--#include virtual="testbody.html" --> 
+</body></html>

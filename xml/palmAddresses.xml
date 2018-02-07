@@ -1,0 +1,2412 @@
+<?xml version="1.0" ?>
+<palm-address-database backup="true" backupDate="2001-12-24T15:47:54Z" createDate="2001-12-11T02:35:25Z" creator="addr" modifyDate="2001-12-24T15:49:28Z" modnum="909" name="AddressDB" type="DATA" version="0">
+  <address-appblock>
+    <category-info last-id="16">
+      <category id="0" name="Unfiled" number="0"/>
+      <category id="1" name="Business" number="1"/>
+      <category id="2" name="Personal" number="2"/>
+      <category id="3" name="QuickList" number="3"/>
+      <category id="17" name="System" number="4"/>
+      <category id="19" name="Companies" number="5"/>
+      <category id="0" name="" number="6"/>
+      <category id="0" name="" number="7"/>
+      <category id="0" name="" number="8"/>
+      <category id="0" name="" number="9"/>
+      <category id="0" name="" number="10"/>
+      <category id="0" name="" number="11"/>
+      <category id="0" name="" number="12"/>
+      <category id="0" name="" number="13"/>
+      <category id="0" name="" number="14"/>
+      <category id="0" name="" number="15"/>
+    </category-info>
+    <field-label element-name="lastname" label="Last name" number="0" renamed="yes"/>
+    <field-label element-name="firstname" label="First name" number="1" renamed="yes"/>
+    <field-label element-name="company" label="Company" number="2" renamed="yes"/>
+    <field-label element-name="phone" label="Work" number="3" renamed="yes"/>
+    <field-label element-name="phone" label="Home" number="4" renamed="yes"/>
+    <field-label element-name="phone" label="Fax" number="5" renamed="yes"/>
+    <field-label element-name="phone" label="Other" number="6" renamed="yes"/>
+    <field-label element-name="phone" label="E-mail" number="7" renamed="yes"/>
+    <field-label element-name="address" label="Address" number="8" renamed="yes"/>
+    <field-label element-name="city" label="City" number="9" renamed="yes"/>
+    <field-label element-name="state" label="Province" number="10" renamed="yes"/>
+    <field-label element-name="zip" label="Postal Code" number="11" renamed="yes"/>
+    <field-label element-name="country" label="Country" number="12" renamed="yes"/>
+    <field-label element-name="title" label="Title" number="13" renamed="yes"/>
+    <field-label element-name="custom" label="Birthday" number="14" renamed="yes"/>
+    <field-label element-name="custom" label="http" number="15" renamed="yes"/>
+    <field-label element-name="custom" label="" number="16" renamed="yes"/>
+    <field-label element-name="custom" label="" number="17" renamed="yes"/>
+    <field-label element-name="note" label="Note" number="18" renamed="yes"/>
+    <field-label element-name="" label="Main" number="19" renamed="yes"/>
+    <field-label element-name="" label="Pager" number="20" renamed="yes"/>
+    <field-label element-name="" label="Mobile" number="21" renamed="yes"/>
+    <phone-label name="Work" number="0"/>
+    <phone-label name="Home" number="1"/>
+    <phone-label name="Fax" number="2"/>
+    <phone-label name="Other" number="3"/>
+    <phone-label name="E-mail" number="4"/>
+    <phone-label name="Main" number="5"/>
+    <phone-label name="Pager" number="6"/>
+    <phone-label name="Mobile" number="7"/>
+  </address-appblock>
+  <address category="0" id="2">
+    <lastname>
+      Accessories
+    </lastname>
+    <company>
+      Palm Computing, Inc.
+    </company>
+    <phone labelNumber="3" show="yes">
+      1.800.881.7256 (US)
+    </phone>
+    <phone labelNumber="3">
+      1.800.891.6342 (Canada)
+    </phone>
+    <phone labelNumber="0">
+      Int'l: Call local InfoLine number
+    </phone>
+    <phone labelNumber="0">
+      Website: www.palm.com
+    </phone>
+    <note>
+      To find out about accessories, useful add-on software, and replacement parts, please visit the web site www.palm.com. Outside the US, please call one of the InfoLine numbers from the Worldwide Customer Support Information card.
+    </note>
+  </address>
+  <address category="0" id="917659">
+    <lastname>
+      Anderson
+    </lastname>
+    <firstname>
+      Alexander
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      alex@upful.org
+    </phone>
+  </address>
+  <address category="2" id="12378154">
+    <lastname>
+      Arnott
+    </lastname>
+    <firstname>
+      Jillian
+    </firstname>
+    <company>
+      BOM Mastercard
+    </company>
+    <phone labelNumber="6">
+      .416.225.5884
+    </phone>
+    <phone labelNumber="6">
+      416.225.3285
+    </phone>
+    <phone labelNumber="4" show="yes">
+      jills.cats@home.com
+    </phone>
+    <phone labelNumber="2">
+      410.600.2680
+    </phone>
+    <title>
+      Support Agent
+    </title>
+    <custom>
+      July 17th, 1971
+    </custom>
+  </address>
+  <address category="2" id="12378155">
+    <lastname>
+      Atherley
+    </lastname>
+    <firstname>
+      Kate
+    </firstname>
+    <company>
+      Microsoft Network
+    </company>
+    <phone labelNumber="6" show="yes">
+      416.364.3490
+    </phone>
+    <phone labelNumber="4">
+      kateath@microsoft.com
+    </phone>
+    <phone labelNumber="4">
+      kate_atherley@hotmail.cem
+    </phone>
+    <address>
+      155 Dalhousie Street #658
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      M5B 2P7
+    </zip>
+    <country>
+      Canada
+    </country>
+    <title>
+      WMP Evangelist
+    </title>
+  </address>
+  <address category="1" id="12378156">
+    <lastname>
+      Badenhorst
+    </lastname>
+    <firstname>
+      Wade
+    </firstname>
+    <phone labelNumber="6">
+      416.656.0521
+    </phone>
+    <phone labelNumber="4" show="yes">
+      badenhorstwade@hotmail.com
+    </phone>
+    <address>
+      22 Alcina Ave
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      M6G 2E8
+    </zip>
+    <country>
+      Canada
+    </country>
+    <custom>
+      December 12th, 1969
+    </custom>
+  </address>
+  <address category="0" id="917661">
+    <lastname>
+      Bailey
+    </lastname>
+    <firstname>
+      Kirk
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      deliberatus@my995internet.com
+    </phone>
+  </address>
+  <address category="2" id="12378157">
+    <lastname>
+      Bellini
+    </lastname>
+    <firstname>
+      Don Maroc
+    </firstname>
+    <company>
+      Solect
+    </company>
+    <phone labelNumber="6">
+      (416) 304-6230
+    </phone>
+    <phone labelNumber="7">
+      (905) 273-4651
+    </phone>
+    <phone labelNumber="4" show="yes">
+      marco@nuclear.biodome.org
+    </phone>
+    <phone labelNumber="1">
+      (416) 821-4268
+    </phone>
+    <address>
+      2376 Ravensthorpe Cres.
+    </address>
+    <city>
+      Mississauga
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+    <title>
+      Über Stud
+    </title>
+    <custom>
+      July 23rd,1973
+    </custom>
+  </address>
+  <address category="2" id="12378158">
+    <lastname>
+      Biggs
+    </lastname>
+    <firstname>
+      Billy
+    </firstname>
+    <company>
+      Newbridge
+    </company>
+    <phone labelNumber="6">
+      613.820.0180
+    </phone>
+    <phone labelNumber="4">
+      wbiggs@csclub.uwaterloo.ca
+    </phone>
+    <city>
+      Ottawa
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+    <title>
+      Vektor Sigma
+    </title>
+  </address>
+  <address category="1" id="12378159">
+    <lastname>
+      Blackrose
+    </lastname>
+    <firstname>
+      Andre
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      andre@destructive.net
+    </phone>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+  </address>
+  <address category="2" id="12378160">
+    <lastname>
+      Borisov
+    </lastname>
+    <firstname>
+      Nikita
+    </firstname>
+    <phone labelNumber="6">
+      (613) 852-7148
+    </phone>
+    <phone labelNumber="4">
+      nborisov@csclub.uwaterloo.ca
+    </phone>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+    <title>
+      Smart Guy
+    </title>
+    <custom>
+      December 24th, 1977
+    </custom>
+    <custom>
+      Roam # for mobile phone
+    </custom>
+    <custom>
+      TO (416) 258-7626
+    </custom>
+    <custom>
+      KW (519) 748-7626
+    </custom>
+  </address>
+  <address category="2" id="12378161">
+    <lastname>
+      Brown
+    </lastname>
+    <firstname>
+      Amy R.
+    </firstname>
+    <phone labelNumber="6">
+      abrown@angoss.com
+    </phone>
+    <phone labelNumber="3" show="yes">
+      arbrown@iname.com
+    </phone>
+    <phone labelNumber="4">
+      arbrown@tor.dhs.org
+    </phone>
+    <phone labelNumber="4">
+      (306) 469-4873 parents
+    </phone>
+    <address>
+      103-130 Oriole Parkway
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      M5P 2G8
+    </zip>
+    <country>
+      Canada
+    </country>
+    <title>
+      Head Girl
+    </title>
+    <custom>
+      August 1st, 1975
+    </custom>
+    <note>
+      Bank account #: 0433(2)/8092-032
+
+
+    </note>
+  </address>
+  <address category="2" id="12378162">
+    <lastname>
+      Brown
+    </lastname>
+    <firstname>
+      Dave
+    </firstname>
+    <company>
+      NCR
+    </company>
+    <phone labelNumber="4" show="yes">
+      519-884-1710x5468
+    </phone>
+    <phone labelNumber="7">
+      519-745-0569
+    </phone>
+    <phone labelNumber="4">
+      db200005@ncr.com
+    </phone>
+    <phone labelNumber="1">
+      519.897.5103
+    </phone>
+    <phone labelNumber="0">
+      dagbrown@home.com
+    </phone>
+    <address>
+      347 Glasgow St
+    </address>
+    <city>
+      Kitchener
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      N2M 2M9
+    </zip>
+    <country>
+      Canada
+    </country>
+    <title>
+      Developer/Analyst
+    </title>
+  </address>
+  <address category="1" id="12378163">
+    <lastname>
+      Busa
+    </lastname>
+    <firstname>
+      Jon
+    </firstname>
+    <company>
+      PC Docs
+    </company>
+    <phone labelNumber="6" show="yes">
+      1-800-273-3800 x.280
+    </phone>
+    <phone labelNumber="4">
+      jonb@pcdocs.com
+    </phone>
+    <phone labelNumber="3">
+      (In the office, use 22280)
+    </phone>
+  </address>
+  <address category="2" id="12378164">
+    <lastname>
+      Cantley
+    </lastname>
+    <firstname>
+      Paula
+    </firstname>
+    <company>
+      PC Financial
+    </company>
+    <phone labelNumber="6" show="yes">
+      416.865.9050x6137
+    </phone>
+    <phone labelNumber="4">
+      416.489.1253
+    </phone>
+    <title>
+      Mortgage Consultant
+    </title>
+  </address>
+  <address category="0" id="12378165">
+    <lastname>
+      Cass
+    </lastname>
+    <firstname>
+      Brian
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      416.483.9666
+    </phone>
+  </address>
+  <address category="0" id="917655">
+    <lastname>
+      Chan
+    </lastname>
+    <firstname>
+      John
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      johnchan1978@rogers.com
+    </phone>
+  </address>
+  <address category="0" id="917658">
+    <lastname>
+      Com
+    </lastname>
+    <firstname>
+      Jamesb@Cryptologic.
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      jamesb@cryptologic.com
+    </phone>
+  </address>
+  <address category="0" id="917656">
+    <lastname>
+      Com
+    </lastname>
+    <firstname>
+      Jeffhalloran@Rogers.
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      jeffhalloran@rogers.com
+    </phone>
+  </address>
+  <address category="0" id="917657">
+    <lastname>
+      Com
+    </lastname>
+    <firstname>
+      TIPatterns@topica.
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      TIPatterns@topica.com
+    </phone>
+  </address>
+  <address category="1" id="12378166">
+    <lastname>
+      Cregg
+    </lastname>
+    <firstname>
+      Rosaleen
+    </firstname>
+    <company>
+      Sage Consultants
+    </company>
+    <phone labelNumber="4" show="yes">
+      (416) 365-7243 x.437
+    </phone>
+    <phone labelNumber="4">
+      (416) 488-5180
+    </phone>
+    <phone labelNumber="2">
+      (416) 860-6231
+    </phone>
+    <phone labelNumber="1">
+      rcregg@sageconsultants.com
+    </phone>
+    <phone labelNumber="0">
+      rcregg@sageconsultants.com
+    </phone>
+    <address>
+      23 Lascelles Blvd.
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      M4V 2B9
+    </zip>
+    <country>
+      Canada
+    </country>
+    <title>
+      That psycho person
+    </title>
+    <custom>
+      July 20th, 1956
+    </custom>
+  </address>
+  <address category="2" id="12378167">
+    <lastname>
+      Cullum
+    </lastname>
+    <firstname>
+      Aaron
+    </firstname>
+    <company>
+      JetFom Corporation
+    </company>
+    <phone labelNumber="6">
+      (416) 445-0790 x.8449
+    </phone>
+    <phone labelNumber="4">
+      (416) 595-5349
+    </phone>
+    <phone labelNumber="4">
+      acullum@jetform.com
+    </phone>
+    <phone labelNumber="1" show="yes">
+      acullum@jetform.com
+    </phone>
+    <address>
+      2-45 Kendal Avenue
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+    <title>
+      Core Warrior
+    </title>
+    <custom>
+      January 31st, 1973
+    </custom>
+  </address>
+  <address category="0" id="12378168">
+    <company>
+      Davisville Pet Clinic.
+    </company>
+    <phone labelNumber="6" show="yes">
+      416.486.5344
+    </phone>
+  </address>
+  <address category="2" id="12378169">
+    <lastname>
+      Deen
+    </lastname>
+    <firstname>
+      Jay
+    </firstname>
+    <company>
+      Solect
+    </company>
+    <phone labelNumber="3" show="yes">
+      (416) 304-6231
+    </phone>
+    <phone labelNumber="6">
+      (905) 882-4289
+    </phone>
+    <phone labelNumber="4">
+      jdeen@solect.com
+    </phone>
+    <phone labelNumber="1">
+      (0) 445-1952
+    </phone>
+    <phone labelNumber="0">
+      (416) 823-4653
+    </phone>
+    <address>
+      130 Morgan Ave
+    </address>
+    <city>
+      Thornhill
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      L3T 1R7
+    </zip>
+    <country>
+      Canada
+    </country>
+    <title>
+      Software Eng
+    </title>
+    <custom>
+      November 2nd, 1971
+    </custom>
+  </address>
+  <address category="0" id="917653">
+    <lastname>
+      Dietz
+    </lastname>
+    <firstname>
+      Lindsey
+    </firstname>
+    <phone labelNumber="1" show="yes">
+      (416) 489-1253
+    </phone>
+    <phone labelNumber="7">
+      lindsey@creatingdance.com
+    </phone>
+    <phone labelNumber="6">
+      (917) 885-8148
+    </phone>
+    <phone labelNumber="4">
+      (917) 833-5564
+    </phone>
+    <phone labelNumber="1">
+      (212) 753-0639
+    </phone>
+    <address>
+      951 2nd Ave. Apt 2
+    </address>
+    <city>
+      New York
+    </city>
+    <state>
+      New York
+    </state>
+    <zip>
+      10022
+    </zip>
+    <country>
+      America
+    </country>
+    <custom>
+      March 14th, 1976
+    </custom>
+  </address>
+  <address category="0" id="12378170">
+    <lastname>
+      Doctoroff
+    </lastname>
+    <firstname>
+      Randy
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      ran.doc@home.com
+    </phone>
+  </address>
+  <address category="0" id="12378171">
+    <lastname>
+      Drama workshop
+    </lastname>
+    <firstname>
+      (For Amy)
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      416 960 8009
+    </phone>
+  </address>
+  <address category="0" id="12378172">
+    <lastname>
+      Dunfield Club
+    </lastname>
+    <firstname>
+      The
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      (416) 485-0200
+    </phone>
+    <address>
+      110 Eglinton East
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+  </address>
+  <address category="2" id="12378173">
+    <lastname>
+      Ferguson
+    </lastname>
+    <firstname>
+      Douggie R.
+    </firstname>
+    <company>
+      ISS
+    </company>
+    <phone labelNumber="6" show="yes">
+      613.829.7198
+    </phone>
+    <phone labelNumber="4">
+      rommel@iss.net
+    </phone>
+    <phone labelNumber="3">
+      613.233.5728 (parents)
+    </phone>
+    <city>
+      Ottawa
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+    <title>
+      Software Engineer
+    </title>
+  </address>
+  <address category="5" id="12378174">
+    <lastname>
+      Field
+    </lastname>
+    <firstname>
+      Tatsinda
+    </firstname>
+    <company>
+      Canada Trust
+    </company>
+    <phone labelNumber="6" show="yes">
+      416.481.4423
+    </phone>
+    <phone labelNumber="4">
+      416.481.2389
+    </phone>
+    <address>
+      1955 Yonge Street
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      M4S 1Z6
+    </zip>
+    <country>
+      Canada
+    </country>
+  </address>
+  <address category="5" id="12378175">
+    <company>
+      Forest Hill Jewish Centre
+    </company>
+    <phone labelNumber="6" show="yes">
+      416.483.0883
+    </phone>
+  </address>
+  <address category="5" id="12378177">
+    <company>
+      Global Pet Foods
+    </company>
+    <phone labelNumber="6" show="yes">
+      416.487.6267
+    </phone>
+    <address>
+      2019 Yonge
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+  </address>
+  <address category="2" id="12378178">
+    <lastname>
+      Goldberg
+    </lastname>
+    <firstname>
+      Ian
+    </firstname>
+    <company>
+      University of California, Berkeley
+    </company>
+    <phone labelNumber="4" show="yes">
+      (510) 643-9435
+    </phone>
+    <phone labelNumber="4">
+      (510) 845-6932
+    </phone>
+    <phone labelNumber="4">
+      ian@cypherpunks.ca
+    </phone>
+    <phone labelNumber="1">
+      iang@cs.berkeley.edu
+    </phone>
+    <phone labelNumber="0">
+      n@ai
+    </phone>
+    <address>
+      1757 Oxford St. #9
+    </address>
+    <city>
+      Berkeley
+    </city>
+    <state>
+      CA
+    </state>
+    <zip>
+      94709
+    </zip>
+    <country>
+      USA
+    </country>
+    <title>
+      Graduate Student Researcher
+    </title>
+    <custom>
+      Mar 31st, 1973
+    </custom>
+  </address>
+  <address category="1" id="12378179">
+    <lastname>
+      Goldfarb
+    </lastname>
+    <firstname>
+      Stan
+    </firstname>
+    <company>
+      PCDocs
+    </company>
+    <phone labelNumber="6" show="yes">
+      1-800-262-1449 x.216
+    </phone>
+    <phone labelNumber="4">
+      stang@pcdocs.com
+    </phone>
+    <title>
+      Manager
+    </title>
+  </address>
+  <address category="5" id="12378180">
+    <company>
+      Goodlife Fitness
+    </company>
+    <phone labelNumber="6" show="yes">
+      416.979.1422
+    </phone>
+    <address>
+      21 McCaul
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+  </address>
+  <address category="2" id="12378219">
+    <lastname>
+      Grierson
+    </lastname>
+    <firstname>
+      Giles
+    </firstname>
+    <company>
+      Simon Fraser University
+    </company>
+    <phone labelNumber="6" show="yes">
+      1 604 254-4442
+    </phone>
+    <phone labelNumber="4">
+      giles@sfu.ca
+    </phone>
+    <phone labelNumber="3">
+      (416) 486-0378
+    </phone>
+    <title>
+      Shit Disturber
+    </title>
+  </address>
+  <address category="1" id="12378182">
+    <lastname>
+      Gunn
+    </lastname>
+    <firstname>
+      Douglas
+    </firstname>
+    <company>
+      PCDocs
+    </company>
+    <phone labelNumber="6" show="yes">
+      (416) 698-5936
+    </phone>
+    <phone labelNumber="4">
+      douglas_gunn@hotmail.com
+    </phone>
+    <address>
+      82 Joseph Duggan Road
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+    <title>
+      Senior Doppelganger
+    </title>
+    <custom>
+      July 22nd, 1964
+    </custom>
+    <note>
+      2 streets West of Woodbine,
+just South of Queen.
+    </note>
+  </address>
+  <address category="1" id="12378183">
+    <lastname>
+      Hamilton
+    </lastname>
+    <firstname>
+      Doug
+    </firstname>
+    <company>
+      PC Docs
+    </company>
+    <phone labelNumber="6" show="yes">
+      (416) 488-9048
+    </phone>
+    <phone labelNumber="4">
+      dough2@pcdocs.com
+    </phone>
+    <address>
+      221 Balliol, Apt 413
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      M4S 1C8
+    </zip>
+    <country>
+      Canada
+    </country>
+    <title>
+      Geek
+    </title>
+    <custom>
+      March 14th, 1960
+    </custom>
+  </address>
+  <address category="2" id="12378184">
+    <lastname>
+      Hamilton
+    </lastname>
+    <firstname>
+      Drew
+    </firstname>
+    <company>
+      Investment Challenge
+    </company>
+    <phone labelNumber="6" show="yes">
+      (416) 487-3800 x.352
+    </phone>
+    <phone labelNumber="4">
+      drew@investmentchallenge.com
+    </phone>
+    <address>
+      164 Eglinton Ave E. 4th Floor
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      M4P 1G4
+    </zip>
+    <country>
+      Canada
+    </country>
+    <title>
+      Internet Systems Engineer
+    </title>
+    <note>
+      hello
+    </note>
+  </address>
+  <address category="2" id="12378185">
+    <lastname>
+      Hehner
+    </lastname>
+    <firstname>
+      Josh
+    </firstname>
+    <phone labelNumber="6">
+      (416) 929-0808
+    </phone>
+    <phone labelNumber="4" show="yes">
+      josh@tao.ca
+    </phone>
+    <address>
+      217 St. George St. #48
+    </address>
+    <zip>
+      M5R 3S7
+    </zip>
+    <title>
+      Supreme Ruler of the Uinverse
+    </title>
+    <custom>
+      June 13th, 1974
+    </custom>
+  </address>
+  <address category="2" id="12378186">
+    <lastname>
+      Heti
+    </lastname>
+    <firstname>
+      Dr. Michael
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      416.485.4774
+    </phone>
+    <phone labelNumber="4">
+      416.787.1571
+    </phone>
+    <phone labelNumber="2">
+      416.487.2823
+    </phone>
+    <address>
+      215-1849 Yonge Street
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      M4S 1Y2
+    </zip>
+    <country>
+      Canada
+    </country>
+    <title>
+      Dentist
+    </title>
+  </address>
+  <address category="2" id="12378187">
+    <lastname>
+      Hughes
+    </lastname>
+    <firstname>
+      Craig
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      (416) 703-5568
+    </phone>
+    <phone labelNumber="6">
+      (416) 504-4274
+    </phone>
+    <phone labelNumber="4">
+      rexx@pobox.com
+    </phone>
+    <phone labelNumber="2">
+      (0) 812-9286
+    </phone>
+    <title>
+      Coder
+    </title>
+    <custom>
+      July 10, 1969
+    </custom>
+  </address>
+  <address category="0" id="12378188">
+    <lastname>
+      Hugstein
+    </lastname>
+    <firstname>
+      Karen
+    </firstname>
+    <company>
+      Algorithmics Inc.
+    </company>
+    <phone labelNumber="6" show="yes">
+      karenh@algorithmics.com
+    </phone>
+    <title>
+      JohnnyMac's SO
+    </title>
+  </address>
+  <address category="5" id="12378189">
+    <company>
+      ING Direct
+    </company>
+    <phone labelNumber="6" show="yes">
+      1.800.464.3473
+    </phone>
+  </address>
+  <address category="5" id="12378190">
+    <lastname>
+      Langley
+    </lastname>
+    <firstname>
+      Holly
+    </firstname>
+    <company>
+      IPC
+    </company>
+    <phone labelNumber="6">
+      (416) 695-2222
+    </phone>
+    <phone labelNumber="4">
+      (416) 695-2225
+    </phone>
+    <phone labelNumber="4" show="yes">
+      hlangley@ipcc.org
+    </phone>
+    <title>
+      Financial Consultant
+    </title>
+  </address>
+  <address category="2" id="12378191">
+    <lastname>
+      Langley
+    </lastname>
+    <firstname>
+      Sean
+    </firstname>
+    <company>
+      Corel
+    </company>
+    <phone labelNumber="4" show="yes">
+      (613) 728-0826 x.5336
+    </phone>
+    <phone labelNumber="4">
+      (613) 237-5728
+    </phone>
+    <phone labelNumber="4">
+      seanl@corel.ca
+    </phone>
+    <phone labelNumber="1">
+      slangley@nuclear.biodome.org
+    </phone>
+    <phone labelNumber="0">
+      hemorage@sympatico.ca
+    </phone>
+    <city>
+      Ottawa
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+  </address>
+  <address category="2" id="12378192">
+    <lastname>
+      Lawrence
+    </lastname>
+    <firstname>
+      Colin
+    </firstname>
+    <phone labelNumber="6">
+      colin@interlog.com
+    </phone>
+    <phone labelNumber="4" show="yes">
+      416.708.1228
+    </phone>
+    <phone labelNumber="3">
+      416.658.0736 (gf)
+    </phone>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+  </address>
+  <address category="0" id="917660">
+    <firstname>
+      Lonetwin
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      lonetwin@yahoo.com
+    </phone>
+  </address>
+  <address category="1" id="12378193">
+    <lastname>
+      Lutz
+    </lastname>
+    <firstname>
+      Jeremy
+    </firstname>
+    <company>
+      PCDocs
+    </company>
+    <phone labelNumber="6" show="yes">
+      (0) 497-7700 x.1320
+    </phone>
+    <phone labelNumber="3">
+      (905) 607-0956
+    </phone>
+    <phone labelNumber="4">
+      j_lutz89@hotmail.com
+    </phone>
+    <phone labelNumber="1">
+      (905) 569-6539
+    </phone>
+    <address>
+      2936 Harvey Crescent
+    </address>
+    <city>
+      Mississauga
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+    <title>
+      Jedi Night
+    </title>
+    <custom>
+      June 7th, 1962
+    </custom>
+  </address>
+  <address category="0" id="12378239">
+    <lastname>
+      MacMillan
+    </lastname>
+    <firstname>
+      John
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      john@weirdways.com
+    </phone>
+  </address>
+  <address category="0" id="12378194">
+    <lastname>
+      Marchant
+    </lastname>
+    <firstname>
+      Jason
+    </firstname>
+    <phone labelNumber="1" show="yes">
+      (416) 489-1253
+    </phone>
+    <phone labelNumber="7">
+      jason@creatingdance.com
+    </phone>
+    <phone labelNumber="6">
+      (917) 885-8148
+    </phone>
+    <phone labelNumber="4">
+      (917) 833-5564
+    </phone>
+    <phone labelNumber="1">
+      (212) 753-0639
+    </phone>
+    <address>
+      951 2nd Ave. Apt 2
+    </address>
+    <city>
+      New York
+    </city>
+    <state>
+      New York
+    </state>
+    <zip>
+      10022
+    </zip>
+    <country>
+      America
+    </country>
+    <custom>
+      October 15th, 1972
+    </custom>
+  </address>
+  <address category="2" id="12378195">
+    <lastname>
+      McAlister
+    </lastname>
+    <firstname>
+      Carrie
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      (416) 604-9687
+    </phone>
+    <phone labelNumber="4">
+      zipecrap@hotmail.com
+    </phone>
+    <address>
+      388A Keele Street
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      M6P 2K8
+    </zip>
+    <country>
+      Canada
+    </country>
+    <custom>
+      July 5th, 1974
+    </custom>
+  </address>
+  <address category="2" id="12378197">
+    <lastname>
+      Mehat
+    </lastname>
+    <firstname>
+      San
+    </firstname>
+    <company>
+      Corel
+    </company>
+    <phone labelNumber="6" show="yes">
+      (613) 788-6000 x.6156
+    </phone>
+    <phone labelNumber="4">
+      (613) 237-4335
+    </phone>
+    <phone labelNumber="4">
+      sanm@corel.com
+    </phone>
+    <city>
+      Ottawa
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+  </address>
+  <address category="2" id="12378199">
+    <lastname>
+      MlCallum
+    </lastname>
+    <firstname>
+      Andrew
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      979-5000 x.3317
+    </phone>
+    <phone labelNumber="4">
+      mentalfloss@techno.ca
+    </phone>
+    <title>
+      Mental Floss
+    </title>
+  </address>
+  <address category="0" id="12378200">
+    <lastname>
+      Mum and Dad
+    </lastname>
+    <phone labelNumber="6" show="yes">
+      506-773-3879
+    </phone>
+    <phone labelNumber="4">
+      506-773-4078
+    </phone>
+    <address>
+      483 Ironmen Cresc
+    </address>
+    <city>
+      Miramichi
+    </city>
+    <state>
+      NB
+    </state>
+    <zip>
+      E1N 4A6
+    </zip>
+    <country>
+      Canada
+    </country>
+  </address>
+  <address category="0" id="12378201">
+    <lastname>
+      Myrden
+    </lastname>
+    <firstname>
+      Scott
+    </firstname>
+    <company>
+      Chapters
+    </company>
+    <phone labelNumber="6" show="yes">
+      smyrden@chapters.ca
+    </phone>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+  </address>
+  <address category="2" id="12378202">
+    <lastname>
+      Neugebaur
+    </lastname>
+    <firstname>
+      Mike
+    </firstname>
+    <phone labelNumber="6">
+      (613) 727-8679
+    </phone>
+    <phone labelNumber="4">
+      bio@iss.net
+    </phone>
+    <city>
+      Ottawa
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+    <title>
+      BioH
+    </title>
+  </address>
+  <address category="2" id="12378203">
+    <lastname>
+      Norman
+    </lastname>
+    <firstname>
+      Christina
+    </firstname>
+    <phone labelNumber="6">
+      tina@ativan.netdesign.net
+    </phone>
+    <phone labelNumber="4" show="yes">
+      (0) 596-2476
+    </phone>
+  </address>
+  <address category="0" id="12378204">
+    <lastname>
+      Oliver
+    </lastname>
+    <firstname>
+      Bryan
+    </firstname>
+    <phone labelNumber="6">
+      (416) 256-1419 x.372.
+    </phone>
+    <phone labelNumber="4" show="yes">
+      boliver@servicesoft.com
+    </phone>
+  </address>
+  <address category="0" id="12378205">
+    <lastname>
+      PalmPilot Accessories
+    </lastname>
+    <company>
+      U.S. Robotics
+    </company>
+    <phone labelNumber="6" show="yes">
+      800-881-7256
+    </phone>
+    <phone labelNumber="4">
+      408-848-5784
+    </phone>
+    <note>
+      Call this number to get accessories, useful add-on software and replacement parts for your PalmPilot.
+
+Outside the U.S. and Canada, please refer to the list below:
+
+U.K. :  0800 22 52 51 (toll free)
+
+Other  Europe, Middle East, Africa: 
+33 (0) 3 20 19 19 39
+
+Australia, New Zealand: 
+(61) 3 9482 6557
+
+Elsewhere:  (01) 408 848 5604
+
+    </note>
+  </address>
+  <address category="0" id="12378133">
+    <lastname>
+      Prescod
+    </lastname>
+    <firstname>
+      Paul
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      paulp@prescod.net
+    </phone>
+  </address>
+  <address category="1" id="12378207">
+    <lastname>
+      Ridler
+    </lastname>
+    <firstname>
+      Barranger
+    </firstname>
+    <company>
+      Screaming Solutions
+    </company>
+    <phone labelNumber="6" show="yes">
+      416.408.1395 ext.243
+    </phone>
+    <phone labelNumber="7">
+      416.698.0818
+    </phone>
+    <phone labelNumber="4">
+      Barranger Ridler
+    </phone>
+    <phone labelNumber="1">
+      647.222.0818
+    </phone>
+  </address>
+  <address category="0" id="12378208">
+    <lastname>
+      Rodrigues
+    </lastname>
+    <firstname>
+      Philip
+    </firstname>
+    <company>
+      Training Associates
+    </company>
+    <phone labelNumber="6" show="yes">
+      416 463-0052
+    </phone>
+    <phone labelNumber="4">
+      philly@interlog.com
+    </phone>
+  </address>
+  <address category="0" id="12378209">
+    <lastname>
+      Rose
+    </lastname>
+    <firstname>
+      Avi
+    </firstname>
+    <company>
+      York University
+    </company>
+    <phone labelNumber="6" show="yes">
+      (416) 736-5297
+    </phone>
+    <phone labelNumber="4">
+      (416) 531-2968
+    </phone>
+    <phone labelNumber="2">
+      (416) 736-5633
+    </phone>
+    <phone labelNumber="1">
+      arose@yorku.ca
+    </phone>
+    <address>
+      57 Wychcrest Ave.
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      M6G-3X8
+    </zip>
+    <country>
+      Canada
+    </country>
+  </address>
+  <address category="1" id="12378210">
+    <lastname>
+      Roth
+    </lastname>
+    <firstname>
+      Lisa
+    </firstname>
+    <company>
+      PC DOCS Group International Inc.
+    </company>
+    <phone labelNumber="6" show="yes">
+      495-6599 x-1314
+    </phone>
+    <phone labelNumber="7">
+      223-8188
+    </phone>
+    <phone labelNumber="4">
+      lsrth@sympatico.ca
+    </phone>
+    <phone labelNumber="1">
+      605-8958
+    </phone>
+    <title>
+      PC-LAN Administrator
+    </title>
+  </address>
+  <address category="0" id="917654">
+    <lastname>
+      Salters
+    </lastname>
+    <firstname>
+      Michiel
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      michiel.salters@cmg.nl
+    </phone>
+  </address>
+  <address category="0" id="12378211">
+    <lastname>
+      San Franceso's
+    </lastname>
+    <phone labelNumber="6" show="yes">
+      485-VEAL
+    </phone>
+  </address>
+  <address category="1" id="12378212">
+    <lastname>
+      Sanci
+    </lastname>
+    <firstname>
+      Sal
+    </firstname>
+    <company>
+      Pivotal
+    </company>
+    <phone labelNumber="6" show="yes">
+      ssanci@pivotal.com
+    </phone>
+    <city>
+      Vancouver
+    </city>
+    <state>
+      British Colombia
+    </state>
+    <country>
+      Canada
+    </country>
+    <title>
+      Neuromancer
+    </title>
+    <custom>
+      August 31st, 1958
+    </custom>
+  </address>
+  <address category="2" id="12378213">
+    <lastname>
+      Scroccaro
+    </lastname>
+    <firstname>
+      Tracy
+    </firstname>
+    <company>
+      Quadravision
+    </company>
+    <phone labelNumber="6" show="yes">
+      960 8400 x.304
+    </phone>
+    <phone labelNumber="4">
+      760-7382
+    </phone>
+    <phone labelNumber="4">
+      tracy.scroccaro@bowne.com
+    </phone>
+    <address>
+      290 South Kingsway Apt. 5
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      M6S 3TS
+    </zip>
+    <country>
+      Canada
+    </country>
+    <title>
+      Babe
+    </title>
+    <custom>
+      April 29th, 1970
+    </custom>
+  </address>
+  <address category="1" id="12378254">
+    <lastname>
+      Sears
+    </lastname>
+    <firstname>
+      Herb
+    </firstname>
+    <company>
+      Sona Inc.
+    </company>
+    <phone labelNumber="4" show="yes">
+      416.866.4100
+    </phone>
+    <phone labelNumber="3">
+      416.834.3195
+    </phone>
+    <phone labelNumber="1">
+      905.508.0372
+    </phone>
+    <phone labelNumber="7">
+      hsears@sympatico.ca
+    </phone>
+    <phone labelNumber="0">
+      herb@SonaInnovations.com
+    </phone>
+    <address>
+      44 Victoria St.
+Suite 400
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      ON
+    </state>
+    <zip>
+      M5C 1Y2
+    </zip>
+    <title>
+      VP Technology
+    </title>
+  </address>
+  <address category="0" id="12378214">
+    <lastname>
+      Sells
+    </lastname>
+    <firstname>
+      Martin
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      678 443 6109
+    </phone>
+    <phone labelNumber="4">
+      770 964 6941
+    </phone>
+    <phone labelNumber="4">
+      msells@iss.net
+    </phone>
+    <city>
+      Atlanta
+    </city>
+  </address>
+  <address category="0" id="12378215">
+    <lastname>
+      Sorokin
+    </lastname>
+    <firstname>
+      Jason
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      jsorokin@idirect.com
+    </phone>
+  </address>
+  <address category="0" id="12378216">
+    <lastname>
+      Sparling
+    </lastname>
+    <firstname>
+      Craig
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      416.485.7261
+    </phone>
+    <phone labelNumber="4">
+      905.709.1100 x.35
+    </phone>
+    <phone labelNumber="4">
+      csparling@cowleyandassociates.com
+    </phone>
+    <phone labelNumber="2">
+      csparling@hotmail.com
+    </phone>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+  </address>
+  <address category="0" id="12378117">
+    <lastname>
+      Stevens
+    </lastname>
+    <firstname>
+      Ian
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      ians@sonainnovations.com
+    </phone>
+  </address>
+  <address category="0" id="12378217">
+    <lastname>
+      Studios
+    </lastname>
+    <firstname>
+      Stainless
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      504-1433
+    </phone>
+    <address>
+      609 Queen West
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      M5V 2B7
+    </zip>
+    <country>
+      Canada
+    </country>
+  </address>
+  <address category="2" id="12378218">
+    <lastname>
+      Suek
+    </lastname>
+    <firstname>
+      Janet
+    </firstname>
+    <company>
+      Brightspark
+    </company>
+    <phone labelNumber="6">
+      (416) 488-1999 x.232
+    </phone>
+    <phone labelNumber="4" show="yes">
+      (416) 363-7986
+    </phone>
+    <phone labelNumber="4">
+      jsuek@bspark.com
+    </phone>
+    <address>
+      310 Lombard St.
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+    <title>
+      QA Something
+    </title>
+    <custom>
+      June 28th, 1975
+    </custom>
+  </address>
+  <address category="0" id="3">
+    <lastname>
+      Technical Support
+    </lastname>
+    <company>
+      Palm Computing, Inc.
+    </company>
+    <phone labelNumber="6" show="yes">
+      847-262-PALM (7256) (US)
+    </phone>
+    <phone labelNumber="3">
+      support@palm.com
+    </phone>
+    <phone labelNumber="0">
+      Int'l: Contact local support number
+    </phone>
+    <phone labelNumber="4">
+      Website: www.palm.com
+    </phone>
+    <note>
+      Outside the U.S.,  please call one of the Tech Support Phone numbers listed on the Worldwide Customer Support Information card. 
+
+For other technical support information, please visit the web site www.palm.com.
+    </note>
+  </address>
+  <address category="0" id="12378220">
+    <lastname>
+      Technical Support
+    </lastname>
+    <company>
+      U.S. Robotics
+    </company>
+    <phone labelNumber="6" show="yes">
+      847-676-1441
+    </phone>
+    <phone labelNumber="3">
+      847-676-7323
+    </phone>
+    <phone labelNumber="4">
+      support@palm.usr.com
+    </phone>
+    <phone labelNumber="2">
+      http://www.usr.com/palm
+    </phone>
+    <address>
+      1565 Charleston Road
+    </address>
+    <city>
+      Mountain View
+    </city>
+    <state>
+      CA
+    </state>
+    <zip>
+      94043
+    </zip>
+    <country>
+      U.S.A.
+    </country>
+    <note>
+      
+For Technical Support outside of the U.S. and Canada, please contact your local U.S. Robotics representative.
+
+    </note>
+  </address>
+  <address category="2" id="12378221">
+    <lastname>
+      Theysmeyer
+    </lastname>
+    <firstname>
+      Jef
+    </firstname>
+    <company>
+      JetForm
+    </company>
+    <phone labelNumber="6" show="yes">
+      x.8016
+    </phone>
+    <phone labelNumber="4">
+      (416) 482-5883
+    </phone>
+    <phone labelNumber="4">
+      jeffwith1f@hotmail.com
+    </phone>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+    <title>
+      QA Engineer
+    </title>
+  </address>
+  <address category="0" id="12378222">
+    <lastname>
+      Trudeau
+    </lastname>
+    <firstname>
+      Christopher
+    </firstname>
+    <company>
+      Nitido Inc
+    </company>
+    <phone labelNumber="6" show="yes">
+      ctrudeau@nitido.com
+    </phone>
+    <phone labelNumber="4">
+      (416) 892-8736
+    </phone>
+    <address>
+      10 Queen's Quay West
+Suite 702
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      M5J 2R9
+    </zip>
+    <country>
+      Canada
+    </country>
+    <note>
+      AIM: nitidoChris
+
+    </note>
+  </address>
+  <address category="1" id="12378223">
+    <lastname>
+      Turner
+    </lastname>
+    <firstname>
+      John
+    </firstname>
+    <company>
+      PCDocs
+    </company>
+    <phone labelNumber="6" show="yes">
+      497-7700 x.1306
+    </phone>
+    <phone labelNumber="7">
+      (905) 336-5031
+    </phone>
+    <phone labelNumber="4">
+      johnt@cgocable.net
+    </phone>
+    <phone labelNumber="1">
+      (905) 630-3102
+    </phone>
+    <address>
+      3200 Maderna rd.
+    </address>
+    <city>
+      Burlington
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      L7M 2W4
+    </zip>
+    <country>
+      Canada
+    </country>
+    <custom>
+      March19th, 1959
+    </custom>
+  </address>
+  <address category="1" id="12378224">
+    <lastname>
+      Vanden Hoven
+    </lastname>
+    <firstname>
+      Francis
+    </firstname>
+    <company>
+      Sage Information Consultants
+    </company>
+    <phone labelNumber="6" show="yes">
+      860-6226
+    </phone>
+    <phone labelNumber="3">
+      860-6231
+    </phone>
+    <phone labelNumber="4">
+      francis@sageconsultants.com
+    </phone>
+    <phone labelNumber="2">
+      520-5855
+    </phone>
+    <address>
+      130 King Street West, suite 1800
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      M5X 1E3
+    </zip>
+    <country>
+      Canada
+    </country>
+    <title>
+      Senior Associate
+    </title>
+  </address>
+  <address category="2" id="12378225">
+    <lastname>
+      White
+    </lastname>
+    <firstname>
+      Steve-O
+    </firstname>
+    <company>
+      Discreet Logic
+    </company>
+    <phone labelNumber="6">
+      (514) 954-7306
+    </phone>
+    <phone labelNumber="4">
+      (514) 842-4641
+    </phone>
+    <phone labelNumber="4" show="yes">
+      swhite@discreet.com
+    </phone>
+    <address>
+      4136 hotel-de-ville
+    </address>
+    <city>
+      Montreal
+    </city>
+    <state>
+      Quebec
+    </state>
+    <zip>
+      H2W 2H1
+    </zip>
+    <country>
+      Canada
+    </country>
+    <title>
+      Grand Poobah of the Royal Order of Waterbuffalos
+    </title>
+    <custom>
+      January 31st, 1969
+    </custom>
+  </address>
+  <address category="2" id="12378226">
+    <lastname>
+      Wick
+    </lastname>
+    <firstname>
+      Dale
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      dalew@truespectra.com
+    </phone>
+    <address>
+      206 burnett ave
+    </address>
+    <city>
+      North york
+    </city>
+    <state>
+      M2n 1v8
+    </state>
+    <title>
+      Friend
+    </title>
+  </address>
+  <address category="2" id="12378227">
+    <lastname>
+      Winton
+    </lastname>
+    <firstname>
+      Andy
+    </firstname>
+    <company>
+      Winton Stevens Partners
+    </company>
+    <phone labelNumber="7" show="yes">
+      (416) 324-9602
+    </phone>
+    <phone labelNumber="4">
+      (416) 962-0880
+    </phone>
+    <phone labelNumber="2">
+      (416) 962-6886
+    </phone>
+    <phone labelNumber="1">
+      awinton@ netcom.ca
+    </phone>
+    <phone labelNumber="0">
+      (416) 878-0880
+    </phone>
+    <address>
+      63 St Clair Ave W. Apt.803
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      M4V 2Y9
+    </zip>
+    <country>
+      Canada
+    </country>
+    <title>
+      Dad
+    </title>
+    <custom>
+      January 6th, 1943
+    </custom>
+  </address>
+  <address category="2" id="12378228">
+    <lastname>
+      Winton
+    </lastname>
+    <firstname>
+      Blake
+    </firstname>
+    <company>
+      Sona Innovations
+    </company>
+    <phone labelNumber="7">
+      416.866.4100 x.236
+    </phone>
+    <phone labelNumber="4" show="yes">
+      416.481.0474
+    </phone>
+    <phone labelNumber="2">
+      416.481.2790
+    </phone>
+    <phone labelNumber="1">
+      bwinton@tor.dhs.org
+    </phone>
+    <phone labelNumber="0">
+      416.992.8649
+    </phone>
+    <address>
+      1006-1901 Yonge Street
+    </address>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <zip>
+      M4S 1Y6
+    </zip>
+    <country>
+      Canada
+    </country>
+    <title>
+      Entry code 276.
+    </title>
+    <custom>
+      March 5th, 1973
+    </custom>
+  </address>
+  <address category="0" id="12378253">
+    <lastname>
+      Winton
+    </lastname>
+    <firstname>
+      Dorothy
+    </firstname>
+    <phone labelNumber="6" show="yes">
+      dwinton@attcanada.ca
+    </phone>
+  </address>
+  <address category="0" id="12378229">
+    <lastname>
+      Winton
+    </lastname>
+    <firstname>
+      Morgan
+    </firstname>
+    <company>
+      PC Financial
+    </company>
+    <phone labelNumber="6" show="yes">
+      morgan.winton@preschoicefinancial.com
+    </phone>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+    <custom>
+      December 27th, 1975
+    </custom>
+  </address>
+  <address category="0" id="12378230">
+    <lastname>
+      Wood
+    </lastname>
+    <firstname>
+      Mother
+    </firstname>
+    <company>
+      Good
+    </company>
+    <phone labelNumber="6">
+      occasionally
+    </phone>
+    <phone labelNumber="4">
+      416.483.2832
+    </phone>
+    <phone labelNumber="4" show="yes">
+      suewood@home.com
+    </phone>
+    <address>
+      149 Old Orchard Grove
+    </address>
+    <title>
+      The mother
+    </title>
+  </address>
+  <address category="2" id="12378231">
+    <lastname>
+      Wood
+    </lastname>
+    <firstname>
+      Scott &quot;Woody&quot;
+    </firstname>
+    <company>
+      Screaming Solutions
+    </company>
+    <phone labelNumber="6">
+      416.483.2832
+    </phone>
+    <phone labelNumber="1">
+      416.488.7281
+    </phone>
+    <phone labelNumber="4">
+      eswood@hotmail.com
+    </phone>
+    <phone labelNumber="1" show="yes">
+      416.323.1649
+    </phone>
+    <city>
+      Toronto
+    </city>
+    <state>
+      Ontario
+    </state>
+    <country>
+      Canada
+    </country>
+    <note>
+      Bank account #: 9812/706-8336
+
+    </note>
+  </address>
+</palm-address-database>

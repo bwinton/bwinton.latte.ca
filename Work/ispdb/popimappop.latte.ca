@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clientConfig>
+  <emailProvider id="popimappop.latte.ca">
+    <domain>popimappop.latte.ca</domain>
+    <displayName>latte.ca with a pop, an imap, and a pop server</displayName>
+    <displayShortName>latte.ca</displayShortName>
+    <incomingServer type="pop3">
+      <hostname>pop.latte.ca</hostname>
+      <port>995</port>
+      <socketType>SSL</socketType>
+      <username>%EMAILLOCALPART%</username>
+      <authentication>plain</authentication>
+      <pop3>
+        <leaveMessagesOnServer>true</leaveMessagesOnServer>
+        <daysToLeaveMessagesOnServer>-1</daysToLeaveMessagesOnServer>
+      </pop3>
+    </incomingServer>
+    <incomingServer type="imap">
+       <hostname>imap.latte.ca</hostname>
+       <port>993</port>
+       <socketType>SSL</socketType>
+       <username>%EMAILADDRESS%</username>
+       <authentication>plain</authentication>
+    </incomingServer>
+    <incomingServer type="pop3">
+      <hostname>pop-2.latte.ca</hostname>
+      <port>9952</port>
+      <socketType>SSL</socketType>
+      <username>%EMAILLOCALPART%</username>
+      <authentication>plain</authentication>
+      <pop3>
+        <leaveMessagesOnServer>true</leaveMessagesOnServer>
+        <daysToLeaveMessagesOnServer>-1</daysToLeaveMessagesOnServer>
+      </pop3>
+    </incomingServer>
+    <outgoingServer type="smtp">
+      <hostname>smtp.latte.ca</hostname>
+      <port>587</port>
+      <socketType>STARTTLS</socketType>
+      <username>%EMAILLOCALPART%</username>
+      <authentication>plain</authentication>
+      <addThisServer>true</addThisServer>
+      <useGlobalPreferredServer>false</useGlobalPreferredServer>
+    </outgoingServer>
+  </emailProvider>
+</clientConfig>

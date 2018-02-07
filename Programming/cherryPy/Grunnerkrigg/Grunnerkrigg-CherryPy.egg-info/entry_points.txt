@@ -1,0 +1,3 @@
+[cherrypy.app]
+Grunnerkrigg = Grunnerkrigg:Index
+

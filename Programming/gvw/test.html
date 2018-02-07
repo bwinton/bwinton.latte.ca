@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Testing.</title>
+  <style>
+    .desc {display: none;}
+    .full {display: none;}
+  </style>
+</head>
+<body>
+<pre class="folding">
+import sys, re
+'''Find all duplicated words in an input file.'''
+# 4 Finally, define a pattern that will match duplicated words.
+pattern = r'(\b\w+\b)\s+\1'
+# /4
+
+# 2 Process lines of text with a regular expression using the looping pattern we've seen before.
+def process(lines):
+  result = set()
+  for the_line in lines:
+    for match in re.findall(pattern, the_line):
+      # 3 Extract data from matches. This is specific to *this* problem, and has to sync with the pattern.
+      word = match.split()[0]
+      result.add(word)
+      # /3
+  return result
+# /2
+
+if __name__ == '__main__':
+  # 1 Write the main body of the program first using the read/process/write pattern we've seen before.
+  lines = open(sys.argv[1], 'r').readlines()
+  results = process(lines)
+  for r in results:
+    print r
+# /1
+</pre>
+</body>
+<script type="text/javascript"
+ src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="gvw.js"></script>
+</html>

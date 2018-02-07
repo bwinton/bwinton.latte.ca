@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleIdentifier</key>
+	<string>ca.latte.crosswords</string>
+	<key>name</key>
+	<string>Crosswords</string>
+	<key>version</key>
+	<string>0.1</string>
+	<key>location</key>
+	<string>http://bwinton.latte.ca/Programming/crosswords/Crosswords.zip</string>
+	<key>size</key>
+	<string>1958503</string>
+	<key>url</key>
+	<string>http://iphonedoom.googlecode.com/</string>
+	<key>description</key>
+	<string>Doom for the iPhone.</string>
+	<key>scripts</key>
+	<dict>
+		<key>install</key>
+		<array>
+			<array>
+				<string>CopyPath</string>
+				<string>doom1.wad</string>
+				<string>/var/root/Media/Doom/doom1.wad</string>
+			</array>
+		</array>
+		<key>uninstall</key>
+		<array>
+			<array>
+				<string>RemovePath</string>
+				<string>/Applications/Doom.app</string>
+			</array>
+			<array>
+				<string>RemovePath</string>
+				<string>/var/root/Media/Doom/doom1.wad</string>
+			</array>
+		</array>
+	</dict>
+</dict>
+</plist>

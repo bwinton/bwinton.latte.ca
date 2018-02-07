@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+ <head>
+  <title>Blog-o!</title>
+  <link rel="stylesheet" href="/static/font/font.css" type="text/css"
+media="screen" />
+  <link rel="alternate" type="application/atom+xml" title="Atom"
+    href="http://weblog.latte.ca/index.xml" />
+  <link rel="stylesheet" href="/static/pygments.css" type="text/css" />
+  <link rel="apple-touch-icon" href="http://weblog.latte.ca/images/iPhoneMug.png"/>
+  <link rel="stylesheet/less" type="text/css" href="/static/blog.less">
+
+  <script src="/static/js/less.js" type="text/javascript"></script>
+  <meta name="viewport" content="initial-scale=1.0" />
+  <script type="text/javascript"
+          src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $("li.expand").click(function(e) {
+        if (e.target != this)
+          return;
+        e.preventDefault();
+        $(this).children("ul").slideToggle();
+        $(this).toggleClass("expanded collapsed");
+      });
+      $("a.f1").click(function(e) {
+        if (navigator &&
+            navigator.mozilla &&
+            navigator.mozilla.labs &&
+            navigator.mozilla.labs.share) {
+          e.preventDefault();
+          navigator.mozilla.labs.share({
+            "title":
+$(this).parent().siblings(".storyTitle").children("a").text(),
+            "url": $(this).siblings("a").attr("href")
+          });
+        }
+      });
+    });
+  </script>
+ </head>
+ <body>
+
+  <div class="title">
+
+    Blog-o!
+    <div class="description">Notes from latte.ca</div>
+    <div class="breadcrumbs"><a
+href="http://weblog.latte.ca/blake">blake</a> :: <a
+href="http://weblog.latte.ca/blake/tech">tech</a> :: <a
+href="http://weblog.latte.ca/blake/tech/thunderbird">thunderbird</a> ::
+GetAnAccountUiUpdate.md</div>
+  </div>
+
+  <div class="content">
+<div class="blosxomFirstDayDiv">
+<div class="blosxomDate">Thu, 31 Mar 2011</div>
+<div class="story">
+<div class="xfolkentry">
+<div class="storyTitle"><a class="taggedlink" name="GetAnAccountUiUpdate"
+href="http://weblog.latte.ca/blake/tech/thunderbird/GetAnAccountUiUpdate.html"><b>New
+GetAnAccount UI.</b></a>
+<div class="storyCategory">[/]</div></div>
+<div class="storyBody"><p>Since <a
+href="http://mozillalabs.com/messaging/2010/12/14/get-an-account/">we
+released</a> the
+   <a
+href="https://addons.mozilla.org/en-US/thunderbird/addon/get-an-account/">GetAnAccount
+addon</a>, we’ve
+   had a lot of feedback.  Many of the people who commented were looking
+for
+   the option of getting an ad-supported account instead of paying for
+email
+   access.  We were always planning on integrating ad-supported services,
+as
+   soon as we could, but of course, doing this required a redesign.
+
+</p>
+<p>One important note before we get to the good stuff: I’ve used Google and
+   GMail soley as an example of a well-known ad-supported email provider
+here.
+   We may or may not be partnering with them, and you should not take these
+   screenshots as proof of our intentions one way or another.
+</p>
+<p>As you can see from this first mockup, the initial view makes it much
+more
+   obvious that you don’t need to create a new account just to use
+   Thunderbird.
+</p>
+<p><center><a href="http://weblog.latte.ca/images/blake/GetAnAccount/01-Initial_View.svg"><img
+   src="http://weblog.latte.ca/images/blake/GetAnAccount/01-Initial_View.svg"
+   title="Initial View" alt="Initial View"
+   width="50%" align="center"/></a></center>
+</p>
+<p>If you click in the bottom half, it expands up to make it more obvious
+that
+   that’s what you want to do, and to allow us to display more information
+   (although we don’t have any extra information to display there yet.
+</p>
+<p><center><a href="http://weblog.latte.ca/images/blake/GetAnAccount/02-Click_on_Bottom.svg"><img
+   src="http://weblog.latte.ca/images/blake/GetAnAccount/02-Click_on_Bottom.svg"
+   title="Click on Bottom" alt="Existing Address"
+   width="50%" align="center"/></a></center>
+</p>
+<p>On the other hand, if you click on the top, we do have more information
+   that you probably want to see before continuing on.
+</p>
+<p><center><a href="http://weblog.latte.ca/images/blake/GetAnAccount/03-Click_on_Top.svg"><img
+   src="http://weblog.latte.ca/images/blake/GetAnAccount/03-Click_on_Top.svg"
+   title="Click on Top" alt="New Address"
+   width="50%" align="center"/></a></center>
+</p>
+<p>And this is something like what we hope to show you when the results
+have
+   been returned.
+</p>
+
+<p><center><a href="http://weblog.latte.ca/images/blake/GetAnAccount/04-Searched.svg"><img
+   src="http://weblog.latte.ca/images/blake/GetAnAccount/04-Searched.svg"
+   title="Search Results" alt="Search Results"
+   width="50%" align="center"/></a></center>
+</p>
+<p>And finally, once you pick one of the providers, we expand that list to
+   show you all of the results for that provider.
+</p>
+<p><center><a href="http://weblog.latte.ca/images/blake/GetAnAccount/05-Chosen.svg"><img
+   src="http://weblog.latte.ca/images/blake/GetAnAccount/05-Chosen.svg"
+   title="Choose a Provider" alt="Provider Chosen"
+   width="50%" align="center"/></a></center>
+</p>
+<p>Feedback, as always, is welcome.
+</p></div>
+<div class="storyFoot">[Posted at 15:29 by <span class="vcard"><a
+class="url fn" href="http://bwinton.latte.ca/">Blake Winton</a></span>] <a
+href="http://weblog.latte.ca/blake/tech/thunderbird/GetAnAccountUiUpdate.html">link
+and comments</a>
+(0 comments) 
+<a href="http://f1.mozillamessaging.com/" class="f1"><img
+src="http://weblog.latte.ca/images/f1.png" title="Share with F1!"/></a></div>
+</div>
+</div>
+
+    <div class="blosxomComments">
+<div class="blosxomCommentForm">
+  <p><b></b></p>
+  <form method="post"
+action="http://weblog.latte.ca/blake/tech/thunderbird/GetAnAccountUiUpdate"
+name="comments_form">
+  <p>
+  <input type="hidden" name="secretToken" value="pleaseDontSpam"/>
+  <input name="parent" type="hidden"
+value="blake/tech/thunderbird/GetAnAccountUiUpdate"/>
+  <input name="title" type="hidden"
+value="blake/tech/thunderbird/GetAnAccountUiUpdate"/>
+  Name:<br/>
+
+  <input maxlength="50" name="author" size="50" type="text" value=""/><br/>
+  <br/>
+  E-mail:<br/>
+  <input maxlength="75" name="email" size="50" type="text" value=""/><br/>
+  <br/>
+  URL:<br/>
+
+  <input maxlength="100" name="url" size="50" type="text" value=""/><br/>
+
+  <br/>
+  Comment:<br/>
+  <textarea id="inputPane" cols="50" name="body" rows="12"></textarea><br/>
+  <div id="previewPane" class="pane"></div>
+  <br/>
+  Note: Comments on entries older than one month won’t be accepted due to
+spam
+  controls.  Please <a href="mailto:bwinton@latte.ca">email me</a> if you
+have
+  something you’ld like posted.<br/>
+
+  <input name="Submit" type="submit" value="Submit"/>
+  <input name="preview" type="submit" value="Preview"/>
+  </p>
+  </form>
+  </div>
+
+  <script type="text/javascript">
+// This sample application only interacts with showdown.js in
+// two places:
+//  In startGui():
+//      converter = new Attacklab.showdown.converter();
+//
+//  In convertText():
+//      text = converter.makeHtml(text);
+
+//
+// Register for onload
+//
+window.onload = startGui;
+
+
+//
+// Globals
+//
+
+var converter;
+var convertTextTimer,processingTime;
+var lastText,lastOutput,lastRoomLeft;
+var inputPane,previewPane;
+var maxDelay = 3000; // longest update pause (in ms)
+
+
+//
+//  Initialization
+//
+
+var guiStarted = false;
+
+function startGui() {
+
+    if (guiStarted) {
+        return;
+    }
+    guiStarted = true;
+
+    // find elements
+    inputPane = document.getElementById("inputPane");
+    previewPane = document.getElementById("previewPane");
+
+    // set event handlers
+
+    // First, try registering for keyup events
+    // (There's no harm in calling onInput() repeatedly)
+    window.onkeyup = inputPane.onkeyup = onInput;
+
+    // In case we can't capture paste events, poll for them
+    var pollingFallback = window.setInterval(function(){
+        if(inputPane.value != lastText)
+            onInput();
+    },1000);
+
+    // Try registering for paste events
+    inputPane.onpaste = function() {
+        // It worked! Cancel paste polling.
+        if (pollingFallback!=undefined) {
+            window.clearInterval(pollingFallback);
+            pollingFallback = undefined;
+        }
+        onInput();
+    }
+
+    // Try registering for input events (the best solution)
+    if (inputPane.addEventListener) {
+        // Let's assume input also fires on paste.
+        // No need to cancel our keyup handlers;
+        // they're basically free.
+        inputPane.addEventListener("input",inputPane.onpaste,false);
+    }
+
+    // start with blank page?
+    if (top.document.location.href.match(/\?blank=1$/))
+        inputPane.value = "";
+
+    // refresh panes to avoid a hiccup
+    previewPane.innerHTML = lastOutput;
+
+    // build the converter
+    converter = new Attacklab.showdown.converter();
+
+    // do an initial conversion to avoid a hiccup
+    convertText();
+
+    // give the input pane focus
+    inputPane.focus();
+
+    // start the other panes at the top
+    // (our smart scrolling moved them to the bottom)
+    previewPane.scrollTop = 0;
+}
+
+
+//
+//  Conversion
+//
+
+function convertText() {
+    // get input text
+    var text = inputPane.value;
+    
+    // if there's no change to input, cancel conversion
+    if (text &amp;&amp; text == lastText) {
+        return;
+    } else {
+        lastText = text;
+    }
+
+    var startTime = new Date().getTime();
+
+    // Do the conversion
+    text = converter.makeHtml(text);
+
+    // display processing time
+    var endTime = new Date().getTime(); 
+    processingTime = endTime - startTime;
+
+    // save proportional scroll positions
+    saveScrollPositions();
+
+    previewPane.innerHTML = text;
+
+    lastOutput = text;
+
+    // restore proportional scroll positions
+    restoreScrollPositions();
+};
+
+
+//
+//  Event handlers
+//
+
+function onInput() {
+// In "delayed" mode, we do the conversion at pauses in input.
+// The pause is equal to the last runtime, so that slow
+// updates happen less frequently.
+//
+// Use a timer to schedule updates.  Each keystroke
+// resets the timer.
+
+    // if we already have convertText scheduled, cancel it
+    if (convertTextTimer) {
+        window.clearTimeout(convertTextTimer);
+        convertTextTimer = undefined;
+    }
+
+    var timeUntilConvertText = 0;
+    // make timer adaptive
+    timeUntilConvertText = processingTime;
+
+    if (timeUntilConvertText > maxDelay)
+        timeUntilConvertText = maxDelay;
+
+    // Schedule convertText().
+    // Even if we're updating every keystroke, use a timer at 0.
+    // This gives the browser time to handle other events.
+    convertTextTimer = window.setTimeout(convertText,timeUntilConvertText);
+}
+
+
+//
+// Smart scrollbar adjustment
+//
+// We need to make sure the user can't type off the bottom
+// of the preview and output pages.  We'll do this by saving
+// the proportional scroll positions before the update, and
+// restoring them afterwards.
+//
+
+var previewScrollPos;
+var outputScrollPos;
+
+function getScrollPos(element) {
+    // favor the bottom when the text first overflows the window
+    if (element.scrollHeight &lt;= element.clientHeight)
+        return 1.0;
+    return element.scrollTop/(element.scrollHeight-element.clientHeight);
+}
+
+function setScrollPos(element,pos) {
+    element.scrollTop = (element.scrollHeight - element.clientHeight) *
+pos;
+}
+
+function saveScrollPositions() {
+    previewScrollPos = getScrollPos(previewPane);
+}
+
+function restoreScrollPositions() {
+    // hack for IE: setting scrollTop ensures scrollHeight
+    // has been updated after a change in contents
+    previewPane.scrollTop = previewPane.scrollTop;
+
+    setScrollPos(previewPane,previewScrollPos);
+}
+
+//
+// Textarea resizing
+//
+// Some browsers (i.e. IE) refuse to set textarea
+// percentage heights in standards mode. (But other units?
+// No problem.  Percentage widths? No problem.)
+//
+// So we'll do it in javascript.  If IE's behavior ever
+// changes, we should remove this crap and do 100% textarea
+// heights in CSS, because it makes resizing much smoother
+// on other browsers.
+//
+
+function getTop(element) {
+    var sum = element.offsetTop;
+    while(element = element.offsetParent)
+        sum += element.offsetTop;
+    return sum;
+}
+
+function getElementHeight(element) {
+    var height = element.clientHeight;
+    if (!height) height = element.scrollHeight;
+    return height;
+}
+
+function getWindowHeight(element) {
+    if (window.innerHeight)
+        return window.innerHeight;
+    else if (document.documentElement &amp;&amp;
+document.documentElement.clientHeight)
+        return document.documentElement.clientHeight;
+    else if (document.body)
+        return document.body.clientHeight;
+}
+  </script>
+
+</div>
+</div>
+
+  </div>
+  <div class="footer">
+   <div class="footBox">
+    <div class="footTitle">Categories:</div><br />
+    <ul class='collapsable'><li><a href="http://weblog.latte.ca/">/</a>
+(714)</li><li class='expand collapsed'><a
+href="http://weblog.latte.ca/amy">amy/</a> (392)<ul><li class='expand
+collapsed'><a href="http://weblog.latte.ca/amy/books">books/</a>
+(101)<ul><li><a href="http://weblog.latte.ca/amy/books/_2005">_2005/</a>
+(31)</li><li><a href="http://weblog.latte.ca/amy/books/_2006">_2006/</a>
+(13)</li><li><a href="http://weblog.latte.ca/amy/books/_2007">_2007/</a>
+(6)</li><li><a href="http://weblog.latte.ca/amy/books/_2008">_2008/</a>
+(6)</li><li><a href="http://weblog.latte.ca/amy/books/_2009">_2009/</a>
+(23)</li><li class='expand collapsed'><a
+href="http://weblog.latte.ca/amy/books/_2010">_2010/</a> (14)<ul><li><a
+href="http://weblog.latte.ca/amy/books/_2010/read-a-thon">read-a-thon/</a>
+(8)</li></ul></li><li><a
+href="http://weblog.latte.ca/amy/books/_2011">_2011/</a> (7)</li><li><a
+href="http://weblog.latte.ca/amy/books/children">children/</a>
+(1)</li></ul></li><li><a
+href="http://weblog.latte.ca/amy/career">career/</a> (5)</li><li
+class='expand collapsed'><a
+href="http://weblog.latte.ca/amy/cordelia">cordelia/</a> (link)<ul><li><a
+href="http://weblog.latte.ca/amy/cordelia/conversations">conversations/</a>
+(link)</li></ul></li><li><a
+href="http://weblog.latte.ca/amy/dayToDay">dayToDay/</a> (5)</li><li
+class='expand collapsed'><a
+href="http://weblog.latte.ca/amy/delphine">delphine/</a> (link)<ul><li><a
+href="http://weblog.latte.ca/amy/delphine/conversations">conversations/</a>
+(link)</li><li><a
+href="http://weblog.latte.ca/amy/delphine/pictures">pictures/</a>
+(link)</li><li><a
+href="http://weblog.latte.ca/amy/delphine/sleeping">sleeping/</a>
+(link)</li><li><a
+href="http://weblog.latte.ca/amy/delphine/writes">writes/</a>
+(link)</li></ul></li><li class='expand collapsed'><a
+href="http://weblog.latte.ca/amy/diversions">diversions/</a> (41)<ul><li><a
+href="http://weblog.latte.ca/amy/diversions/nyadventure">nyadventure/</a>
+(3)</li></ul></li><li><a
+href="http://weblog.latte.ca/amy/everythingelse">everythingelse/</a>
+(104)</li><li><a href="http://weblog.latte.ca/amy/food">food/</a>
+(14)</li><li class='expand collapsed'><a
+href="http://weblog.latte.ca/amy/girls">girls/</a> (24)<ul><li><a
+href="http://weblog.latte.ca/amy/girls/positiveParenting">positiveParenting/</a>
+(4)</li></ul></li><li class='expand collapsed'><a
+href="http://weblog.latte.ca/amy/houseandhome">houseandhome/</a>
+(40)<ul><li><a
+href="http://weblog.latte.ca/amy/houseandhome/bathroom">bathroom/</a>
+(1)</li><li><a
+href="http://weblog.latte.ca/amy/houseandhome/garden">garden/</a>
+(5)</li><li class='expand collapsed'><a
+href="http://weblog.latte.ca/amy/houseandhome/reno">reno/</a>
+(18)<ul><li><a
+href="http://weblog.latte.ca/amy/houseandhome/reno/deck">deck/</a>
+(12)</li></ul></li></ul></li><li><a
+href="http://weblog.latte.ca/amy/letters">letters/</a> (4)</li><li><a
+href="http://weblog.latte.ca/amy/motion">motion/</a> (17)</li><li><a
+href="http://weblog.latte.ca/amy/news">news/</a> (6)</li><li><a
+href="http://weblog.latte.ca/amy/stuff">stuff/</a> (4)</li><li><a
+href="http://weblog.latte.ca/amy/theworld">theworld/</a> (1)</li><li
+class='expand collapsed'><a href="http://weblog.latte.ca/amy/unsolicited
+advice">unsolicited advice/</a> (10)<ul><li><a
+href="http://weblog.latte.ca/amy/unsolicited advice/food">food/</a>
+(2)</li></ul></li><li><a
+href="http://weblog.latte.ca/amy/whingeing">whingeing/</a> (8)</li><li><a
+href="http://weblog.latte.ca/amy/work">work/</a> (2)</li><li><a
+href="http://weblog.latte.ca/amy/writing">writing/</a> (2)</li><li><a
+href="http://weblog.latte.ca/amy/yearInReview">yearInReview/</a>
+(2)</li></ul></li><li class='expand collapsed'><a
+href="http://weblog.latte.ca/blake">blake/</a> (160)<ul><li><a
+href="http://weblog.latte.ca/blake/camera">camera/</a> (2)</li><li
+class='expand collapsed'><a
+href="http://weblog.latte.ca/blake/employment">employment/</a> (12)<ul><li
+class='expand collapsed'><a
+href="http://weblog.latte.ca/blake/employment/mozilla">mozilla/</a>
+(4)<ul><li class='expand collapsed'><a
+href="http://weblog.latte.ca/blake/employment/mozilla/thunderbird">thunderbird/</a>
+(link)<ul><li><a
+href="http://weblog.latte.ca/blake/employment/mozilla/thunderbird/ucosp">ucosp/</a>
+(link)</li></ul></li></ul></li></ul></li><li><a
+href="http://weblog.latte.ca/blake/family">family/</a> (8)</li><li
+class='expand collapsed'><a
+href="http://weblog.latte.ca/blake/random">random/</a> (53)<ul><li><a
+href="http://weblog.latte.ca/blake/random/biking">biking/</a>
+(29)</li><li><a href="http://weblog.latte.ca/blake/random/bread">bread/</a>
+(1)</li></ul></li><li><a
+href="http://weblog.latte.ca/blake/reviews">reviews/</a> (3)</li><li
+class='expand collapsed'><a
+href="http://weblog.latte.ca/blake/tech">tech/</a> (81)<ul><li><a
+href="http://weblog.latte.ca/blake/tech/basie">basie/</a> (2)</li><li><a
+href="http://weblog.latte.ca/blake/tech/bzr">bzr/</a> (3)</li><li><a
+href="http://weblog.latte.ca/blake/tech/drproject">drproject/</a>
+(2)</li><li><a href="http://weblog.latte.ca/blake/tech/iTouch">iTouch/</a>
+(9)</li><li><a href="http://weblog.latte.ca/blake/tech/mac">mac/</a>
+(3)</li><li><a href="http://weblog.latte.ca/blake/tech/opengl">opengl/</a>
+(1)</li><li><a href="http://weblog.latte.ca/blake/tech/pEdit">pEdit/</a>
+(1)</li><li><a
+href="http://weblog.latte.ca/blake/tech/progect">progect/</a>
+(1)</li><li><a href="http://weblog.latte.ca/blake/tech/python">python/</a>
+(2)</li><li><a href="http://weblog.latte.ca/blake/tech/scheme">scheme/</a>
+(3)</li><li class='expand collapsed'><a
+href="http://weblog.latte.ca/blake/tech/thunderbird">thunderbird/</a>
+(21)<ul><li><a
+href="http://weblog.latte.ca/blake/tech/thunderbird/ucosp">ucosp/</a>
+(1)</li></ul></li><li><a
+href="http://weblog.latte.ca/blake/tech/weblog">weblog/</a>
+(7)</li></ul></li></ul></li><li><a
+href="http://weblog.latte.ca/callOuts">callOuts/</a> (3)</li><li><a
+href="http://weblog.latte.ca/charity">charity/</a> (2)</li><li
+class='expand collapsed'><a
+href="http://weblog.latte.ca/cordelia">cordelia/</a> (55)<ul><li><a
+href="http://weblog.latte.ca/cordelia/conversations">conversations/</a>
+(5)</li></ul></li><li class='expand collapsed'><a
+href="http://weblog.latte.ca/delphine">delphine/</a> (96)<ul><li><a
+href="http://weblog.latte.ca/delphine/conversations">conversations/</a>
+(26)</li><li><a
+href="http://weblog.latte.ca/delphine/pictures">pictures/</a>
+(8)</li><li><a
+href="http://weblog.latte.ca/delphine/sleeping">sleeping/</a>
+(1)</li><li><a href="http://weblog.latte.ca/delphine/writes">writes/</a>
+(2)</li></ul></li><li><a href="http://weblog.latte.ca/woody">woody/</a>
+(3)</li></ul>
+
+   </div>
+   <div class="footBox">
+    <div class="footTitle">Archives:</div>
+    <!-- div style="text-align:center">
+     <table class="blosxomCalendar">
+<tr>
+<td align="left"><a href="http://weblog.latte.ca/2011/Feb">&lt;</a></td>
+<td colspan="5" align="center" class="blosxomCalendarHead">March 2011</td>
+<td align="right"> </td>
+</tr>
+<tr><td class="blosxomCalendarWeekHeader">Su</td><td
+class="blosxomCalendarWeekHeader">Mo</td><td
+class="blosxomCalendarWeekHeader">Tu</td><td
+class="blosxomCalendarWeekHeader">We</td><td
+class="blosxomCalendarWeekHeader">Th</td><td
+class="blosxomCalendarWeekHeader">Fr</td><td
+class="blosxomCalendarWeekHeader">Sa</td></tr>
+<tr><td class="blosxomCalendarEmpty">&#160;</td><td
+class="blosxomCalendarEmpty">&#160;</td><td class="blosxomCalendarCell">
+1</td><td class="blosxomCalendarCell"> 2</td><td
+class="blosxomCalendarCell"> 3</td><td class="blosxomCalendarCell">
+4</td><td class="blosxomCalendarCell"> 5</td></tr>
+<tr><td class="blosxomCalendarBlogged"><a
+href="http://weblog.latte.ca/2011/Mar/06"> 6</a></td><td
+class="blosxomCalendarCell"> 7</td><td class="blosxomCalendarCell">
+8</td><td class="blosxomCalendarCell"> 9</td><td
+class="blosxomCalendarCell">10</td><td
+class="blosxomCalendarCell">11</td><td
+class="blosxomCalendarCell">12</td></tr>
+<tr><td class="blosxomCalendarCell">13</td><td
+class="blosxomCalendarCell">14</td><td
+class="blosxomCalendarCell">15</td><td
+class="blosxomCalendarCell">16</td><td
+class="blosxomCalendarCell">17</td><td
+class="blosxomCalendarCell">18</td><td class="blosxomCalendarBlogged"><a
+href="http://weblog.latte.ca/2011/Mar/19">19</a></td></tr>
+<tr><td class="blosxomCalendarCell">20</td><td
+class="blosxomCalendarBlogged"><a
+href="http://weblog.latte.ca/2011/Mar/21">21</a></td><td
+class="blosxomCalendarCell">22</td><td class="blosxomCalendarBlogged"><a
+href="http://weblog.latte.ca/2011/Mar/23">23</a></td><td
+class="blosxomCalendarCell">24</td><td class="blosxomCalendarBlogged"><a
+href="http://weblog.latte.ca/2011/Mar/25">25</a></td><td
+class="blosxomCalendarCell">26</td></tr>
+<tr><td class="blosxomCalendarCell">27</td><td
+class="blosxomCalendarCell">28</td><td
+class="blosxomCalendarCell">29</td><td
+class="blosxomCalendarCell">30</td><td class="blosxomCalendarToday"><a
+href="http://weblog.latte.ca/2011/Mar/31">31</a></td><td
+class="blosxomCalendarEmpty">&#160;</td><td
+class="blosxomCalendarEmpty">&#160;</td></tr>
+</table>
+    </div -->
+    <div><ul class='collapsable'>
+<li class='expand collapsed'>2011 (21)<ul>
+<li><a href='http://weblog.latte.ca/2011/03'>Mar (8)</a></li>
+<li><a href='http://weblog.latte.ca/2011/02'>Feb (7)</a></li>
+
+<li><a href='http://weblog.latte.ca/2011/01'>Jan (6)</a></li>
+</ul></li>
+<li class='expand collapsed'>2010 (99)<ul>
+<li><a href='http://weblog.latte.ca/2010/12'>Dec (10)</a></li>
+<li><a href='http://weblog.latte.ca/2010/11'>Nov (12)</a></li>
+<li><a href='http://weblog.latte.ca/2010/10'>Oct (13)</a></li>
+<li><a href='http://weblog.latte.ca/2010/09'>Sep (25)</a></li>
+<li><a href='http://weblog.latte.ca/2010/08'>Aug (3)</a></li>
+<li><a href='http://weblog.latte.ca/2010/07'>Jul (3)</a></li>
+
+<li><a href='http://weblog.latte.ca/2010/06'>Jun (2)</a></li>
+<li><a href='http://weblog.latte.ca/2010/04'>Apr (8)</a></li>
+<li><a href='http://weblog.latte.ca/2010/03'>Mar (8)</a></li>
+<li><a href='http://weblog.latte.ca/2010/02'>Feb (11)</a></li>
+<li><a href='http://weblog.latte.ca/2010/01'>Jan (4)</a></li>
+</ul></li>
+<li class='expand collapsed'>2009 (155)<ul>
+<li><a href='http://weblog.latte.ca/2009/12'>Dec (9)</a></li>
+<li><a href='http://weblog.latte.ca/2009/11'>Nov (14)</a></li>
+
+<li><a href='http://weblog.latte.ca/2009/10'>Oct (9)</a></li>
+<li><a href='http://weblog.latte.ca/2009/09'>Sep (14)</a></li>
+<li><a href='http://weblog.latte.ca/2009/08'>Aug (8)</a></li>
+<li><a href='http://weblog.latte.ca/2009/07'>Jul (8)</a></li>
+<li><a href='http://weblog.latte.ca/2009/06'>Jun (10)</a></li>
+<li><a href='http://weblog.latte.ca/2009/05'>May (13)</a></li>
+<li><a href='http://weblog.latte.ca/2009/04'>Apr (12)</a></li>
+<li><a href='http://weblog.latte.ca/2009/03'>Mar (15)</a></li>
+<li><a href='http://weblog.latte.ca/2009/02'>Feb (15)</a></li>
+
+<li><a href='http://weblog.latte.ca/2009/01'>Jan (28)</a></li>
+</ul></li>
+<li class='expand collapsed'>2008 (105)<ul>
+<li><a href='http://weblog.latte.ca/2008/12'>Dec (11)</a></li>
+<li><a href='http://weblog.latte.ca/2008/11'>Nov (4)</a></li>
+<li><a href='http://weblog.latte.ca/2008/10'>Oct (7)</a></li>
+<li><a href='http://weblog.latte.ca/2008/09'>Sep (6)</a></li>
+<li><a href='http://weblog.latte.ca/2008/08'>Aug (3)</a></li>
+<li><a href='http://weblog.latte.ca/2008/07'>Jul (5)</a></li>
+
+<li><a href='http://weblog.latte.ca/2008/06'>Jun (9)</a></li>
+<li><a href='http://weblog.latte.ca/2008/05'>May (9)</a></li>
+<li><a href='http://weblog.latte.ca/2008/04'>Apr (8)</a></li>
+<li><a href='http://weblog.latte.ca/2008/03'>Mar (11)</a></li>
+<li><a href='http://weblog.latte.ca/2008/02'>Feb (15)</a></li>
+<li><a href='http://weblog.latte.ca/2008/01'>Jan (17)</a></li>
+</ul></li>
+<li class='expand collapsed'>2007 (133)<ul>
+<li><a href='http://weblog.latte.ca/2007/12'>Dec (6)</a></li>
+
+<li><a href='http://weblog.latte.ca/2007/11'>Nov (4)</a></li>
+<li><a href='http://weblog.latte.ca/2007/10'>Oct (8)</a></li>
+<li><a href='http://weblog.latte.ca/2007/09'>Sep (11)</a></li>
+<li><a href='http://weblog.latte.ca/2007/08'>Aug (6)</a></li>
+<li><a href='http://weblog.latte.ca/2007/07'>Jul (24)</a></li>
+<li><a href='http://weblog.latte.ca/2007/06'>Jun (1)</a></li>
+<li><a href='http://weblog.latte.ca/2007/05'>May (45)</a></li>
+<li><a href='http://weblog.latte.ca/2007/04'>Apr (5)</a></li>
+<li><a href='http://weblog.latte.ca/2007/03'>Mar (7)</a></li>
+
+<li><a href='http://weblog.latte.ca/2007/02'>Feb (8)</a></li>
+<li><a href='http://weblog.latte.ca/2007/01'>Jan (8)</a></li>
+</ul></li>
+<li class='expand collapsed'>2006 (136)<ul>
+<li><a href='http://weblog.latte.ca/2006/12'>Dec (8)</a></li>
+<li><a href='http://weblog.latte.ca/2006/11'>Nov (7)</a></li>
+<li><a href='http://weblog.latte.ca/2006/10'>Oct (3)</a></li>
+<li><a href='http://weblog.latte.ca/2006/09'>Sep (18)</a></li>
+<li><a href='http://weblog.latte.ca/2006/08'>Aug (20)</a></li>
+
+<li><a href='http://weblog.latte.ca/2006/07'>Jul (21)</a></li>
+<li><a href='http://weblog.latte.ca/2006/06'>Jun (11)</a></li>
+<li><a href='http://weblog.latte.ca/2006/05'>May (4)</a></li>
+<li><a href='http://weblog.latte.ca/2006/04'>Apr (7)</a></li>
+<li><a href='http://weblog.latte.ca/2006/03'>Mar (12)</a></li>
+<li><a href='http://weblog.latte.ca/2006/02'>Feb (10)</a></li>
+<li><a href='http://weblog.latte.ca/2006/01'>Jan (15)</a></li>
+</ul></li>
+<li class='expand collapsed'>2005 (121)<ul>
+
+<li><a href='http://weblog.latte.ca/2005/12'>Dec (10)</a></li>
+<li><a href='http://weblog.latte.ca/2005/11'>Nov (15)</a></li>
+<li><a href='http://weblog.latte.ca/2005/10'>Oct (11)</a></li>
+<li><a href='http://weblog.latte.ca/2005/09'>Sep (11)</a></li>
+<li><a href='http://weblog.latte.ca/2005/08'>Aug (4)</a></li>
+<li><a href='http://weblog.latte.ca/2005/07'>Jul (16)</a></li>
+<li><a href='http://weblog.latte.ca/2005/06'>Jun (4)</a></li>
+<li><a href='http://weblog.latte.ca/2005/05'>May (12)</a></li>
+<li><a href='http://weblog.latte.ca/2005/04'>Apr (6)</a></li>
+
+<li><a href='http://weblog.latte.ca/2005/03'>Mar (12)</a></li>
+<li><a href='http://weblog.latte.ca/2005/01'>Jan (20)</a></li>
+</ul></li>
+<li class='expand collapsed'>2004 (88)<ul>
+<li><a href='http://weblog.latte.ca/2004/12'>Dec (11)</a></li>
+<li><a href='http://weblog.latte.ca/2004/11'>Nov (4)</a></li>
+<li><a href='http://weblog.latte.ca/2004/10'>Oct (8)</a></li>
+<li><a href='http://weblog.latte.ca/2004/09'>Sep (5)</a></li>
+<li><a href='http://weblog.latte.ca/2004/08'>Aug (10)</a></li>
+
+<li><a href='http://weblog.latte.ca/2004/07'>Jul (3)</a></li>
+<li><a href='http://weblog.latte.ca/2004/05'>May (3)</a></li>
+<li><a href='http://weblog.latte.ca/2004/04'>Apr (6)</a></li>
+<li><a href='http://weblog.latte.ca/2004/03'>Mar (9)</a></li>
+<li><a href='http://weblog.latte.ca/2004/02'>Feb (8)</a></li>
+<li><a href='http://weblog.latte.ca/2004/01'>Jan (21)</a></li>
+</ul></li>
+<li class='expand collapsed'>2003 (28)<ul>
+<li><a href='http://weblog.latte.ca/2003/11'>Nov (2)</a></li>
+
+<li><a href='http://weblog.latte.ca/2003/10'>Oct (1)</a></li>
+<li><a href='http://weblog.latte.ca/2003/09'>Sep (1)</a></li>
+<li><a href='http://weblog.latte.ca/2003/07'>Jul (3)</a></li>
+<li><a href='http://weblog.latte.ca/2003/03'>Mar (1)</a></li>
+<li><a href='http://weblog.latte.ca/2003/02'>Feb (8)</a></li>
+<li><a href='http://weblog.latte.ca/2003/01'>Jan (12)</a></li>
+</ul></li>
+</ul></div>
+   </div>
+   <div class="footBox">
+
+    <div class="footTitle">Links:</div><br />
+     Local<br/>
+     <ul class="sidebar">
+      <li><a href="http://weblog.latte.ca/2004/01/15#about">About
+Blog-o!</a></li>
+      <li><a href="http://arbrown.latte.ca/">Amy’s home page</a></li>
+      <li><a href="http://bwinton.latte.ca/">Blake’s home page</a></li>
+
+      <li><a href="http://delphine.latte.ca/">Delphine’s home page</a></li>
+      <li><a href="http://baby.latte.ca/">Cordelia’s home page</a></li>
+      <li><a href="http://arbrown.latte.ca/me.html">About Amy</a></li>
+      <li><a href="http://arbrown.latte.ca/reading.html">Amy’s Book
+Log</a></li>
+     </ul>
+     Amy’s Journals<br/>
+
+     <ul class="sidebar">
+      <li><a href="http://www.tantastik.org/">Tan</a></li>
+      <li><a href="http://www.darn-tootin.com/">Rob</a></li>
+      <li><a href="http://www.whatsthefuss.com/">Fussy</a></li>
+      <li><a href="http://www.eileene.net/">Iko</a></li>
+      <li><a href="http://www.xeney.com/">Beth</a></li>
+
+      <li><a href="http://mayaroo.diary-x.com/">mayaroo</a></li>
+      <li><a href="http://fluff328.diaryland.com/">Ellie</a></li>
+      <li><a href="http://www.analecta.net/">Stacey</a></li>
+      <li><a href="http://www.hashai.com/">Anna Beth</a></li>
+      <li><a href="http://leontinemay.blogspot.com/">Leontine</a></li>
+      <li><a href="http://littleowl.com/thursday/">Other Beth</a></li>
+
+      <li><a href="http://www.aproposofnothing.net/apropos/">Sasha</a></li>
+     </ul>
+     Amy’s Fun<br/>
+     <ul class="sidebar">
+      <li><a href="http://movie-reviews.colossus.net/movies.html">James
+          Berardinelli's New Movie Reviews page</a></li>
+      <li><a href="http://www.theusuals.net">The Usual Suspects</a></li>
+     </ul>
+
+    <a href="http://twitter.com/amyrhoda">amyrhoda's Twitter</a> (caching
+for another 0:22:41)<br />
+<ul class="sidebar">
+<li>@caffekat @northTOmom Get this: kid in choir was up 'til midnight
+working on a project. Kid is child of a school board superintendent!
+SIGH.</li>
+<li>Must remember to activate swearing filter before volunteering with
+school choir. #oops #awkward</li>
+<li><a
+href="http://twitter.com/jenwilsonTO/status/53488274987155456">@jenwilsonTO</a>
+Yeah, I'm doin' it anyway!</li>
+<li>I feel weird reaching out to an acquaintance who may or may not need
+emotional support. Like I'm implying she doesn't have friends...</li>
+<li><a
+href="http://twitter.com/dagbrown/status/53280063910719488">@dagbrown</a>
+That inspires confidence.</li>
+
+<li><a
+href="http://twitter.com/caffekat/status/53201803994595328">@caffekat</a>
+@jrtbone Oh, we had bacon sandwiches for dinner - so good! I love my
+piggy.</li>
+<li>Pig is on its way! Fancy pig. I know it's fancy because the farmer is
+also delivering to Quince and Cumbrae today. #chichi</li>
+<li>If TV stations were serious about getting kids moving (which they
+aren't) they would play 30 seconds of dead air between shows.</li>
+</ul>
+
+    <a href="http://del.icio.us/bwinton">bwinton's Del.icio.us</a> (caching
+for another 0:52:41)<br />
+<a href="http://del.icio.us/network?add=bwinton">Add me to your
+network</a><br/>
+
+<ul class="sidebar">
+<li><img src="http://www.etsy.com/favicon.ico" height="16" width="16"/><a
+href="http://www.etsy.com/shop/marymaryhandmade">marymaryhandmade on
+Etsy</a><br/></li>
+<li><img src="http://theoatmeal.com/favicon.ico" height="16" width="16"/><a
+href="http://theoatmeal.com/comics/angry_birds">The Likability of Angry
+Birds - The Oatmeal</a><br/>I should really use those images in something
+sometime…</li>
+<li><img src="http://designingwebinterfaces.com/favicon.ico" height="16"
+width="16"/><a
+href="http://designingwebinterfaces.com/designing-web-interfaces-12-screen-patterns">12
+Standard Screen Patterns</a><br/>I wonder how many of these we use in
+Thunderbird…</li>
+<li><img src="http://www.gramfeed.com/favicon.ico" height="16"
+width="16"/><a href="http://www.gramfeed.com/bwinton">Gramfeed | Photo Feed
+from Instagram</a><br/></li>
+<li><img src="http://jsfiddle.net/favicon.ico" height="16" width="16"/><a
+href="http://jsfiddle.net/">jsFiddle - Online Editor for the
+Web</a><br/></li>
+</ul>
+
+    <a href="http://twitter.com/bwinton">bwinton's Twitter</a> (caching for
+another 0:22:41)<br />
+
+<ul class="sidebar">
+<li><a
+href="http://twitter.com/joelcrocker/status/53464383308824576">@joelcrocker</a>
+Yeah, I didn't cause I am startlingly lazy.  :)</li>
+<li><a
+href="http://twitter.com/4MKMobile/status/53462456915345408">@4MKMobile</a>
+I wish.  Actually, I should look into a referral plan…  :)</li>
+<li><a
+href="http://twitter.com/runmad/status/53462135736516608">@runmad</a>
+@satefan @richardpenner You'ld want to use the localized name anyways.
+:)</li>
+<li><a
+href="http://twitter.com/4MKMobile/status/53460852845723648">@4MKMobile</a>
+Also, now I'm getting the same speed, 5x the bandwidth cap, and am paying
+$15 less per month.  TekSavvy FTW!</li>
+
+<li><a
+href="http://twitter.com/4MKMobile/status/53460852845723648">@4MKMobile</a>
+Well, I was asleep for most of it.  ;)  I woke up this morning to find no
+more internet, switched modems and everything worked.</li>
+<li><a
+href="http://twitter.com/4MKMobile/status/53457972331941888">@4MKMobile</a>
+Well, I was on Rogers, and am now on the cable-modem version of TekSavvy,
+so Bell isn't involved, but I totally agree with you.</li>
+<li><a
+href="http://twitter.com/4MKMobile/status/53444050736513024">@4MKMobile</a>
+If there is UBB for resellers, I don't want to give the people imposing it
+any more of my money than I have to.  :)</li>
+<li><a
+href="http://twitter.com/4MKMobile/status/53444050736513024">@4MKMobile</a>
+That's part of why I switched.  If there's no UBB, I want to be on the
+small guy offering higher caps…</li>
+<li>Waiting outside Rogers to return m cable modem. The switch to TekSavvy
+this morning worked with only minor hitches.</li>
+
+</ul>
+
+   </div>
+
+   <div class="footBox">
+    <div class="footTitle">Blake's Current Tunes:</div><br />
+    <a href="http://www.last.fm/user/bwinton/">bwinton's current tunes
+(caching for another 0:52:42)</a><br />
+<a
+href="http://www.last.fm/music/CBC+Radio+3/_/The+Grey+-+Brand+New+Drugs">CBC
+Radio 3 - The Grey - Brand New Drugs</a><br />
+<a
+href="http://www.last.fm/music/CBC+Radio+3/_/The%2BMountains%2B%2526%2BThe%2BTrees">CBC
+Radio 3 - The Mountains &amp; The Trees</a><br />
+
+<a href="http://www.last.fm/music/CBC+Radio+3/_/Galaxie+-+Big+Bang">CBC
+Radio 3 - Galaxie - Big Bang</a><br />
+<a href="http://www.last.fm/music/CBC+Radio+3/_/Rah+Rah+-+Henry">CBC Radio
+3 - Rah Rah - Henry</a><br />
+<a
+href="http://www.last.fm/music/CBC+Radio+3/_/Sarah+Harmer+LIVE+at+Massey+Hall">CBC
+Radio 3 - Sarah Harmer LIVE at Massey Hall</a><br />
+<a href="http://www.last.fm/music/Fleet+Foxes/_/White+Winter+Hymnal">Fleet
+Foxes - White Winter Hymnal</a><br />
+<a
+href="http://www.last.fm/music/Arcade+Fire/_/Keep+the+Car+Running">Arcade
+Fire - Keep the Car Running</a><br />
+<a
+href="http://www.last.fm/music/Arcade+Fire/_/Rebellion+%28Lies%29">Arcade
+Fire - Rebellion (Lies)</a><br />
+<a href="http://www.last.fm/music/Feist/_/Mushaboom">Feist -
+Mushaboom</a><br />
+<a href="http://www.last.fm/music/CBC+Radio+3/_/R3-30%3A+Chart+234">CBC
+Radio 3 - R3-30: Chart 234</a><br />
+
+   </div>
+   <div class="footBox">
+    <div class="footTitle">Blake's Last 7 Bike Trips:</div><br />
+    <table border="1">
+     <tr><td>date</td><td>time</td><td>dist</td><td>ave</td><td>max</td><td>odo</td></tr>
+
+      <tr><td>18/08</td><td>1.11.12</td><td>25.72</td><td>21.6</td><td>55.4</td><td>5036.5<!--
+Good to be back on the bike
+again.--></td></tr><tr><td>19/08</td><td>0.59.27</td><td>22.53</td><td>22.7</td><td>55.7</td><td>5059.0<!--
+--></td></tr><tr><td>20/08</td><td>1.01.09</td><td>22.57</td><td>22.1</td><td>54.6</td><td>5081.6<!--
+--></td></tr><tr><td>22/08</td><td>1.05.32</td><td>24.97</td><td>22.8</td><td>55.3</td><td>5106.6<!--
+--></td></tr><tr><td>25/08</td><td>1.30.39</td><td>27.35</td><td>18.1</td><td>58.0</td><td>5133.9<!--
+--></td></tr><tr><td>26/08</td><td>1.06.22</td><td>25.00</td><td>22.6</td><td>55.3</td><td>5158.9<!--
+--></td></tr><tr><td>27/08</td><td>0.59.41</td><td>22.94</td><td>23.0</td><td>55.5</td><td>5181.9<!--
+Going up Mt. Pleasant is hard and unsatisfying.--></td></tr>
+
+    </table>
+    <img
+src="data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%D2%00%00%00%16%08%06%00%00%00%B5%E0%C2%E0%00%00%02%C3IDATx%9Cb%FC%CF0%0AF%C1%28%A0%14%00%00%00%00%FF%FFb%1Ah%07%0C%010Z%D6%8C%02%82%00%00%00%00%FF%FF%1A%94%19%89%F1%0C%C3%7F%06%0A%120%E3%19%86%FF0%8C%CD%1CR%C4%19%CF00P%E2%96Q%403%80%1E%27%03%1AG%00%00%00%00%FF%FF%82%A7%1C%12%F0%7FR%D51%9Ca%F8%0F%C3%84%F4C%D5%20%9BA%AC%7D%D8%F4cu%0B%B1%E2%B8%D4%0Er%3CT%DCI%B6%3F%90%E2%05%3D%FE%F0%C6%3D%B1%E1%83n%166%B3%D1%D24%03%00%00%00%FF%FF%C2j0.Ga%F3%00%21%C7%E0J%D8%D82%16%0E%B5%28%EA%09eH%7C%19%09%8B%1C%C9%E2%C4%16%08%94%60B%E6%13%19%3F%24%EB%C7%A6%0E%9F%7Fi%15%0E%E8%E9%0CK%DC%E3%8A%27%82nDN%97%B82%08z%7Cc3%1B%3Dm%00%00%00%00%FF%FFb%40W%84%AF%14%26PB%13%93%21pa%5C%19%8E%A0%3E%3C%91%40%13ql%F6%E3Kh%A4%14%008%12%0AF%CDNB%98c%D8O%28%D1%E1p%07Q%E9%04%9F%3F%09%85%03.%7B%89%88%07b%C2%04W%C1H%28%8D%E3%8Bo%149%00%00%00%00%FF%FF%22%AC%00w%C0bs%00%3E%07%D3%02%13%9D%91H%C5%C4%9ACb%C2FVGJ%C1%837aS%E0gR%0B%3F%BC%E9%84%88%F4A%A9%FD%C4%C6%136w%12%2C%1C%88%8C7%ACj%00%00%00%00%FF%FF%A2%24%01bu%00%1D3%11%D5%22%83%DAn%21%C1%1D%14%87%19%85%7E%269%ECH%B4%8F%90%FFh%95f0%CC%25%E4%06b%FD%87K%1E%00%00%00%FF%FF%A2%D8%B1T%8AP%AA%B8c%10d%24%92%DD0%C0n%A6u%E1G%8C%F9%E46%EB%A9%19%AED%87%03.5%00%00%00%00%FF%FF%A2d%F8%9B%11f%F6%28%40%80%FF%26%0C%8C%B4T%3F%DC%00%E3%99%A1%15%06%B8%DC%0A%00%00%00%FF%FF%A2%CA%3C%12%E3%19%86%FFC%290F%01%1C0%D28%EE%08%9AO%2B%BB%E9%9D%1E%01%00%00%00%FF%FF%1A%94%13%B2%24%82%D1%9Aq%14%0C8%00%00%00%00%FF%FF%1A%0E%19i%14P%00h%5Dr%8F%94%96%0A%00%00%00%FF%FF%1A%CDH%A3%60%14P%01%00%00%00%00%FF%FF%1A6%19i%B4%9F6%0A%06%12%00%00%00%00%FF%FF%1A.%19i4%03%8D%02J%00%C5%83.%00%00%00%00%FF%FF%1A.%19i%14%8C%82%01%05%00%00%00%00%FF%FF%A24%23%8D%8E%98%8D%82Q%C0%C0%C0%00%00%00%00%FF%FF%A2%B8F%1A%2C%13j%83%C1%0D%A3%60%E4%02%00%00%00%00%FF%FF%1Am%DA%8D%82Q%C0%40yA%0C%00%00%00%FF%FF%1A%CDH%A3%60%14P%01%00%00%00%00%FF%FF%1A%CDH%A3%60%14P%01%00%00%00%00%FF%FF%03%00%C6%A2%F5%A5%84%D9%CC%F8%00%00%00%00IEND%AEB%60%82"/><br
+/>
+    <img
+src="data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%D2%00%00%00%16%08%06%00%00%00%B5%E0%C2%E0%00%00%02%2AIDATx%9Cb%FC%CF0%0AF%C1%28%A0%14%00%00%00%00%FF%FFb%1Ah%07%0Cv%C0x%86%E1%3F%E3%19%86%D1%F2f%14%E0%05%00%00%00%00%FF%FFb%19h%07%E0%02%B0%C4%FB%DF%84%81%91%12%FD0%80n%0E.%F3%29%B5w%14%D0%07%A0%C7%D3%40%C7%1B%00%00%00%FF%FF%229%23%11%EB%60%5C%1E%85%01%5C%FA%D1%D5%91%1A%40%84j%0F%5C%F2%C4%EA%1B%EC%19l%A8%B8%93%10%A0%96%3F%C8%CDp%84%F4%A1%A7%17%00%00%00%00%FF%FFb%A1u%C9Ll%C2%25%D6c%E8%80%DE%09%86TwSj%0F%A1%02%87V%F2%E8%EA%60%60%A0jpj7%AFq%F9%0BWAN%08%00%00%00%00%FF%FF%C2V%23%11%EB%60%98%3AF%1C%7CR%01%AD%FB%21%B8%CC%A7%96%BD%B8%FC%8F%CB%7Cb%D5%E1%0Ag%5C%EA%88%15%C7%05H%8D%7FB%E2%84%DCM%AE%BFp%01J%D3%21Y%00%00%00%00%FF%FF%22%A6i7R%3B%DA%D4NP%B8%E4%89%8D%F0%81%2Ah%E8%A5%7F%A8%D9%8B%02%00%00%00%00%FF%FFB%CEH%D4.%99G%01%7D%00%BD%C3%7B%A8%C6/M%DD%0D%00%00%00%FF%FF%1A%B4%A3v%C4%02F%86%FF%906%3A%03%E3%A0%E8%5C%23%B9%87%26%EAG%C1%C0%02X%7C%A17%24%00%00%00%00%FF%FF%1A%F2%19i%14%0Cm%40%AB%82%04W%82%A7%15%00%00%00%00%FF%FF%1A%9D%90%1D%05%A3%80%0A%00%00%00%00%FF%FF%A2%B8F%1A%2CM%13z%97%40%C3%05%D0%3A%FE%06K%FA%20%04%28M%3F%00%00%00%00%FF%FFb%A4%B4%076X%FA%28%83%C5%1D%A3%60h%02J%D3%0F%00%00%00%FF%FF%1Am%DA%8D%82Q%40%05%00%00%00%00%FF%FF%1A%CDH%A3%60%14P%01%00%00%00%00%FF%FF%1A%CDH%A3%60%14P%01%00%00%00%00%FF%FF%1A%CDH%A3%60%14P%01%00%00%00%00%FF%FF%1A%CDH%A3%60%14P%01%00%00%00%00%FF%FF%1A6%13%B2%A3%A3u%A3%60%20%01%00%00%00%FF%FF%1A6%19i%14%8C%02J%00%A5%051%00%00%00%FF%FF%1Am%DA%8D%82Q%40%05%00%00%00%00%FF%FF%1A%CDH%A3%60%14P%01%00%00%00%00%FF%FF%03%007d%B6%E6%B0.%AD%C9%00%00%00%00IEND%AEB%60%82"/>
+   </div>
+   <div class="footBox">
+     <div class="footTitle">Metadata:</div><br />
+     <a href="http://roughingit.subtlehints.net/pyblosxom"><img
+       src="http://weblog.latte.ca/images/pb_pyblosxom.png" alt="Get Blosxom!"
+       /></a><br />
+     <a href="http://creativecommons.org/licenses/by/1.0"><img
+       alt="Creative Commons License" border="0"
+       src="http://creativecommons.org/images/public/somerights.gif"
+       /></a><br />
+
+     This work is licensed under a<br />
+     <a href="http://creativecommons.org/licenses/by/1.0">Creative
+       Commons License</a>.
+     <!--
+     <rdf:RDF xmlns="http://web.resource.org/cc/"
+       xmlns:dc="http://purl.org/dc/elements/1.1/"
+       xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+       <Work rdf:about="">
+         <license rdf:resource="http://creativecommons.org/licenses/by/1.0"
+/>
+       </Work>
+
+       <License rdf:about="http://creativecommons.org/licenses/by/1.0">
+         <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+         <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+         <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+         <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"
+/>
+         <requires rdf:resource="http://web.resource.org/cc/Notice" />
+       </License>
+     </rdf:RDF>
+     -->
+   </div>
+  </div>
+  <div style="clear:both;"> 
+  </div> 
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ?
+"https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost +
+"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-5805429-2");
+      pageTracker._trackPageview();
+    } catch(err) {}</script>
+
+ </body>
+ <script type="text/javascript" src="/static/js/showdown.js"></script>
+</html>
+
+

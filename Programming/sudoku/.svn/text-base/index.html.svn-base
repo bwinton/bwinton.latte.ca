@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <link rel="stylesheet" href="http://bwinton.latte.ca/base.css" type="text/css" />
+  <LINK REL="SHORTCUT ICON" HREF="https://www.latte.ca/favicon.ico">
+  <title>A Sudoku Importer</title>
+</head>
+<body id="www-latte-ca">
+  <h1>A Sudoku Importer</h1>
+
+  <div class="content">
+    <h3>Description</h3>
+    <p>The Sudoku Importer is a program which takes a set of Sudoku
+    puzzles in a memo, and imports them all into Andrew Gregory's
+    Sudoku program for the Palm.  The format of Sudoku puzzles should
+    be as follows:<br/>
+    <code>% Sudoku From Wikipedia<br/>
+    53..7....<br/>
+    6..195...<br/>
+    .98....6.<br/>
+    8...6...3<br/>
+    4..8.3..1<br/>
+    7...2...6<br/>
+    .6....28.<br/>
+    ...419..5<br/>
+    ....8..79<br/>
+    </code>
+    Note that the title must start with "<code>% </code>", which gets
+    removed when the puzzle is imported.</p>
+
+    <p>How, you may ask, does one get Sudoku puzzles in this format
+    into my Palm's Memo Pad?  Conveniently, I have a program written
+    in Python which will hit a site and download a configurable number
+    (currently 20) of their puzzles, outputting them in the above
+    format.  However, the site I was getting the puzzles from asked me
+    to not use them as a Sudoku source, and so I'm in the middle of
+    updating the program to get its puzzles from another site.  And
+    while I was doing that, someone pointed a program out to me that
+    would generate Sudoku puzzles, so I think I'll use that
+    instead.</p>
+
+    <h3>Yet-to-be-implemented Features</h3>     
+    <ul>
+      <li>Handle the case where the Sudoku program is on a memory
+        stick.  (Thanks, Ben Cordes.)</li>
+      <li>Figure out what's causing the "Query Error" messages.
+	(Thanks, Greg Balls.)</li>
+      <li>Add some more in-app documentation/help.</li>
+      <li>Please <a
+      href="mailto:bwinton+sudoku@latte.ca?subject=Sudoku Importer
+ Suggestion">email me</a> with any suggestions.</li>
+    </ul>
+
+    <h3>Yet-to-be-fixed Bugs</h3>
+    <ul>
+      <li>Successful importing of puzzles can result in an error code
+        of 9 or possibly 12, depending on whether there's a blank line
+        at the end of your puzzles.  I should really change that.
+	(Thanks, Joan Fisbein.)</li>
+      <li>Figure out what's causing the "Query Error" messages.
+	(Thanks, Greg Balls.)</li>
+    </ul>
+
+    <h3>Download</h3>
+    <p>You can download a copy of the latest version (0.6) of the
+    Sudoku Importer <a href="SImport.prc">here</a>.
+
+    <h3>Changelog</h3>
+    <h4>Version 0.6 - 17/01/06 17:58</h4>
+    <ul>
+      <li>Category support!  Persistant, even.  (Thanks, Greg Balls.) </li>
+    </ul>
+    <h4>Version 0.5 - 15/01/06 10:01</h4>
+    <ul>
+      <li>Scroll list with hard keys.  Also, import current menu when
+        the middle key is pressed.  Well, the middle key on the T|X,
+        anyways.  I'm not sure about other devices.  (Thanks , Greg
+        Balls.)</li>
+      <li>Get it compiling under GCC (or, more accurately, g++).
+        (Thanks, Dave McKienzie.)</li>
+      <li>Show the version (with the build date) on the about page.</li>
+    </ul>
+    <h4>Version 0.4 - 09/01/06 14:42</h4>
+    <ul>
+      <li>Import puzzles generated from <a
+        href="http://www.laurasia.com.au/sudoku/">Michael
+        Kennett's</a> <a href="sudoku.exe">sudoku generator</a>.
+        (Note that I'm actually using a patched version of the sudoku
+        generator, so be sure to download it from the "sudoku
+        generator" link above.  My patched version can be run as
+        "<code>sudoku -p1 -g5 -f compact &gt; puzzles.txt</code>" to
+        get puzzles 1 to 5.) (Thanks, Ben Cordes.)</li>
+      <li>Add an "Import" button, and align the text.  (Thanks, Tom
+        Grydeland)</li>
+      <li>Show the number of puzzles imported.</li>
+      <li>Print out better messages, both error and success.</li>
+      <li>Rework the puzzle parsing to correctly handle the cases
+        below.  (Thanks, Dave McKienzie.)</li>
+    </ul>
+    <h4>Version 0.3 - 19/12/05 17:00</h4>
+    <ul>
+      <li>Added support for '0' instead of '.' as the empty cell (thanks, Mike Dunning).</li>
+      <li>Added support for 1 line of 81 characters, instead of 9 lines of 9 characters (thanks, Mike Dunning).</li>
+    </ul>
+    <h4>Version 0.2 alpha 3 - 11/8/05 9:32</h4>
+    <ul>
+      <li>Fixed the memory leaks, I think</li>
+      <li>Fixed the T3 crash (thanks, Frédéric Crozat, and Mike
+        Bock).</li>
+      <li>Updated the code to use the latest version of Andrew's
+        Sudoku program.</li>
+    </ul>
+    <h4>Version 0.1 - 26/07/2005 16:06</h4>
+    <ul><li>Initial release!</li></ul>
+  </div>
+
+  <div class="sidebar">
+    <h3>Other Pages</h3>
+    <ul>
+      <li><a href="http://www.scss.com.au/family/andrew/pdas/palm/myprogs/sudoku/">Andrew Gregory's Sudoku for the Palm</a></li>
+      <li><a href="http://www.laurasia.com.au/sudoku/">Michael Kennett's sudoku generator</a></li>
+      <li><a href="sudoku.exe">My slightly-modified version of Michael Kennett's sudoku generator</a></li>
+      <li><a href="http://bwinton.latte.ca/">My Homepage</a></li>
+    </ul>
+  </div>
+</body>
+</html>

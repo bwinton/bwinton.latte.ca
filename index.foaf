@@ -1,0 +1,15 @@
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/">
+  <foaf:Person>
+    <rdfs:seeAlso rdf:resource="http://markpasc.org/mark/index.foaf"/>
+    <foaf:name>Blake Winton</foaf:name>
+    <foaf:title>Mr</foaf:title>
+    <foaf:firstName>Blake</foaf:firstName>
+    <foaf:surname>Winton</foaf:surname>
+    <foaf:nick>bwinton</foaf:nick>
+    <foaf:homepage rdf:resource="http://bwinton.latte.ca/"/>
+    <foaf:weblog rdf:resource="http://weblog.latte.ca/"/>
+  </foaf:Person>
+</rdf:RDF>

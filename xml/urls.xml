@@ -1,0 +1,1206 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet href="urls-html.xsl"?>
+<xbel>
+  <title>Blake's Bookmarks</title>
+  <info>
+    <metadata owner="bwinton@tor.dhs.org"/>
+  </info>
+  <desc>Random links I've collected in my travels over the weeb.</desc>
+
+  <folder>
+    <title>From The Weeb</title>
+      <bookmark
+          href="http://hebrew.about.com/homework/hebrew/library/help/blalefwords.htm">
+        <title>Hebrew Stuff</title>
+      </bookmark>
+      <bookmark href="http://www.underlevel.net/jordan/erik-perl.txt">
+        <title>Why not to use Perl</title>
+      </bookmark>
+      <bookmark href="http://www.pyrite.org/index.html">
+      <title>Python Utils for working with the PalmOS!!!</title>
+    </bookmark>
+    <bookmark href="http://www.palmos.com/dev/tech/docs/devguide/TableOfContents.htm">
+      <title>PalmOS Programming (version 1)</title>
+    </bookmark>
+    <bookmark href="http://nextgenss.com/products/ngssniff.html">
+      <title>Network Sniffer</title>
+    </bookmark>
+    <bookmark href="http://www.ZBoxZ.com/">
+      <title>ZBoxZ</title>
+    </bookmark>
+    <bookmark href="http://www.palmos.com/dev/tech/docs/FileFormats/Intro.html">
+      <title>PalmOS File Formats</title>
+    </bookmark>
+    <bookmark href="http://home.golden.net/~deepnet/old/coordtask.html">
+      <title>Multi-tasking for the PalmOS</title>
+    </bookmark>
+    <bookmark href="http://www.djw.org/product/palm/par/">
+      <title>Pilot Database Creator</title>
+    </bookmark>
+    <bookmark href="http://www.pilot-link.org/howto/ppp/">
+      <title>How-to Palm PPP</title>
+    </bookmark>
+    <bookmark href="http://pilot-link.org/howto/nhsync/">
+      <title>How-to Network Hotsync</title>
+    </bookmark>
+    <bookmark href="http://www.cs.fhm.edu/~ifw00065/bookmarks/index.html">
+      <title>XBEL Stylesheet</title>
+    </bookmark>
+    <bookmark href="http://www-106.ibm.com/developerworks/xml/library/xml-matters1/index.html">
+      <title>XML Matters 3</title>
+    </bookmark>
+    <bookmark href="http://www-106.ibm.com/developerworks/xml/library/xml-matters2/index.html">
+      <title>XML Matters 2</title>
+    </bookmark>
+    <bookmark href="http://www-106.ibm.com/developerworks/xml/library/x-matters11.html">
+      <title>XML Matters</title>
+    </bookmark>
+    <bookmark href="http://www.ai.mit.edu/projects/dynlangs/wizards-panels.html">
+      <title>Language Wizard Discussions</title>
+    </bookmark>
+    <bookmark href="http://www.logilab.org/xmldiff">
+      <title>XML Diff</title>
+    </bookmark>
+    <bookmark href="http://www.devx.com/upload/free/Features/Javapro/2001/01dec01/jt0112/jt0112-1.asp">
+      <title>An Article on J-DOM</title>
+    </bookmark>
+    <bookmark href="http://mc-foo.sf.net/">
+      <title>MC-Foo</title>
+    </bookmark>
+    <bookmark href="http://www.python.org/doc/current/lib/markup.html">
+      <title>Python Markup Processing</title>
+    </bookmark>
+    <bookmark href="http://twistedmatrix.net/">
+      <title>Twisted Python</title>
+    </bookmark>
+    <bookmark href="http://twisted.coopweb.org/">
+      <title>Twisted Python Archives</title>
+    </bookmark>
+    <bookmark href="http://www.amazon.com/exec/obidos/ASIN/B00005KAPS/qid%3D1010093010/ref%3Dsr%5F11%5F0%5F1/102-6138318-5096933">
+      <title>Power Shovel!</title>
+    </bookmark>
+    <bookmark href="http://www.math.fu-berlin.de/~guckes/screen/">
+      <title>Screen!</title>
+    </bookmark>
+    <bookmark href="http://www.n-gon.com/freshmeat/b./">
+      <title>XML Bookmark Manager</title>
+    </bookmark>
+    <bookmark href="http://www.mobilesoft-labs.com/mobilestudiopurchase.htm">
+      <title>GCC Palm IDE</title>
+    </bookmark>
+    <bookmark href="http://www-106.ibm.com/developerworks/xml/">
+      <title>IBM's XML Articles</title>
+    </bookmark>
+    <bookmark href="http://www.ai.mit.edu/projects/dynlangs/wizards-panels.html">
+      <title>Language Design Panels</title>
+    </bookmark>
+    <bookmark href="http://sources.redhat.com/autobook/">
+      <title>AutoConf book</title>
+    </bookmark>
+    <bookmark href="http://koala.ilog.fr/colas/mouse-wheel-scroll/">
+      <title>Getting WheelMice working in X</title>
+    </bookmark>
+    <bookmark href="http://nonsense-verse.blogspot.com/">
+      <title>A Blog by an actual Journalist</title>
+    </bookmark>
+    <bookmark href="http://tor.dhs.org/~arbrown/journal/">
+      <title>Amy's Journal</title>
+    </bookmark>
+    <bookmark href="http://alistapart.com/stories/dao/">
+      <title>The Dao Of Web Design</title>
+    </bookmark>
+    <bookmark href="http://theory.stanford.edu/~amitp/">
+      <title>Amit J Patel's Cool Stuff</title>
+    </bookmark>
+    <bookmark href="http://www.introversion.co.uk/uplink/">
+      <title>Uplink: The Hacking Game</title>
+    </bookmark>
+    <bookmark href="http://www.try2hack.nl">
+      <title>The other Hacking Game</title>
+    </bookmark>
+    <bookmark href="http://goingware.com/tips/parameters/">
+      <title>C++ Style pointers</title>
+    </bookmark>
+    <bookmark href="http://www.penny-arcade.com/">
+      <title>Penny-Arcade</title>
+    </bookmark>
+    <bookmark href="http://palmboy.suburbia.com.au/">
+      <title>PalmBoy!</title>
+    </bookmark>
+    <bookmark href="http://www.fujitsupc.com/www/products_notebooks.shtml?products/notebooks/p_series">
+      <title>My New Notebook...</title>
+    </bookmark>
+    <bookmark href="http://www.palmos.com/dev/tech/docs/palmos/">
+      <title>PalmOS Docs</title>
+    </bookmark>
+    <bookmark href="ftp://ftp.be.com/pub/">
+      <title>Be's FTP Site</title>
+    </bookmark>
+    <bookmark href="http://www.linuxvoodoo.org/">
+      <title>Linux Voodoo Drivers</title>
+    </bookmark>
+    <bookmark href="http://useit.com/alertbox/">
+      <title>The Alertbox: Current Issues in Web Usability</title>
+    </bookmark>
+    <bookmark href="http://www.dotico.com/">
+      <title>Icons For Windows</title>
+    </bookmark>
+  </folder>
+
+  <folder>
+    <title>From Sona</title>
+    <bookmark href="http://books.i-set.ru">
+      <title>E-Books</title>
+    </bookmark>
+    <bookmark href="http://www.protej.com/buffy/">
+      <title>More Buffy knowledge than you want</title>
+    </bookmark>
+    <bookmark href="http://www.somethingawful.com/cliff/ihateyou/page-187-02a.jpg">
+      <title>Large Cat</title>
+    </bookmark>
+    <bookmark href="http://www-106.ibm.com/developerworks/linux/library/l-pycon.html?dwzone=linux">
+      <title>Iterators and Generators in Python</title>
+    </bookmark>
+    <bookmark href="http://www.constantrevolution.com">
+      <title>Paul Prescod's new company</title>
+    </bookmark>
+    <bookmark href="http://merd.net/pixel/language-study/">
+      <title>Programming Language Study</title>
+    </bookmark>
+    <bookmark href="http://sourceforge.net/projects/pycrust/">
+      <title>Interactive Python Shell</title>
+    </bookmark>
+    <bookmark href="http://gnosis.cx/publish/tech_index.html">
+      <title>Assorted Articles</title>
+    </bookmark>
+    <bookmark href="http://pygame.org/docs/tut/newbieguide.html">
+      <title>A Newbie's guide to PyGame</title>
+    </bookmark>
+    <bookmark href="http://www.cetus-links.com/">
+      <title>Object-Oriented Links</title>
+    </bookmark>
+    <bookmark href="http://diveintopython.org/">
+      <title>Dive Into Python</title>
+    </bookmark>
+    <bookmark href="http://www.linuxnewbie.org/">
+      <title>LinuxNewbie.org</title>
+    </bookmark>
+    <bookmark href="http://www-106.ibm.com/developerworks/linux/library/l-python6.html">
+      <title>Python Curses Tutorial</title>
+    </bookmark>
+    <bookmark href="http://www.boost.org/">
+      <title>Boost C++ Libraries</title>
+    </bookmark>
+    <bookmark href="http://www.pilot-link.org/">
+      <title>Pilot-Link.org</title>
+    </bookmark>
+    <bookmark href="http://calliopeinc.com/palmprog2/tutorial/x506.html">
+      <title>How to get prc-tools working on Windows</title>
+    </bookmark>
+  </folder>
+
+  <folder>
+    <title>Some XML Stuff</title>
+    <bookmark href="http://www.syndic8.com/">
+      <title>Check this out sometime...</title>
+    </bookmark>
+    <bookmark href="http://www.newsisfree.com/HPE/xml/feeds/39/1439.xml">
+      <title>Scientific American in RSS...</title>
+    </bookmark>
+    <bookmark href="http://www.slashdot.com/slashdot.rdf">
+      <title>Slashdot in RDF...</title>
+    </bookmark>
+    <bookmark href="http://www.jamsterdam.com/rss092/">
+      <title>RSS Tutorial</title>
+    </bookmark>
+    <bookmark href="http://www.w3.org/2000/xp/Group/1/11/19/UsageScenarios">
+      <title>XML Usage Scenarios</title>
+    </bookmark>
+    <bookmark href="http://www-105.ibm.com/developerworks/education.nsf/dw/xml-onlinecourse-bynewest?OpenDocument&amp;Count=500">
+      <title>Tutorials on XML in Python</title>
+    </bookmark>
+  </folder>
+
+  <folder>
+    <title>TeX &amp; LaTeX</title>
+    <bookmark href="http://www.tex.ac.uk/cgi-bin/texfaq2html">
+      <title>List of  TeX Frequently Asked Questions:</title>
+    </bookmark>
+    <bookmark href="http://tex.loria.fr/english/index.html">
+      <title>A (La)TeX encyclopaedia:</title>
+    </bookmark>
+    <bookmark href="http://www.it.kth.se/docs/TeX-stuff/">
+      <title>TeX, LaTeX, and Related Software:</title>
+    </bookmark>
+    <bookmark href="http://www.radamir.com/tex/ttf-tex.htm">
+      <title>TrueType fonts support to TeX and LaTeX:</title>
+    </bookmark>
+    <bookmark href="http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/">
+      <title>Getting Started with LaTeX :</title>
+    </bookmark>
+    <bookmark href="http://www.emerson.emory.edu/services/latex/latex2e/latex2e_toc.html">
+      <title>LaTeXe help 1.4:</title>
+    </bookmark>
+    <bookmark href="http://www.dimi.uniud.it/~gorni/">
+      <title>TeX page:</title>
+    </bookmark>
+    <bookmark href="http://www-h.eng.cam.ac.uk/help/tpl/textprocessing/makingWWWdocs.html">
+      <title>Producing HTML and PDF files with LaTeX:</title>
+    </bookmark>
+  </folder>
+
+  <folder>
+    <title>Fun</title>
+    <bookmark href="http://www.nessus.org/">
+      <title>Nessus, a free box-securer</title>
+    </bookmark>
+    <bookmark href="http://twistedmatrix.com/users/jh.twistd/python/moin.cgi/FrontPage">
+      <title>#Python Wiki</title>
+    </bookmark>
+    <bookmark href="http://tenderbytes.net/rhymeworld/feeder/teacher/poepuree.htm">
+      <title>Poe Puree (Abort, Retry, Ignore)</title>
+    </bookmark>
+    <bookmark href="http://www.ems.psu.edu/~fraser/BadScience.html">
+      <title>Bad Science</title>
+    </bookmark>
+    <bookmark href="http://www.darn-tootin.com/">
+      <title>Darn Tootin'</title>
+    </bookmark>
+    <bookmark href="http://diabloii.net/garwulfs/">
+      <title>Garwulf's Corner</title>
+    </bookmark>
+    <bookmark href="http://www.theunderdogs.org/">
+      <title>Home of the Underdogs</title>
+    </bookmark>
+    <bookmark href="http://www.wordsmith.org/anagram/advanced.html">
+      <title>Internet Anagram Server _ I, Rearrangement Servant _ anagrams, wordplay, solve, crossword, tran</title>
+    </bookmark>
+    <bookmark href="http://primates.ximian.com/~miguel/bongo-bong.html">
+      <title>Let's Make Unix Not Suck</title>
+    </bookmark>
+    <bookmark href="http://thingy.apana.org.au/~fun/slrn/">
+      <title>slrn under Windows</title>
+    </bookmark>
+    <bookmark href="http://www.classicgaming.com/starcontrol/">
+      <title>The Pages of Now &amp; Forever - All About Star Control</title>
+    </bookmark>
+    <bookmark href="http://twisted.coopweb.org/docs/basics.html">
+      <title>Twisted</title>
+    </bookmark>
+    <bookmark href="http://www.uhs-hints.com/uhsweb/outworld.php">
+      <title>UHS_ Out of this World Hints</title>
+    </bookmark>
+    <bookmark href="http://www.notebookuniverse.com/Used/UsedNotebooksRev1.htm">
+      <title>Used Notebooks &amp; Pricing</title>
+    </bookmark>
+  </folder>
+
+  <folder>
+    <title>Reference</title>
+    <bookmark href="http://www.programmersheaven.com/">
+      <title>A Programmers Heaven - Where programmers go!</title>
+    </bookmark>
+    <bookmark href="http://www.unicode.org/charts/">
+      <title>Code Charts (PDF Version)</title>
+    </bookmark>
+    <bookmark href="http://developer.intel.com/design/motherbd/ca3/ca3_drive.htm">
+      <title>D810E2CA3 Desktop Board Driver Updates</title>
+    </bookmark>
+    <bookmark href="http://java.sun.com/j2se/1.3/docs/api/index.html">
+      <title>Javadocs 1.3</title>
+    </bookmark>
+    <bookmark href="http://www.brunningonline.net/simon/python/PQR2.1.html">
+      <title>Python 2.1 Quick Reference</title>
+    </bookmark>
+    <bookmark href="http://www.faqs.org/rfcs/">
+      <title>RFC Archive</title>
+    </bookmark>
+    <bookmark href="http://mitpress.mit.edu/sicp/full-text/book/book.html">
+      <title>Structure and Interpretation of Computer Programs</title>
+    </bookmark>
+    <bookmark href="http://www.toronto.com/feature/241/">
+      <title>Toronto_ Maps &amp;amp; Resources - toronto.com</title>
+    </bookmark>
+    <bookmark href="http://www.function-pointer.org/">
+      <title>Function Pointer .org</title>
+    </bookmark>
+    <bookmark href="http://www.icce.rug.nl/documents/cplusplus/cplusplus.html">
+      <title>C++ Annotations.</title>
+    </bookmark>
+    <bookmark href="http://www.wn.com.au/rnielsen/pilrcedit/">
+      <title>PilrcEdit</title>
+    </bookmark>
+    <bookmark href="http://industry.java.sun.com/javaone/99/event/0,1768,624,00.html">
+      <title>High Performance Java</title>
+    </bookmark>
+  </folder>
+
+  <folder>
+    <title>User interface design</title>
+    <bookmark href="http://www.students.tut.fi/~tuomov/ion/">
+      <title>Ion, a non-overlapping Window Manager</title>
+    </bookmark>
+    <bookmark href="http://www-3.ibm.com/ibm/easy/eou_ext.nsf/Publish/561">
+      <title>IBM_Ease of Use_Design</title>
+    </bookmark>
+    <bookmark href="http://developer.kde.org/documentation/standards/kde/style/basics/">
+      <title>KDE User Interface Guidelines</title>
+    </bookmark>
+    <bookmark href="http://developer.apple.com/techpubs/mac/HIGuidelines/HIGuidelines-2.html">
+      <title>Macintosh Human Interface Guidelines</title>
+    </bookmark>
+    <bookmark href="http://msdn.microsoft.com/ui/">
+      <title>Microsoft User Experience and Interface Design Resources</title>
+    </bookmark>
+  </folder>
+
+  <folder>
+    <title>Retro Games</title>
+    <bookmark href="http://www.theunderdogs.org/">
+      <title>Home of The Underdogs.</title>
+    </bookmark>
+    <bookmark href="http://www.classicgaming.com/starcontrol/">
+      <title>Star Control</title>
+    </bookmark>
+  </folder>
+  <folder>
+    <title>Newest</title>
+    <bookmark href="http://www.btinternet.com/~mousepad/">
+      <title>Hacking Diablo II.</title>
+    </bookmark>
+    <bookmark href="http://www.geocities.com/kefkarules/DiabloIIHowTo.txt">
+      <title>The Diablo II Linux HOWTO.</title>
+    </bookmark>
+    <bookmark href="http://appdb.codeweavers.com/appview.php?appId=74">
+      <title>The Diablo II section in Wine's App Database.</title>
+    </bookmark>
+    <bookmark href="http://www.winehq.com/support.shtml">
+      <title>WINE's support and documentation page.</title>
+    </bookmark>
+    <bookmark href="http://www.transgaming.com">
+      <title>Wine with DirectX Support.</title>
+    </bookmark>
+  </folder>
+
+  <folder>
+    <title>Python</title>
+    <bookmark href="ftp://ftp-icf.llnl.gov/pub/python/extending_python.ps">
+    </bookmark>
+    <bookmark href="ftp://ftp-icf.llnl.gov/pub/python/numericalpython.pdf">
+    </bookmark>
+    <bookmark href="ftp://ftp.cg.cs.tu-bs.de/pub/cg/people/havemann/Subdiv-Demo.NT">
+      <title>Generative Modeling with Subdivision Surfaces</title>
+    </bookmark>
+    <bookmark href="ftp://ftp.cg.cs.tu-bs.de/pub/cg/people/havemann/spirograph/spirodemo-1.0.zip">
+    </bookmark>
+    <bookmark href="ftp://ftp.cs.indiana.edu/pub/scheme-repository/doc/pubs/guardians.ps.gz">
+    </bookmark>
+    <bookmark href="ftp://ftp.csh.rit.edu/csh/retrev/psh">
+    </bookmark>
+    <bookmark href="ftp://ftp.parc.xerox.com/pub/ilu/ilu.html">
+      <title>Inter-Language Unification</title>
+    </bookmark>
+    <bookmark href="ftp://mancos.cs.utah.edu/papers/oskit-sosp97.html">
+      <title>Flux OS Teaching Kit</title>
+    </bookmark>
+    <bookmark href="http://209.218.86.64/linux.html">
+      <title>AutoCAD-type-thing for Linux</title>
+    </bookmark>
+    <bookmark href="http://art.net/Studios/Hackers/Hopkins/Don/text/gnuscript.html">
+      <title>GnuScript, The One True Language</title>
+    </bookmark>
+    <bookmark href="http://bbcr.uwaterloo.ca/~dfevans/">
+      <title>David Evans, Be Guy.</title>
+    </bookmark>
+    <bookmark href="http://bbcr.uwaterloo.ca/~dfevans/studio/">
+      <title>His studio</title>
+    </bookmark>
+    <bookmark href="http://c2.com/cgi/wiki?ExtremeProgrammingRoadmap">
+      <title>Extreme Programming (via Wiki)</title>
+    </bookmark>
+    <bookmark href="http://csl.cse.ucsc.edu/~ben/python/">
+      <title>ID3 Tagging in Python</title>
+    </bookmark>
+    <bookmark href="http://dubois.simplenet.com/python">
+      <title>Numerical Python</title>
+    </bookmark>
+    <bookmark href="http://friga.mer.utexas.edu/mark/perl/perceps/">
+    </bookmark>
+    <bookmark href="http://futuramaoutlet.com/">
+      <title>Futurama!</title>
+    </bookmark>
+    <bookmark href="http://grail.cnri.reston.va.us/grail/">
+      <title>Grail homepage</title>
+    </bookmark>
+    <bookmark href="http://hare.net.au/~neilh/ScintillaTide.html">
+      <title>Source Code Editing Componant</title>
+    </bookmark>
+    <bookmark href="http://home.earthlink.net/~atomic212/gameboy.html">
+      <title>Gameboy on the Palm</title>
+    </bookmark>
+    <bookmark href="http://itrc.uwaterloo.ca/~papresco/tcl/">
+      <title>Papresco's Tcl page</title>
+    </bookmark>
+    <bookmark href="http://java.sun.com/people/gbracha/nwst.html">
+      <title>Type System for Smalltalk</title>
+    </bookmark>
+    <bookmark href="http://language.perl.com/versus/python">
+      <title>Perl's view on Python</title>
+    </bookmark>
+    <bookmark href="http://lima.mudlib.org/~rassilon/p2c/">
+      <title>Python to C converter</title>
+    </bookmark>
+    <bookmark href="http://mini.net/pub/ts2/minotaur.html">
+    </bookmark>
+    <bookmark href="http://news.excite.com/news/r/990504/08/odd-snake">
+    </bookmark>
+    <bookmark href="http://photo.net/philg/humor/media-lab.html">
+    </bookmark>
+    <bookmark href="http://reality.sgi.com/boehm_mti/finalization.html">
+    </bookmark>
+    <bookmark href="http://starbase.neosoft.com/~claird/comp.lang.misc/language_comparisons.html">
+      <title>Cameron's Language Comparisons</title>
+    </bookmark>
+    <bookmark href="http://starbase.neosoft.com/~claird/comp.lang.python/7IPC.html">
+    </bookmark>
+    <bookmark href="http://starbase.neosoft.com/~claird/comp.lang.python/web_python.html">
+    </bookmark>
+    <bookmark href="http://starbase.neosoft.com/~claird/comp.lang.tcl/fmm.html">
+    </bookmark>
+    <bookmark href="http://starbase.neosoft.com/~claird/comp.object.corba/CORBA.html">
+      <title>Cameron's Corba Page</title>
+    </bookmark>
+    <bookmark href="http://starship.python.net/crew/amk/grimoire/">
+    </bookmark>
+    <bookmark href="http://starship.python.net/crew/amk/python/simple.html">
+    </bookmark>
+    <bookmark href="http://starship.python.net/crew/amk/python/string.html#parsing">
+    </bookmark>
+    <bookmark href="http://starship.python.net/crew/amk/writing/crypto-curiosa.html">
+    </bookmark>
+    <bookmark href="http://starship.python.net/crew/da/PyOpenGL/">
+      <title>Python OpenGL Module</title>
+    </bookmark>
+    <bookmark href="http://starship.python.net/crew/gandalf/DNET/classes/index.html">
+    </bookmark>
+    <bookmark href="http://starship.python.net/crew/gherman/UMLgenTest.pdf">
+    </bookmark>
+    <bookmark href="http://starship.python.net/crew/gherman/playground/codeplot/">
+      <title>Code Plot</title>
+    </bookmark>
+    <bookmark href="http://starship.python.net/crew/gmcm/install.html">
+      <title>Greg's Installer Module</title>
+    </bookmark>
+    <bookmark href="http://starship.python.net/crew/scharf/Programmieren-mit-Python.html">
+    </bookmark>
+    <bookmark href="http://starship.python.net/crew/vlad/pymalloc/">
+    </bookmark>
+    <bookmark href="http://starship.python.net/~just/pythonpowered/">
+    </bookmark>
+    <bookmark href="http://starship.skyport.net/crew/vlad/archive/threaded_code/">
+    </bookmark>
+    <bookmark href="http://starship.skyport.net/~lemburg/fastpath.zip">
+    </bookmark>
+    <bookmark href="http://starship.skyport.net/~lemburg/mxCGIPython.html">
+    </bookmark>
+    <bookmark href="http://surfnetusa.com/notepower">
+    </bookmark>
+    <bookmark href="http://theopenlab.uml.edu/pygtools/">
+    </bookmark>
+    <bookmark href="http://user.sgic.fi/~tml/gimp/win32/">
+      <title>The Gimp for Win32</title>
+    </bookmark>
+    <bookmark href="http://wearables.stanford.edu/">
+    </bookmark>
+    <bookmark href="http://webster.cs.ucr.edu/">
+    </bookmark>
+    <bookmark href="http://www-personal.engin.umich.edu/~johannb/position.htm">
+    </bookmark>
+    <bookmark href="http://www.acs.ucalgary.ca/~nascheme/python/gc.html">
+    </bookmark>
+    <bookmark href="http://www.automatrix.com/~skip/python/">
+    </bookmark>
+    <bookmark href="http://www.biddin.com/pyPit/">
+    </bookmark>
+    <bookmark href="http://www.calarts.edu/~elaforge/pov/">
+    </bookmark>
+    <bookmark href="http://www.callwave.com">
+    </bookmark>
+    <bookmark href="http://www.cm.cf.ac.uk/CLE/">
+    </bookmark>
+    <bookmark href="http://www.comp.it.bton.ac.uk/burks/burks/language/asm/artofasm/artof001.htm">
+      <title>The Art of Assembler</title>
+    </bookmark>
+    <bookmark href="http://www.complang.tuwien.ac.at/projects/rafts.html">
+    </bookmark>
+    <bookmark href="http://www.cs.kun.nl/~clean/">
+    </bookmark>
+    <bookmark href="http://www.cs.nott.ac.uk/Department/Staff/gmh/monparsing.ps">
+    </bookmark>
+    <bookmark href="http://www.cs.su.oz.au/~piers/python/facemail.html">
+    </bookmark>
+    <bookmark href="http://www.cs.umd.edu/~fred/search/">
+    </bookmark>
+    <bookmark href="http://www.cs.vu.nl/~dick/PTAPG.html">
+    </bookmark>
+    <bookmark href="http://www.cwi.nl/~sjoerd/PythonVsTcl.html">
+      <title>Yet Another Python vs. Tcl page</title>
+    </bookmark>
+    <bookmark href="http://www.datamonitor.com/dmhtml/tc/tcpr03199901_2.htm#1">
+    </bookmark>
+    <bookmark href="http://www.div8.net/billy/music">
+      <title>Vektor Sigma's Music page</title>
+    </bookmark>
+    <bookmark href="http://www.div8.net/thud">
+    </bookmark>
+    <bookmark href="http://www.div8.net/ttrk">
+    </bookmark>
+    <bookmark href="http://www.dstc.edu.au/Fnorb">
+    </bookmark>
+    <bookmark href="http://www.dylanworld.com/advocacy/Competitive.html">
+    </bookmark>
+    <bookmark href="http://www.first.gmd.de/smile/trap/TRAP.zip">
+    </bookmark>
+    <bookmark href="http://www.fool.com/ddow/1999/ddow990721.htm">
+    </bookmark>
+    <bookmark href="http://www.fool.com/portfolios/rulebreaker/1999/rulebreaker990721.htm">
+    </bookmark>
+    <bookmark href="http://www.geocities.com/SiliconValley/Foothills/9316/SGEmain.htm">
+    </bookmark>
+    <bookmark href="http://www.geocities.com/TheTropics/Island/2932/gcpy.html">
+    </bookmark>
+    <bookmark href="http://www.groovetech.com/">
+    </bookmark>
+    <bookmark href="http://www.hvision.nl/~ivnowa/snippets/">
+      <title>Python snippets</title>
+    </bookmark>
+    <bookmark href="http://www.idi.ntnu.no/~mlh/python/different.html">
+    </bookmark>
+    <bookmark href="http://www.idi.ntnu.no/~mlh/python/instant.html">
+    </bookmark>
+    <bookmark href="http://www.idi.ntnu.no/~mlh/python/programming.html">
+    </bookmark>
+    <bookmark href="http://www.iecc.com/gclist/GC-faq.html">
+      <title>Garbage Collection FAQ</title>
+    </bookmark>
+    <bookmark href="http://www.jpython.org/">
+      <title>JPython</title>
+    </bookmark>
+    <bookmark href="http://www.linux.org/info/logos.html">
+    </bookmark>
+    <bookmark href="http://www.lyra.org/greg/small/">
+    </bookmark>
+    <bookmark href="http://www.microsoft.com/iit/">
+    </bookmark>
+    <bookmark href="http://www.objectdomain.com/odEvalUser">
+      <title>Object Domain UML Eval Version</title>
+    </bookmark>
+    <bookmark href="http://www.onthenet.com.au/~briblack/pyrpg/">
+    </bookmark>
+    <bookmark href="http://www.ora.com/people/authors/lunde/cjk_inf.html">
+      <title>CJKV Info</title>
+    </bookmark>
+    <bookmark href="http://www.oreilly.com/catalog/lpython/">
+      <title>Learning Python (O'Reilly)</title>
+    </bookmark>
+    <bookmark href="http://www.oreilly.com/catalog/pythonwin32/noframes.html">
+    </bookmark>
+    <bookmark href="http://www.oreilly.com/frank/">
+    </bookmark>
+    <bookmark href="http://www.pauahtun.org/4nobletruthsofpython.html">
+      <title>The 4 Noble Truths of Python</title>
+    </bookmark>
+    <bookmark href="http://www.pauahtun.org/getargs.html">
+    </bookmark>
+    <bookmark href="http://www.pdc.kth.se/~jas/retro/">
+    </bookmark>
+    <bookmark href="http://www.python.org/doc/Intros.html">
+    </bookmark>
+    <bookmark href="http://www.python.org/doc/current/lib/os-process.html">
+    </bookmark>
+    <bookmark href="http://www.python.org/doc/howto/idle/">
+      <title>The Idle Howto</title>
+    </bookmark>
+    <bookmark href="http://www.python.org/doc/howto/qt-examples/">
+    </bookmark>
+    <bookmark href="http://www.python.org/emacs/python-mode/faq.html">
+      <title>Emacs' Python Mode</title>
+    </bookmark>
+    <bookmark href="http://www.python.org/pipermail/xml-sig/1999-May/001220.html">
+    </bookmark>
+    <bookmark href="http://www.python.org/sigs/xml-sig/files/xml051.zip">
+    </bookmark>
+    <bookmark href="http://www.python.org/topics/database/DatabaseAPI-2.0.html">
+    </bookmark>
+    <bookmark href="http://www.python.org/topics/tkinter/doc.html">
+    </bookmark>
+    <bookmark href="http://www.python.org/workshops/1997-10/proceedings/savikko.html">
+    </bookmark>
+    <bookmark href="http://www.python.org/workshops/1997-10/proceedings/savikko.ps">
+    </bookmark>
+    <bookmark href="http://www.python.org/~bwarsaw/ecshort.pdf">
+    </bookmark>
+    <bookmark href="http://www.pythonware.com/fredrik/tkdraft/">
+    </bookmark>
+    <bookmark href="http://www.pythonware.com/library/tkinter/introduction/index.htm">
+    </bookmark>
+    <bookmark href="http://www.research.att.com/sw/tools/fsm/">
+    </bookmark>
+    <bookmark href="http://www.scriptics.com/scripting/white.html">
+    </bookmark>
+    <bookmark href="http://www.sdmagazine.com/supplement/ppm/homepage.shtml">
+    </bookmark>
+    <bookmark href="http://www.sff.net/people/neelk/free-software/DejaGrabber.py">
+    </bookmark>
+    <bookmark href="http://www.sff.net/people/neelk/free-software/Signature.py">
+    </bookmark>
+    <bookmark href="http://www.spindoczine.com/folder5">
+    </bookmark>
+    <bookmark href="http://www.stat.ucla.edu/develop/lisp/common/docs/Evolution-of-Lisp.ps.gz">
+    </bookmark>
+    <bookmark href="http://www.strout.net/python/piddle/">
+    </bookmark>
+    <bookmark href="http://www.strout.net/python/poo/">
+      <title>Poo.  Yes, you read that right.</title>
+    </bookmark>
+    <bookmark href="http://www.strout.net/python/tidbits.html">
+    </bookmark>
+    <bookmark href="http://www.stud.ifi.uio.no/~larsga/download/python/plumbo.py">
+    </bookmark>
+    <bookmark href="http://www.sunworld.com/swol-02-1998/swol-02-python.html">
+      <title>Python Article</title>
+    </bookmark>
+    <bookmark href="http://www.sunworld.com/swol-07-1999/swol-07-regex.html#2">
+      <title>Regexes</title>
+    </bookmark>
+    <bookmark href="http://www.telerama.com/~bgarcia/cons/">
+    </bookmark>
+    <bookmark href="http://www.troubleshooters.com/tpromag/199905/199905.htm">
+    </bookmark>
+    <bookmark href="http://www.ucalgary.ca/~nascheme/python/">
+    </bookmark>
+    <bookmark href="http://www.ucalgary.ca/~nascheme/python/gc-python.patch">
+    </bookmark>
+    <bookmark href="http://www.vanderburg.org/~glv/Tcl/war/">
+      <title>The Tcl War</title>
+    </bookmark>
+    <bookmark href="http://www.vanderburg.org/~glv/Tcl/war2/">
+      <title>Part 2 of The Tcl War</title>
+    </bookmark>
+    <bookmark href="http://www.vb-zone.com/upload/free/features/vbpj/1999/mckinney/mckinneytoc.asp">
+    </bookmark>
+    <bookmark href="http://www.w3.org/HTTP-NG/">
+    </bookmark>
+    <bookmark href="http://www.w3.org/People/Raggett/tidy/">
+    </bookmark>
+    <bookmark href="http://www.xs4all.nl/~bsarempt/python/tutorial.html">
+    </bookmark>
+    <bookmark href="http://www3.freebsd.org/publish.html">
+    </bookmark>
+    <bookmark href="http://members.xoom.com/alan_gauld/tutor/tutindex.htm">
+      <title>Python Tutorial</title>
+    </bookmark>
+    <bookmark href="http://www.BeOpen.com/products.html">
+      <title>Python Class Browser</title>
+    </bookmark>
+    <bookmark href="http://starship.python.net:9673/crew/da/Code/compile">
+      <title>Python Compiler</title>
+    </bookmark>
+    <bookmark href="http://www.abo.fi/~iporres/python">
+      <title>Deeply Embedded Python</title>
+    </bookmark>
+    <bookmark href="http://www.zope.org/pipermail/zope/1999-August/007743.html">
+      <title>Mmmm... Plugabble Brains...</title>
+    </bookmark>
+    <bookmark href="http://www.tipworld.com/">
+      <title>Tip of the Day</title>
+    </bookmark>
+    <bookmark href="http://www.csclub.uwaterloo.ca/past_events/events/type-poly_OOP.html">
+      <title>Type Polymorphism</title>
+    </bookmark>
+    <bookmark href="http://www.cosc.canterbury.ac.nz/~greg/python/lexscope.html">
+      <title>Lexical Scoping</title>
+    </bookmark>
+    <bookmark href="http://www.oasis-open.org/cover/xul.html">
+      <title>XUL</title>
+    </bookmark>
+    <bookmark href="http://www.bluestone.com/xml/XwingML/">
+      <title>X Wing ML</title>
+    </bookmark>
+    <bookmark href="http://glade.pn.org/">
+      <title>Glade?</title>
+    </bookmark>
+    <bookmark href="http://www.list.org/">
+      <title>Mailman.</title>
+    </bookmark>
+    <bookmark href="http://www.abo.fi/~iporres/python/">
+      <title>Really Small Python</title>
+    </bookmark>
+    <bookmark href="http://SmallEiffel.loria.fr/papers/papers.html">
+      <title>Small Eiffel Type Inferrence</title>
+    </bookmark>
+    <bookmark href="http://www.us.kernel.org/pub/linux/libs/pam/Linux-PAM-html/pam.html">
+      <title>PAM</title>
+    </bookmark>
+    <bookmark href="http://www.mrob.com/lego.html">
+      <title>Lego stuffs</title>
+    </bookmark>
+    <bookmark href="http://www.pangalactic.org/PyPAM/">
+      <title>Python PAM</title>
+    </bookmark>
+    <bookmark href="http://www.perl.com/language/critiques/ppc.html">
+      <title>Some Book</title>
+    </bookmark>
+    <bookmark href="http://www.python.org/workshops/2000-01/index.html">
+      <title>The 8th annual PyConf</title>
+    </bookmark>
+    <bookmark href="http://www.python.org/cgi-bin/todo.py">
+      <title>Python To-Do list</title>
+    </bookmark>
+    <bookmark href="http://www.puer.to/bae/p/txtipe01.htm">
+      <title>Timbot pics (part 1)</title>
+    </bookmark>
+    <bookmark href="http://www.miraclebaseball.com/pete19.html">
+      <title>Timbot pics (part 2)</title>
+    </bookmark>
+    <bookmark href="http://www.abo.fi/~iporres/python/">
+      <title>Deeply Embedded Python</title>
+    </bookmark>
+    <bookmark href="http://buzz.builder.com/cgi-bin/WebX?14@236.hs95a9MoeFg^0@.ee7bc67/0">
+      <title>Python Article</title>
+    </bookmark>
+    <bookmark href="http://www.xml.com/pub/1999/08/excelon/montreal.html#python">
+      <title>PyXML stuff</title>
+    </bookmark>
+    <bookmark href="http://www.cs.virginia.edu/~jks6b/icfp/">
+      <title>Optimization Contest</title>
+    </bookmark>
+    <bookmark href="http://www.udanax.com/">
+      <title>The former Xanadu</title>
+    </bookmark>
+    <bookmark href="http://members.xoom.com/alan_gauld/uml.htm">
+      <title>Is UML Good</title>
+    </bookmark>
+    <bookmark href="http://home.earthlink.net/~salhir">
+      <title>More UML</title>
+    </bookmark>
+    <bookmark href="http://starship.python.net/crew/mhammond/cvs.html">
+      <title>PythonWin CVS</title>
+    </bookmark>
+    <bookmark href="http://starship.python.net/~moshez/cloom.tar.gz">
+      <title>Python Unix Mail Reader</title>
+    </bookmark>
+    <bookmark href="http://forum.swarthmore.edu/epigone/geometry-research/whelsendsnimp">
+      <title>Polyhedra</title>
+    </bookmark>
+    <bookmark href="http://www.deja.com/getdoc.xp?AN=516251867&amp;fmt=text">
+      <title>something</title>
+    </bookmark>
+    <bookmark href="http://www.inetarena.com/~pdx4d/ocn/oop5.html">
+      <title>chap 5 of something</title>
+    </bookmark>
+    <bookmark href="http://www.inetarena.com/~pdx4d/ocn/oop6.html">
+      <title>chap 6 of something</title>
+    </bookmark>
+    <bookmark href="http://www.inetarena.com/~pdx4d/ocn/oop7.html">
+      <title>chap 7 of something</title>
+    </bookmark>
+    <bookmark href="http://www.inetarena.com/~pdx4d/ocn/python/">
+      <title>Python Quadray Stuff</title>
+    </bookmark>
+    <bookmark href="http://www.inetarena.com/~pdx4d/ocn/xtals101.html">
+      <title>Animated Gifs</title>
+    </bookmark>
+  </folder>
+
+  <folder>
+    <title>Personal</title>
+    <bookmark href="http://www.teleport.com/~pdx4d/quadintro.html">
+      <title>Quadray intro</title>
+    </bookmark>
+    <bookmark href="http://www.python.org/pipermail/xml-sig/1999-July/001367.html">
+      <title>XML beautifier</title>
+    </bookmark>
+    <bookmark href="http://www.best.com/~xah/PageTwo_dir/more.html">
+      <title>Some Random Python Kook</title>
+    </bookmark>
+    <bookmark href="http://www.tibsnjoan.demon.co.uk/mxtext/metalang.html">
+      <title>MetaLanguage</title>
+    </bookmark>
+    <bookmark href="http://www.nightwares.com/">
+      <title>A Macromedia Director Page</title>
+    </bookmark>
+    <bookmark href="http://www.plasticsoftware.com/index_e.html">
+      <title>Plastic UML</title>
+    </bookmark>
+    <bookmark href="http://www.mit.edu/people/xuant/ben/lego.html#tutebot">
+      <title>Lego TuteBot</title>
+    </bookmark>
+    <bookmark href="http://www.despair.com/demotivators/24x30prints.html">
+      <title>DeMotivators</title>
+    </bookmark>
+    <bookmark href="http://www.despair.com/demotivators/dem20.html">
+      <title>More DeMotivators</title>
+    </bookmark>
+    <bookmark href="http://starship.python.net/crew/kernr/Projects.html">
+      <title>TrueType rendering in Python</title>
+    </bookmark>
+    <bookmark href="http://theopenlab.uml.edu/pyorbit/">
+      <title>Python ORBit bindings</title>
+    </bookmark>
+    <bookmark href="http://www.after-y2k.com/Aftery2k/aftery2kmain.html">
+      <title>After Y2K!</title>
+    </bookmark>
+    <bookmark href="http://sidhe.folkwolf.net/~chris/pppoe-howto/">
+      <title>Sympatico Access Manager for Linux</title>
+    </bookmark>
+    <bookmark href="http://www3.sympatico.ca/bcarrick/qanda.htm">
+      <title>PPPoE Q and A</title>
+    </bookmark>
+    <bookmark href="http://fastweb.sympatico.ca/test/ontario/en.html">
+      <title>HSE download speed test page</title>
+    </bookmark>
+    <bookmark href="http://www.math.uwaterloo.ca/~mostrows">
+      <title>PPPoE in the Kernel</title>
+    </bookmark>
+    <bookmark href="http://oss.sgi.com/projects/jessie/">
+      <title>Jessie: an ide for Linux</title>
+    </bookmark>
+    <bookmark href="http://www.ecf.toronto.edu/~stras/pppoe.html">
+      <title>Free PPPoE client</title>
+    </bookmark>
+    <bookmark href="http://www.billday.com/KVMArchive/">
+      <title>Bill Day's KVM archive</title>
+    </bookmark>
+    <bookmark href="http://ece.uwaterloo.ca/~warg/">
+      <title>Waterloo Aerial Robotics Group</title>
+    </bookmark>
+    <bookmark href="http://www.cs.cornell.edu/Info/Misc/LaTeX-Tutorial/LaTeX-Home.html">
+      <title>Beginning LaTeX</title>
+    </bookmark>
+    <bookmark href="http://www.europa.com/~dogman/osi/">
+      <title>The OSI 7-Layer Burrito</title>
+    </bookmark>
+    <bookmark href="http://www.hatrack.com/writingclass/index.shtml">
+      <title>Uncle Orson's Writing Class</title>
+    </bookmark>
+    <bookmark href="http://java.sun.com/docs/books/tutorial/uiswing/index.html">
+      <title>Using Swing Tutorial</title>
+    </bookmark>
+    <bookmark href="ian://48.72.7.90/eglinton/">
+      <title>Ian's Phone number</title>
+    </bookmark>
+  </folder>
+
+  <folder>
+    <title>Newton</title>
+    <bookmark href="http://home.kiss.de/~oehl/">
+      <title>Georg's World of HTML</title>
+    </bookmark>
+    <bookmark href="http://www.newton.apple.com/dev/nstools.html">
+      <title>Newton Tools - NewtonScript</title>
+    </bookmark>
+    <bookmark href="http://www.newton.apple.com/dev/">
+      <title>Newton Developer Homepage</title>
+    </bookmark>
+    <bookmark href="http://photo.net/wtr/dead-trees/story.html">
+      <title>The book behind the book behind the book...</title>
+    </bookmark>
+  </folder>
+
+  <folder>
+    <title>Palm Pilot</title>
+    <bookmark href="http://www.palm.com/custsupp/downloads/netsync.html">
+      <title>3Com-Palm Computing - HotSync Network Connection for Palm Desktop 3.0</title>
+    </bookmark>
+    <bookmark href="http://post-pc.cs.berkeley.edu/">
+      <title>Experimental Systems for the Post-PC Era</title>
+    </bookmark>
+    <bookmark href="http://linux.fh-heilbronn.de/~christ/SyncBuilder/">
+      <title>http--linux.fh-heilbronn.de-~christ-SyncBuilder-</title>
+    </bookmark>
+  </folder>
+
+  <folder>
+    <title>PlayStation</title>
+    <bookmark href="http://www.mit.edu/afs/sipb/user/xiphmont/cdparanoia/">
+      <title>CDDA Paranoia Homepage</title>
+    </bookmark>
+    <bookmark href="http://come.to/PSFAQ/">
+      <title>PSEmuPro Official FAQ Home Page</title>
+    </bookmark>
+    <bookmark href="http://www.phoenix.net/~feldon/psxvideo.html">
+      <title>PSXVideo 1.07 Download</title>
+    </bookmark>
+    <bookmark href="http://www.thecursor.com/">
+      <title>The Cursor Magazine</title>
+    </bookmark>
+    <bookmark href="http://www.videogames.com/features/psx/ff7/">
+      <title>videogames.com's Guide to Final Fantasy VII</title>
+    </bookmark>
+  </folder>
+
+  <folder>
+    <title>Python</title>
+    <bookmark href="ftp://ftp.netcom.com/pub/hb/hbaker/Prag-Parse.html">
+      <title>ACM Lisp Pointers 4, 2 (Apr-Jun 1991), 3-15.</title>
+    </bookmark>
+    <bookmark href="http://www.teleport.com/~pdx4d/">
+      <title>4D Solutions</title>
+    </bookmark>
+    <bookmark href="http://www.pythonware.com/library/tkinter/introduction/index.htm">
+      <title>An Introduction to Tkinter</title>
+    </bookmark>
+    <bookmark href="http://starship.python.net/crew/mwh/bch/">
+      <title>Bytecodehacks</title>
+    </bookmark>
+    <bookmark href="http://www.csr.uvic.ca/~aycock/python/">
+      <title>index.html</title>
+    </bookmark>
+    <bookmark href="http://www.cecm.sfu.ca/projects/ISC/">
+      <title>ISC Main Page</title>
+    </bookmark>
+    <bookmark href="http://self.sunlabs.com/papers/papers.html">
+      <title>Papers about Self and OO Programming</title>
+    </bookmark>
+    <bookmark href="http://www.strout.net/python/poo/index.html">
+      <title>POO</title>
+    </bookmark>
+    <bookmark href="http://vismod.www.media.mit.edu/~tpminka/PLE/">
+      <title>Programming Language Exploration</title>
+    </bookmark>
+    <bookmark href="http://starship.skyport.net/crew/amk/cookbook/">
+      <title>Python Cookbook</title>
+    </bookmark>
+    <bookmark href="http://www.lfw.org/python/">
+      <title>Python things (KaPing Yee)</title>
+    </bookmark>
+    <bookmark href="http://www.strout.net/python/pythonica.html">
+      <title>Pythonica</title>
+    </bookmark>
+    <bookmark href="http://www.scriptics.com/people/john.ousterhout/scripting.html">
+      <title>Scripting</title>
+    </bookmark>
+    <bookmark href="http://www.cl.cam.ac.uk/~fms27/selfgen/">
+      <title>Self generating programs</title>
+    </bookmark>
+    <bookmark href="http://www.mcmillan-inc.com/sockets.html">
+      <title>Sockets</title>
+    </bookmark>
+    <bookmark href="http://www.ddj.com/articles/1998/9804/9804a/9804a.htm">
+      <title>Ternary Search Trees</title>
+    </bookmark>
+    <bookmark href="http://www.handle.net/">
+      <title>The Handle System</title>
+    </bookmark>
+    <bookmark href="http://www.tuxedo.org/~esr/trove/index.html">
+      <title>Trove project page</title>
+    </bookmark>
+    <bookmark href="http://www.glissando.net/vturing/">
+      <title>Visual Turing Page</title>
+    </bookmark>
+    <bookmark href="http://www.w3.org/TR/WD-SVG/">
+      <title>W3C Working Draft Scalable Vector Graphics (SVG)</title>
+    </bookmark>
+    <bookmark href="http://www.stud.ifi.uio.no/%7Elarsga/download/artikler/perl.html">
+      <title>What's wrong with Perl</title>
+    </bookmark>
+    <bookmark href="http://www.mcmillan-inc.com/Install.html">
+      <title>Win32 Python Installer</title>
+    </bookmark>
+    <bookmark href="http://www.zope.org/Documentation">
+      <title>Zope Documentation</title>
+    </bookmark>
+  </folder>
+
+  <folder>
+    <title>Work</title>
+    <bookmark href="http://www.ics.uci.edu/pub/c2/uml/index.html">
+      <title>Argo-UML Free Object-Oriented Design Tool w- Cognitive Support</title>
+    </bookmark>
+    <bookmark href="http://209.167.89.66/cyberdocs26production/cyberdocs.asp">
+      <title>CyberDOCS Version 3.0</title>
+    </bookmark>
+    <bookmark href="http://www.freecode.com/">
+      <title>FreeCode, Free Programming Source Code</title>
+    </bookmark>
+    <bookmark href="http://junior.apk.net/~jbarta/tutor/frames/lesson04.html">
+      <title>Frames Tutor- Lesson 4</title>
+    </bookmark>
+    <bookmark href="http://216.13.9.31/shiftonline/html/onlineTOC/columns/Howling/howling_7.asp">
+      <title>Howling 7</title>
+    </bookmark>
+    <bookmark href="http://www.mcs.net/~dsdawdy/Canpass/go/table/index.html">
+      <title>GO Transit -- Schedules -- Experimental table version</title>
+    </bookmark>
+    <bookmark href="http://blockhead/FrontDesk/default.asp?setPerson=Blake%20Winton&amp;status=Out&amp;comment=gone%20home">
+      <title>I'm going home</title>
+    </bookmark>
+    <bookmark href="http://blockhead/FrontDesk/default.asp?setPerson=Blake%20Winton&amp;status=In&amp;comment=%20">
+      <title>I'm baaaaack...</title>
+    </bookmark>
+    <bookmark href="http://member.nifty.ne.jp/mindstorms/">
+      <title>LEGO MindStorms Gallery</title>
+    </bookmark>
+    <bookmark href="http://www.gyugyi.com/l3g0/ldlite/index.html">
+      <title>LDLITE version 1.5</title>
+    </bookmark>
+    <bookmark href="http://www.crynwr.com/lego-robotics/">
+      <title>Lego Mindstorms Internals</title>
+    </bookmark>
+    <bookmark href="http://lrl.freeservers.com/">
+      <title>Lego Robotics Laboratory</title>
+    </bookmark>
+    <bookmark href="http://blockhead/FrontDesk/default.asp?setPerson=Blake%20Winton&amp;status=Out&amp;comment=for%20lunch...">
+      <title>Out to lunch</title>
+    </bookmark>
+    <bookmark href="http://officeupdate.microsoft.com/downloadCatalog/dldoutlook.htm">
+      <title>Outlook Downloads</title>
+    </bookmark>
+    <bookmark href="http://slashdot.org/features/99/07/16/1316248.shtml">
+      <title>SlashdotFeatureNews in the Slashdot Decade</title>
+    </bookmark>
+    <bookmark href="http://alumni.cse.ucsc.edu/~davevw/onscreen/">
+      <title>OnScreen Programming version 1.0 for Lego Mindstorms</title>
+    </bookmark>
+    <bookmark href="http://po:2112/cyberdocs30/cyberdocs.asp">
+      <title>Po - CyD3.0 Netscape Server</title>
+    </bookmark>
+    <bookmark href="http://www.tmcm.com/strips/index.htm">
+      <title>Too Much Coffee Man cartoons</title>
+    </bookmark>
+    <bookmark href="http://www.w3.org/TR/WD-SVG/">
+      <title>W3C Working Draft Scalable Vector Graphics (SVG)</title>
+    </bookmark>
+    <bookmark href="http://blockhead/FrontDesk/default.asp">
+      <title>Who's in the office</title>
+    </bookmark>
+    <bookmark href="http://www.uk.research.att.com/vnc/index.html">
+      <title>VNC - Virtual Network Computing from AT&amp;T Laboratories Cambridge</title>
+    </bookmark>
+    <bookmark href="http://www.infowar.co.uk/mnemonix/ntbufferoverruns.htm">
+      <title>Windows NT Buffer Overruns - RASMAN.EXE</title>
+    </bookmark>
+  </folder>
+
+  <folder>
+    <title>Random</title>
+    <bookmark href="http://starship.python.net/crew/mwh/bch/module-findfunctioncall.html">
+      <title>1.7 bytecodehacks</title>
+    </bookmark>
+    <bookmark href="http://www.jeigh.com/werk/admin/">
+      <title>AdminSpotting</title>
+    </bookmark>
+    <bookmark href="http://www.phobe.com/furby/index.html">
+      <title>Anatomy of a Furby</title>
+    </bookmark>
+    <bookmark href="http://www.asktog.com/">
+      <title>Ask Tog Home Page</title>
+    </bookmark>
+    <bookmark href="http://homepages.svc.fcj.hvu.nl/brok//legomind/models/trains/barcode.html">
+      <title>Articulated metroliner</title>
+    </bookmark>
+    <bookmark href="http://www.bea.hi-ho.ne.jp/meeco/biped/bipede.html">
+      <title>Biped 1</title>
+    </bookmark>
+    <bookmark href="javascript:location.href='http://babelfish.altavista.com/cgi-bin/translate?jss&amp;urltext='+escape(window.location);">
+      <title>AV Translation</title>
+    </bookmark>
+    <bookmark href="http://www.networkweek.com/bofh/story/topStory">
+      <title>BOFH</title>
+    </bookmark>
+    <bookmark href="http://www.blender.nl/">
+      <title>Blender, freeware 3D software</title>
+    </bookmark>
+    <bookmark href="http://www.freeamp.org/cdindex/">
+      <title>CD Index Home Page</title>
+    </bookmark>
+    <bookmark href="http://www.radix.net/~lhb/cluelock.htm">
+      <title>Clue-Lock The Humor</title>
+    </bookmark>
+    <bookmark href="http://www.jerrypournelle.com/COMPUTING/computing.html">
+      <title>COMPUTING AT CHAOS MANOR</title>
+    </bookmark>
+    <bookmark href="http://el.www.media.mit.edu/groups/el/Projects/constructopedia/">
+      <title>Constructopedia</title>
+    </bookmark>
+    <bookmark href="ftp://download.gamespot.com/pub/action/descent3/d3demo111.exe">
+      <title>Descent 3 v1.1.1 demo</title>
+    </bookmark>
+    <bookmark href="http://www.ctv.es/USERS/xose/wm/">
+      <title>Dockable Applets for WindowMaker</title>
+    </bookmark>
+    <bookmark href="http://www.doczilla.com/development/extmoz.html#i0">
+      <title>Extending Mozilla Or How To Do The Impossible</title>
+    </bookmark>
+    <bookmark href="http://www.melexis.com/site/10402/f_10402.htm">
+      <title>F 10402</title>
+    </bookmark>
+    <bookmark href="http://www.solarflair.ndirect.co.uk/faq2.htm">
+      <title>FAQ</title>
+    </bookmark>
+    <bookmark href="http://www.firingsquad.com/games/quake3/page6.asp">
+      <title>FiringSquad.com - Hands on Preview</title>
+    </bookmark>
+    <bookmark href="http://www.fishdot.org/">
+      <title>Fishdot.org News for fish, Stuff that's wet.</title>
+    </bookmark>
+    <bookmark href="ftp://ftp.freeamp.org/pub/freeamp/freeamp-snap.zip">
+      <title>FreeAmp Latest Snap</title>
+    </bookmark>
+    <bookmark href="http://www.fool.com/foolu/tensteps/step5.htm">
+      <title>FoolU.com Step 5</title>
+    </bookmark>
+    <bookmark href="http://www.freeamp.org/">
+      <title>FreeAmp</title>
+    </bookmark>
+    <bookmark href="http://www.gnome.org/start/getting_rh.shtml">
+      <title>Getting Gnome...</title>
+    </bookmark>
+    <bookmark href="http://www.cs.berkeley.edu/~mdw/java/fourdee/hcube.html">
+      <title>Java test</title>
+    </bookmark>
+    <bookmark href="ftp://ftp.apple.asimov.net/pub/apple_II/images/games/strategy/">
+      <title>FTP directory -pub-apple_II-images-games-strategy- at ftp.apple.asimov.net</title>
+    </bookmark>
+    <bookmark href="ftp://ftp.netcom.com/pub/hb/hbaker/hakmem/hakmem.html">
+      <title>HAKMEM -- CONTENTS -- DRAFT, NOT YET PROOFED</title>
+    </bookmark>
+    <bookmark href="http://www.geocities.com/SiliconValley/Garage/8516/gimp/gimpw32.html">
+      <title>GNU Image Manipulation Program for WIN32</title>
+    </bookmark>
+    <bookmark href="http://unisci.com/stories/19993/0826994.htm">
+      <title>http--unisci.com-stories-19993-0826994</title>
+    </bookmark>
+    <bookmark href="http://www.gargoyle.dyndns.org/linux/portfw-tutorial.html">
+      <title>http--www.gargoyle.dyndns.org-linux-portfw-tutorial.html</title>
+    </bookmark>
+    <bookmark href="http://www.public.iastate.edu/~rpolikar/WAVELETS/WTtutorial.html">
+      <title>INDEX TO SERIES OF TUTORIALS TO WAVELET TRANSFORM BY ROBI POLIKAR</title>
+    </bookmark>
+    <bookmark href="http://rorschach/isapifilterspy/controlpanel">
+      <title>Isapi FilterSpy Control Panel  92369839800000001</title>
+    </bookmark>
+    <bookmark href="http://world.std.com/~pitman/PS/Lambda.html">
+      <title>Lambda</title>
+    </bookmark>
+    <bookmark href="http://library.advanced.org/20551/lessons10-12.html#les10">
+      <title>Lessons 10 to 12 Intermediate LEdit</title>
+    </bookmark>
+    <bookmark href="http://www.myboot.com/movies.html">
+      <title>My Boot movie theater</title>
+    </bookmark>
+    <bookmark href="http://www.tbtf.com/jaundiced/">
+      <title>Lloyd Wood's Jaundiced Eye Index</title>
+    </bookmark>
+    <bookmark href="http://www.openresources.com/">
+      <title>Open Resources</title>
+    </bookmark>
+    <bookmark href="http://www.uml.edu/Dept/Chem/BICGroup/PyGTools/">
+      <title>PyG Tools</title>
+    </bookmark>
+    <bookmark href="http://plan9.bell-labs.com/plan9/doc/rc.html">
+      <title>Rc </title>
+    </bookmark>
+  </folder>
+</xbel>

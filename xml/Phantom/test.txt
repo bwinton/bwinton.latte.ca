@@ -1,0 +1,65 @@
+
+Phantom Fiber XML Documents.
+• Coding Standards.
+• Binary Protocol.
+• Server Design.
+
+<?xml version="1.0"?>
+<?xml-stylesheet href="article.xsl" type="text/xsl"?>
+<?cocoon-process type="xslt"?>
+
+<!DOCTYPE article PUBLIC "-//OASIS//DTD Simplified DocBook XML V4.1.2.5//EN"
+     "sdocbook.dtd">
+
+<!-- 
+  Programming Thoughts DocBook 
+  Copyright (c) 2002 - Blake Winton.  All Rights Reserved.
+  
+  The contents of this file are the property of Blake Winton.
+  Any reproduction or redistribution of the code in whole or in part
+  without expressed written consent is prohibited.
+  
+  $Header:$
+-->
+
+<article>
+    <articleinfo>
+        <title>Programming Thoughts</title>
+        <author>
+            <firstname>Blake</firstname>
+            <surname>Winton</surname>
+        </author>
+        <authorinitials>bw</authorinitials>
+        <revhistory>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>Jan. 15th, 2002</date>
+                <authorinitials>bw</authorinitials>
+                <revremark>Initial Draft.</revremark>
+            </revision>
+        </revhistory>
+        <copyright>
+            <year>2002</year> <holder>Blake Winton</holder>
+        </copyright>
+        <legalnotice>
+            The contents of this file are the property of Blake Winton.
+            Any reproduction or redistribution of the code in whole or in part
+            without expressed written consent is prohibited.
+        </legalnotice>                                                                                                                                            
+    </articleinfo>
+
+    <section>
+        <title>Overview and Miscellania</title>
+        <para>
+            Frequently I think about things I'm working on, and how to best accomplish the tasks I've set for myself.  In an attempt to remember these breakthroughs I've had, I decided to start writing them down.
+        </para>
+    </section>
+
+    <section>
+        <title>Language Independant.</title>
+        <para>
+            If you name your method arguments with an initial underscore (_arg), then you can always tell whether you're using an argument passed in or a member variable of your class.  This seems like a good thing to be able to tell.  Similarly, I've added the single underscore for local variables that I mean to use as I would use arguments.  It also means that I don't need to come up with new names for arguments in setters.  Just prefix the member variable name with an underscore, and we're done.
+        <para>
+
+        <para>
+            If you're trying to test a program, look for inputs that could break it.  This is the kind of testing that QA people can't effectively do, since you'll need to know something about how the program is put together.  Having said that, there are several things that QA people can know about a program, which leads to some tests that they can create.  For instance, if the program has a web-based front-end, try changing your name to the HTML begin-comment tag <literal>lt;!--</literal>.  If it doesn't get escaped on output, it will comment out the rest of the HTML page, which is bad.  Much more malicious things could also be done with that, by embedding javascript in your name, so this is an important thing to test for.  If you know that there is a database on the back end (which most things have if they have a search facility),  then search for things like <literal>' AND otherField = 3</literal> on the chance that the programmer has forgotten to encode his search strings.  This also could be used maliciously, b

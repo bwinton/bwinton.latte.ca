@@ -1,0 +1,90 @@
+a:hover   {background-color:#C0C0C0;color:#0030FF}
+a:link{background-color:#d3b992;color:#840000}
+a:visited{background-color:#d3b992;color:#774343}
+a:active{background-color:#d3b992;color:#ff0000}
+a.headerfile {text-decoration: none}
+a.headerfile:visited {background-color:#d3b992;color:#000000}
+
+body{font-size:100%;background-color:#d3b992;color:#300e0a;margin-top:0px} 
+blockquote{text-align:justify;margin-left:100px;margin-right:100px}
+pre{text-align:left;margin-left:100px;margin-right:100px}
+
+h1{
+    padding-top:1em;
+    padding-bottom:0em;
+    text-align:center;
+}
+
+div.content{
+    font-size:1em;
+    text-align:left;
+    margin-left:230px;
+    margin-right:50px;
+    padding-top:0px;
+}
+
+div.content h3{
+    margin-top:1em;
+}
+
+div.sidebar{
+    border-style:solid;
+    position:absolute;
+    width:150px;
+    top:7em;
+    left:50px;
+    padding: 5px;
+}
+
+div.sidebar ul{
+    margin-left:-2em;
+    list-style-position: inside;
+}
+
+div.footer{
+    font-size:80%;
+    text-align:right;
+    padding-top:1em;
+    margin-left:230px;
+    margin-right:50px;
+}
+
+div.valid{
+    float:left;
+    text-align:left;
+}
+
+div.bookItem{
+    position: relative;
+    /* border: 1px solid #000; */
+    width: 80%;
+    padding-right: 25%;
+}
+
+span.bookTitle{
+    /* border: 1px solid #000; */
+    width: 75%;
+}
+span.bookDate{
+    /* border: 1px solid #000; */
+    position: absolute;
+    width: 25%;
+    bottom: -2px;
+    right: -1px;
+    text-align: right;
+}
+
+span.dateTh{
+    vertical-align: super;
+    font-size: smaller;
+}
+
+div.bookReview{
+    clear: both;
+}
+
+ul.read li{
+    vertical-align:middle;
+    padding-bottom:1em;
+}
+

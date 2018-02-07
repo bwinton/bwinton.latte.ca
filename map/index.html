@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+
+.map {
+  width: 90vw;
+  height: 90vh;
+  margin: 0px;
+}
+
+.country {
+  fill: #ccc;
+  stroke: #fff;
+  stroke-width: .5px;
+  stroke-linejoin: round;
+}
+
+.graticule {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .3;
+  stroke-width: .5px;
+}
+
+.graticule.outline {
+  stroke: #333;
+  stroke-opacity: 1;
+  stroke-width: 1.5px;
+}
+
+.city {
+  stroke: #000000;
+  stroke-width: 0.2;
+}
+
+.city.blake {
+  fill: #ff1133;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Where we’ve been…</h1>
+  <svg class="map" viewbox="0 0 960 500"></svg>
+  <script src="d3.v3.min.js"></script>
+  <script src="topojson.v1.min.js"></script>
+  <script>
+// Largely stolen from http://bl.ocks.org/jasondavies/raw/4188334/
+
+var width = 960;
+var height = 500;
+
+var projection = d3.geo.equirectangular().scale(125);
+var graticule = d3.geo.graticule();
+
+var path = d3.geo.path()
+  .projection(projection);
+
+var cities = [
+  {'name': 'Toronto', 'lat': 43.666667, 'lon': -79.416667, 'who': ['blake']},
+  {'name': 'Waterloo', 'lat': 43.4638888889, 'lon': -80.5258333333, 'who': ['blake']},
+  {'name': 'Vancouver', 'lat': 49.25, 'lon': -123.133333, 'who': ['blake']},
+  {'name': 'San Francisco,', 'lat': 37.775, 'lon': -122.4183333, 'who': ['blake']},
+  {'name': 'Caracas', 'lat': 10.5, 'lon': -66.9166667, 'who': ['blake']},
+  {'name': 'Warsaw', 'lat': 52.25, 'lon': 21, 'who': ['blake']},
+  {'name': 'Paris', 'lat': 48.866667, 'lon': 2.333333, 'who': ['blake']},
+  {'name': 'Rome', 'lat': 41.9, 'lon': 12.4833333, 'who': ['blake']},
+  {'name': 'London', 'lat': 51.5, 'lon': -0.116667, 'who': ['blake']},
+  {'name': 'London, Ontario', 'lat': 42.983333, 'lon': -81.25, 'who': ['blake']},
+  {'name': 'Winnipeg', 'lat': 49.883333, 'lon': -97.166667, 'who': ['blake']},
+  {'name': 'Saskatoon', 'lat': 52.133333, 'lon': -106.666667, 'who': ['blake']},
+  {'name': 'Mountain View', 'lat': 37.3861111, 'lon': -122.0827778, 'who': ['blake']},
+  {'name': 'Las Vegas', 'lat': 36.175, 'lon': -115.1363889, 'who': ['blake']},
+  {'name': 'Honolulu', 'lat': 21.3069444, 'lon': -157.8583333, 'who': ['blake']},
+  {'name': 'Boston', 'lat': 42.3583333, 'lon': -71.0602778, 'who': ['blake']},
+  {'name': 'New York', 'lat': 40.7141667, 'lon': -74.0063889, 'who': ['blake']},
+  {'name': 'Pittsburgh', 'lat': 40.4405556, 'lon': -79.9961111, 'who': ['blake']},
+  {'name': 'Minneapolis', 'lat': 44.98, 'lon': -93.2636111, 'who': ['blake']},
+  {'name': 'Edinburgh', 'lat': 55.95, 'lon': -3.2, 'who': ['blake']},
+  {'name': 'Brussels', 'lat': 50.833333, 'lon': 4.333333, 'who': ['blake']}
+].map(d => {
+  d.coords = projection([d.lon, d.lat]);
+  return d;
+});
+
+var svg = d3.select("svg");
+
+svg.append("text")
+  .attr({
+    'class': 'loading',
+    'x': width / 2,
+    'y': height / 2,
+    'dy': '0.5em',
+    'width': function (d) {
+      return width;
+    },
+    'height': function (d) {
+      return height;
+    }
+  }).style({
+    'text-anchor': 'middle'
+  }).text("Loading…")
+
+svg.append("path")
+  .datum(graticule.outline)
+  .attr("class", "graticule outline")
+  .attr("d", path);
+
+d3.json("readme-world.json", function(error, world) {
+  svg.select('.loading')
+    .transition()
+    .style('color', '#FFFFFF')
+    .each('end', function () {
+      this.remove();
+    });
+
+  svg.append("path")
+    .datum(graticule)
+    .attr("class", "graticule")
+    .attr("d", path);
+
+  var countries = topojson.feature(world, world.objects.countries).features;
+  var neighbors = topojson.neighbors(world.objects.countries.geometries);
+
+  svg.selectAll(".country")
+    .data(countries)
+    .enter().insert("path", ".graticule")
+      .attr("class", "country")
+      .attr("d", path)
+      .style("fill", '#ffffff')
+      .transition()
+      .duration(1000)
+      .style("fill", function(d, i) {
+        var z = d.color = d3.max(neighbors[i], n => countries[n].color) + 1 | 0;
+        var y = d3.hsl();
+        y.h = z * 360 / 8;
+        y.s = 0.5;
+        y.l = 0.9;
+        return y.rgb().toString();
+      });
+
+  svg.selectAll('.city')
+    .data(cities)
+    .enter().append('circle')
+      .attr({
+        'class': d => 'city ' + d.who.join(' '),
+        'cx': d => d.coords[0],
+        'cy': d => d.coords[1],
+        'r': 1.5
+      }).style({
+      });
+});
+
+  </script>
+</body>

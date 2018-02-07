@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="75"
+   name=""
+   committed-date="2006-01-18T02:28:55.207732Z"
+   url="https://www.latte.ca/svn/SImport"
+   last-author="bwinton"
+   kind="dir"
+   uuid="e3e2eb00-22d9-0310-8188-a3fdc3149153"
+   revision="75"/>
+<entry
+   committed-rev="75"
+   name="SImport.prc"
+   text-time="2006-01-18T19:55:41.000000Z"
+   committed-date="2006-01-18T02:28:55.207732Z"
+   checksum="d459807a53d582131b539bbb15c7711e"
+   last-author="bwinton"
+   kind="file"
+   prop-time="2006-01-18T19:55:41.000000Z"/>
+<entry
+   committed-rev="74"
+   name="dont-link-web-s.py"
+   text-time="2006-01-15T15:20:43.000000Z"
+   committed-date="2006-01-15T15:18:57.600953Z"
+   checksum="cdd45f1298d1e82fcf97e05488259681"
+   last-author="bwinton"
+   kind="file"
+   prop-time="2006-01-15T15:20:42.000000Z"/>
+<entry
+   committed-rev="68"
+   name="SImport_Rsrc.PRC"
+   text-time="2006-01-15T15:20:43.000000Z"
+   committed-date="2005-07-22T12:37:24.233393Z"
+   checksum="8a3ae4b99883172e06ff920d1b9ea33f"
+   last-author="bwinton"
+   kind="file"
+   prop-time="2006-01-15T15:20:42.000000Z"/>
+<entry
+   committed-rev="68"
+   name="SImport_proj.PRC"
+   text-time="2006-01-15T15:20:43.000000Z"
+   committed-date="2005-07-22T12:37:24.233393Z"
+   checksum="9ee18a24dbb6407ad82e61f75f3c3e1f"
+   last-author="bwinton"
+   kind="file"
+   prop-time="2006-01-15T15:20:42.000000Z"/>
+<entry
+   committed-rev="75"
+   name="index.html"
+   text-time="2006-01-18T19:55:41.000000Z"
+   committed-date="2006-01-18T02:28:55.207732Z"
+   checksum="011de7bf661ee14a5f2902816d5540da"
+   last-author="bwinton"
+   kind="file"
+   prop-time="2006-01-18T19:55:41.000000Z"/>
+<entry
+   committed-rev="74"
+   name="sudoku.exe"
+   text-time="2006-01-15T15:20:43.000000Z"
+   committed-date="2006-01-15T15:18:57.600953Z"
+   checksum="b663840e35725077de751d2a5b666546"
+   last-author="bwinton"
+   kind="file"
+   prop-time="2006-01-15T15:20:43.000000Z"/>
+<entry
+   committed-rev="75"
+   name="SImport.c"
+   text-time="2006-01-18T19:55:41.000000Z"
+   committed-date="2006-01-18T02:28:55.207732Z"
+   checksum="7a9842a6faa18f4f9363b2b0299aac65"
+   last-author="bwinton"
+   kind="file"
+   prop-time="2006-01-18T19:55:41.000000Z"/>
+</wc-entries>

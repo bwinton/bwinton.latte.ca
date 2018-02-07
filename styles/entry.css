@@ -1,0 +1,90 @@
+a:link    {color:#0010c4}
+a:visited {color:#000972}
+a:active  {color:#bb0004}
+
+/* This is the body of the entire document.
+   background-color is color1
+   border-color is #ffffff (for now)
+*/
+body{
+    background-color:#9cc5ec;
+    color:#000000;
+    border-style:double solid;
+    border-color:#ffffff;
+    margin-left:15%;
+    margin-right:15%} 
+
+/* This is the body of the text block.
+   background-color is color2
+   color is text color (#000000)
+   border-color is color3
+*/
+div.body{
+    background-color:#ffffff;
+    color:#000000;
+    text-align:left;
+    padding:15px;
+    border-style:solid;
+    border-color:#6bffad}
+
+div.other{
+    position:absolute;
+    top:45px;
+    text-align:center;
+    width:170px}
+
+div.content{
+    margin-left:190px}
+
+/* This is the header
+   border-color is color3
+*/
+div.header{
+    font-size:150%;
+    font-weight:bold;
+    padding:5px;
+    text-align:right;
+    border-bottom-width:2px;
+    border-style:solid;
+    border-color:#6bffad;
+    border-top:0;
+    border-left:0;
+    border-right:0}
+
+/* This is the sidebar
+   color is either black or white
+   background-color is color1
+   border-color is color3
+*/
+div.sidebar{
+    font-size:80%;
+    padding:5px;
+    margin-top:30px;
+    text-align:left;
+    color:#000000;
+    background-color:#9cc5ec;
+    border-style:solid;
+    border-color:#6bffad}
+div.sidebar a:link {color:#0010c4}
+div.sidebar a:visited {color:#000972}
+span.sbheader{font-weight:bolder}
+
+/* This is the pregometer
+   color is the text colour (#000000) 
+   background-color is color2
+   border-color is color1
+*/
+div.pregnant{padding:5px;color:#000000;background-color:#ffffff;border-style:double;border-color:#9cc5ec}
+div.pregnant a:link {color:#0010c4}
+div.pregnant a:visited {color:#000972}
+span.pregheader{font-weight:bolder;font-size:120%;text-align:center}
+
+div.footer{font-size:80%;text-align:center}
+
+span.done{text-decoration:line-through}
+span.whisper{font-size:80%}
+span.clue{font-weight:bolder}
+
+div.quote{font-style:italic;margin-left:25px}
+
+div.nav{font-size:80%}

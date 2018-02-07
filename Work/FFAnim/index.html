@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Firefooooox</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script>
+$(function(){
+
+  window.onhashchange = function() {
+    $(".o").not("#o").remove();
+    var repeat = Number(window.location.hash.substr(1));
+    for (var i = 0; i < repeat; i++)
+      $("#o").clone().removeAttr("id").insertAfter($("#o"));
+  };
+  window.onhashchange();
+
+  var start = mozAnimationStartTime;
+  var step = function(t) {
+    var progress = t - start;  
+    if (progress > 100) {
+      $("img").each(function(i, e) {
+        s = Math.sin(t/500 - i/$("img").length); 
+        y = s * 100 + 150;
+        e.style.top = y + "px";
+      });
+      start = t;
+    }
+    mozRequestAnimationFrame(step);
+  };
+
+  mozRequestAnimationFrame(step);
+});
+</script>
+<style>
+img {
+  position: relative;
+  left: 10px;
+  top: 10px;
+}
+</style>
+</head>
+<body>
+<img src="F.png">
+<img src="i.png">
+<img src="r.png">
+<img src="e.png">
+<img src="f2.png">
+<img id="o" class="o" src="o.png">
+<img src="x.png">
+</body>
+</html>

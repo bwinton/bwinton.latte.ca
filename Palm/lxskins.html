@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <link rel="stylesheet" href="../base.css" type="text/css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Creating Icon Packs For IconMgr With PilRC</title>
+</head>
+<body>
+  <h1>Creating Icon Packs For IconMgr With PilRC.</h1>
+
+  <p>I should probably start with the disclaimer that the following
+    instructions are for Windows only.  You can probably modify them
+    to work under some sort of Unix, but I'm not going to, since I
+    figure that if you're smart enough to run Unix, you're smart
+    enough to figure this stuff out.</p>
+
+  <p>So, here's my example code.  You'll need to download and install
+    <a href="http://pilrc.sourceforge.net/">pilrc</a>.  (Check the <a
+    href="http://sourceforge.net/project/showfiles.php?group_id=7404"
+    >Downloads page</a>.)  I've chosen to put it in a
+    <code>pilrc</code> subdirectory.  You'll also need some bitmaps.
+    The small ones should be 10x9, and the large ones should be 20x18.
+    If you have a program like Photoshop, you should convert your
+    images to 8-bit colour, and use <a href="PalmOS.act">this colour
+    table</a> so that Photoshop can handle all the dithering, instead
+    of letting PilRC do it.  (PilRC does a fair job, but it's not
+    going to be as good as a program which was designed to do exactly
+    that.) I've got some sample images which you should download and
+    save into an <code>images</code> subdirectory.</p>
+
+  <ul>
+    <li><a href="images/AgentSmithSmallGrey.bmp"><img
+    src="images/AgentSmithSmallGrey.bmp"/></a></li>
+    <li><a href="images/AgentSmithSmallColour.bmp"><img
+    src="images/AgentSmithSmallColour.bmp"/></a></li>
+    <li><a href="images/AgentSmithLargeColour.bmp"><img
+    src="images/AgentSmithLargeColour.bmp"/></a></li>
+  </ul>
+
+  <p>Okay, so now we have our PilRC, and our images, and it's time to
+    write the file that ties them all together.  Here's mine, which
+    I've named <code>icons.rcp</code>, with some explanation
+    afterwards.<p>
+
+  <pre>/**
+ * Icons.
+ **/
+BITMAPFAMILYEX ID 1
+BEGIN
+  BITMAP "images/AgentSmithSmallGrey.bmp" BPP 4    
+  BITMAP "images/AgentSmithSmallColour.bmp" BPP 8   
+  BITMAP "images/AgentSmithLargeColour.bmp" BPP 8 DENSITY 2
+END</pre>
+
+  <p>So, What's there to explain.  The first three lines are comments.
+    The next 6 define a family of bitmaps.  Large bitmaps have to have
+    <code>DENSITY 2</code> at the end.  <code>BPP 4</code> means that
+    there are four bits of colour information per pixel, which in
+    Palm-land means it's a greyscale image.  <code>BPP 8</code> means
+    that there are 8 bits of colour information per pixel, which in
+    Palm-land means that it's an indexed colour image.  If you wanted
+    to add more images, you would repeat the whole
+    <code>BITMAPFAMILYEX</code> block, with a different
+    <code>ID</code>.  One thing to watch out for is ids that are
+    greater than 10,000 or so.  They can interfere with some standard
+    Palm bitmaps.  As long as you start your ids at 1, and work your
+    way up, you shouldn't have any problems.</p>
+
+  <p>The final piece of the puzzle is how to turn the images and the
+    <code>icons.rcp</code> file into something that you can install on
+    your Palm.  I've written a batch file, called
+    <code>icons.bat</code> to automate much of the work for me.  And
+    here it is.</p>
+
+  <pre>pilrc\pilrc -ro -type Rsrc -creator Actn -name "New Icons" icons.rcp
+copy /Y icons.ro icons.prc</pre>
+
+  <p>Does it need any explanation?  I don't think so, but if you feel
+    I'm wrong, please <a href="mailto:bwinton+iconmgr@latte.ca">email
+    me</a>, and I'll throw some more information up here.</p>
+
+  <p>Oh, I'll be adding more icons to the file as I convert them.  You
+    can get a copy of the latest version <a
+    href="Icons.prc">here</a>.  And I wanted to mention that the
+    reason I'm doing this in the first place is to get people to think
+    about the hi-res and lo-res icons differently.  There's no reason
+    they have to be the same as each other.  When I create galleries
+    of digital pictures on the web, I usually take an interesting
+    snippet from the picture to use as a thumbnail.  The people who
+    created the Ravenswood Manor icons which I'm using as a base for
+    the rest of the icons in my pack had the same idea.  The lo-res
+    icons are a close-up detail of part of the hi-res icons.  You can
+    get a good idea of which icon it is from the lo-res, and see the
+    full picture in the hi-res.  Personally, I'ld love to see more
+    icon creators do things like this, but I realize that it takes a
+    lot more time, and so it's unlikely to happen.</p>
+
+  </body>
+</html>

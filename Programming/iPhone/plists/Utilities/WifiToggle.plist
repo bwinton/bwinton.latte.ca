@@ -1,0 +1,48 @@
+<plist version="1.0">
+<dict>
+	<key>bundleIdentifier</key>
+	<string>ca.latte.wifi.toggle</string>
+	<key>name</key>
+	<string>WifiToggle</string>
+	<key>version</key>
+	<string>1.0.1</string>
+	<key>location</key>
+	<string>http://iphone.latte.ca/zips/WifiToggle-1.0.1.zip</string>
+	<key>size</key>
+	<string>11030</string>
+	<key>url</key>
+	<string>http://iphone.latte.ca/info/WifiToggle.html</string>
+	<key>description</key>
+	<string>A utility to toggle the Wifi on and off.</string>
+	<key>scripts</key>
+	<dict>
+		<key>install</key>
+		<array>
+			<array>
+				<string>CopyPath</string>
+				<string>WifiToggle.app</string>
+				<string>/Applications/WifiToggle.app</string>
+			</array>
+		</array>
+		<key>uninstall</key>
+		<array>
+			<array>
+				<string>RemovePath</string>
+				<string>/Applications/WifiToggle.app</string>
+			</array>
+		</array>
+		<key>update</key>
+		<array>
+			<array>
+				<string>RemovePath</string>
+				<string>/Applications/WifiToggle.app</string>
+			</array>
+			<array>
+				<string>CopyPath</string>
+				<string>WifiToggle.app</string>
+				<string>/Applications/WifiToggle.app</string>
+			</array>
+		</array>
+	</dict>
+</dict>
+</plist>

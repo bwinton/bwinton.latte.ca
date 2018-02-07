@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="tree-view.xsl" type="text/xsl"?>
+<?cocoon-process type="xslt"?>
+<stuff xmlns:bad="urn:ewwww">
+   <junk xmlns="http://skew.org/junk">
+     <greeting xml:lang="en">hello world!</greeting>
+     <bad:poetry>
+         i  like
+         xml
+         in the morning
+     </bad:poetry>
+     <tab>	</tab>
+   </junk>
+</stuff>

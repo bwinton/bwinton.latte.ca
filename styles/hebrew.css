@@ -1,0 +1,17 @@
+body{background-color:#d3b992;color:#300e0a} 
+a:link{background-color:#d3b992;color:#840000}
+a:visited{background-color:#d3b992;color:#774343}
+a:active{background-color:#d3b992;color:#ff0000}
+
+p.header{margin-left:50px;margin-right:125px;border-top-style:solid}
+p.special{margin-left:50px;margin-right:125px;border-top-style:solid;border-top-width:2px;border-bottom-style:solid;border-bottom-width:2px}
+div.date{float:right;text-align:right;margin-right:62px}
+p.beginner{margin-left:125px}
+p.intermediate{margin-left:125px}
+div.note{margin-left:125;margin-right:125px;border-left-style:solid;padding-left:10}
+
+
+p.head{text-align:center;margin-left:0px;margin-right:0px}
+p{text-align:left;margin-left:125px;margin-right:125px}
+p.footer{font-size:60%;text-align:center}
+hr.footer{width:40%}
