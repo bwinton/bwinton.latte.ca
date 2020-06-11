@@ -13,15 +13,31 @@
           rel="stylesheet">
     <style type="text/css">
       body {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-gap: .5em 3em;
       }
-      #content div.span4 {
-        padding-bottom: 3em;
+      #title {
+        margin-bottom: 2.5em;
+      }
+      #title {
+        grid-column: span 2;
       }
       .sidebar-nav {
         padding: 9px 0;
+        margin: 0;
       }
+      .content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: .5em 3em;
+      }
+      .subtitle {
+        grid-column: span 3;
+      }
+
+
     </style>
     <link href="/static/bootstrap/docs/assets/css/bootstrap-responsive.css"
           rel="stylesheet" type="text/css" />
@@ -40,111 +56,95 @@
     <title>Blake's WebSpace</title>
   </head>
   <body id="www-latte-ca">
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="hero-unit">
-          <h1>Blake's Space</h1>
-          <p>(All the interesting content is over on
-            <a href="http://weblog.latte.ca/blake/">the blog</a>.)</p>
-        </div>
+    <div id="title" class="hero-unit">
+      <h1>Blake's Space</h1>
+      <p>(All the interesting content is over on
+        <a href="http://weblog.latte.ca/blake/">the blog</a>.)</p>
+    </div>
+    <div class="content">
+      <h2 class="subtitle">Recent projects</h2>
+      <div>
+        <h3><a href="https://github.com/bwinton">GitHub</a></h3>
+        <dl>
+          <dt><a href="https://github.com/bwinton/Mozilla-Tools">Mozilla Tools</a></dt>
+          <dd>Various tools in Python and Node.js for working with Mozilla’s codebase.</dd>
+          <dt><a href="https://github.com/bwinton/mazes">Mazes</a></dt>
+          <dd>A collection of maze-generating algorithms in Node.js.</dd>
+          <dt><a href="https://github.com/bwinton/LimeChat-Themes">LimeChat Themes</a></dt>
+          <dd>Some themes for LimeChat, a Mac IRC client.</dd>
+          <dt><a href="https://github.com/bwinton/reviewer-dashboard">Reviewer Dashboard</a></dt>
+          <dd>A fork of Atul’s Reviewer Dashboard, modified for Thunderbird.</dd>
+          <dt><a href="https://github.com/bwinton/TbAir">TbAir</a></dt>
+          <dd>An experimental extension for Thunderbird, providing a radical new UI.</dd>
+        </dl>
       </div>
-      <div class="row-fluid">
-        <div class="span9">
-          <div id="content">
-            <h2>Recent projects</h2>
-            <div class="row-fluid">
-              <div class="span4">
-                <h3><a href="https://github.com/bwinton">GitHub</a></h3>
-                <dl>
-                  <dt><a href="https://github.com/bwinton/Mozilla-Tools">Mozilla Tools</a></dt>
-                  <dd>Various tools in Python and Node.js for working with Mozilla’s codebase.</dd>
-                  <dt><a href="https://github.com/bwinton/mazes">Mazes</a></dt>
-                  <dd>A collection of maze-generating algorithms in Node.js.</dd>
-                  <dt><a href="https://github.com/bwinton/LimeChat-Themes">LimeChat Themes</a></dt>
-                  <dd>Some themes for LimeChat, a Mac IRC client.</dd>
-                  <dt><a href="https://github.com/bwinton/reviewer-dashboard">Reviewer Dashboard</a></dt>
-                  <dd>A fork of Atul’s Reviewer Dashboard, modified for Thunderbird.</dd>
-                  <dt><a href="https://github.com/bwinton/TbAir">TbAir</a></dt>
-                  <dd>An experimental extension for Thunderbird, providing a radical new UI.</dd>
-                </dl>
-              </div>
-              <div class="span4">
-                <h3><a href="https://bitbucket.org/bwinton">BitBucket</a></h3>
-                <dl>
-                  <dt><a href="https://bitbucket.org/bwinton/pixelcity-mac/overview">PixelCity Mac</a></dt>
-                  <dd>A fork of the Mac port of the Pixel City screensaver by Shamus Young.</dd>
-                  <dt><a href="https://bitbucket.org/bwinton/tb-at-rest/overview">Thunderbird at REST</a></dt>
-                  <dd>A REST interface to Thunderbird, along with a Facebook scraper as proof-of-concept.</dd>
-                </dl>
-              </div>
-              <div class="span4">
-                <h3><a href="http://hg.mozilla.org/users/bwinton_latte.ca/">Mozilla</a></h3>
-                <dl>
-                  <dt><a href="http://hg.mozilla.org/users/bwinton_latte.ca/replytoggle/">ReplyToggle</a></dt>
-                  <dd>A Thunderbird extension to let you toggle between reply types (Reply, Reply All, and Reply to Group).</dd>
-                  <dt><a href="http://hg.mozilla.org/users/bwinton_latte.ca/bmode/">B-Mode</a></dt>
-                  <dd>The start of a Thunderbird extension to provide a "Group by subject, order by date" view in the message list.</dd>
-                </dl>
-              </div>
-            </div>
-
-            <h2>Really old projects</h2>
-            <div class="row-fluid">
-              <div class="span4">
-                Writing a <a href="http://palmblosxom.latte.ca/">Palm
-                Conduit</a> to post memos from my <a
-                href="http://www.palmsource.com">Palm</a> into my <a
-                href="http://pyblosxom.sourceforge.net/">weblog</a>.
-              </div>
-              <div class="span4">
-                Writing another <a href="http://pedit.latte.ca/">Palm
-                Conduit</a> to transfer my <a
-                href="http://www.paulcomputing.com/">pEdit32/pEditPro</a>
-                memos onto my desktop.
-              </div>
-              <div class="span4">
-                Getting <a href="http://www.diabloii.net/">Diablo II</a>
-                <a href="http://www.latte.ca/D2LOD/">working</a> under <a
-                href="http://www.winehq.org">Wine</a>.
-              </div>
-            </div>
-            <div class="row-fluid">
-              <div class="span4">
-                Getting <a href=
-                "http://www.lemburg.com/files/python/SoftwareDescriptions.html#py2html.py"
-                >syntax highlighting </a> working for the <a
-                href="http://www.latte.ca/cgi-bin/daily.py?name=Source">daily.py</a>.
-              </div>
-              <div class="span4">
-                Getting <a href="xml/urls.xml">xml</a>/<a
-                href="xml/urls-html.xsl">xsl</a> processing happening <a
-                href="http://xml.apache.org/cocoon/index.html">automatically</a>.
-              </div>
-              <div class="span4">
-                Learning about <a
-                href="http://www.w3schools.com/css/">Cascading Style Sheets</a>,
-                and applying <a href="styles/base.css">them</a> to my pages.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Other Pages</li>
-              <li><a href="calendar.html">My Calendar</a></li>
-              <li><a href="resume.html">My Resume</a></li>
-              <li><a href="http://delicious.com/bwinton">Bookmarks</a></li>
-              <li><a href="http://www.flickr.com/people/blakewinton">Recent digital pictures</a></li>
-              <li><a href="camera/">Digital pictures from an earlier era</a></li>
-              <li><a href="http://www.goodreads.com/user/show/7296874-bwinton">Books I’ve read recently</a></li>
-              <li><a href="books.html">Books I read a long, long time ago</a></li>
-              <li><a class="headerfile" href="stdclaim.html">Standard Disclaimer</a></li>
-            </ul>
-          </div>
-        </div>
+      <div>
+        <h3><a href="https://bitbucket.org/bwinton">BitBucket</a></h3>
+        <dl>
+          <dt><a href="https://bitbucket.org/bwinton/pixelcity-mac/overview">PixelCity Mac</a></dt>
+          <dd>A fork of the Mac port of the Pixel City screensaver by Shamus Young.</dd>
+          <dt><a href="https://bitbucket.org/bwinton/tb-at-rest/overview">Thunderbird at REST</a></dt>
+          <dd>A REST interface to Thunderbird, along with a Facebook scraper as proof-of-concept.</dd>
+        </dl>
       </div>
+      <div>
+        <h3><a href="http://hg.mozilla.org/users/bwinton_latte.ca/">Mozilla</a></h3>
+        <dl>
+          <dt><a href="http://hg.mozilla.org/users/bwinton_latte.ca/replytoggle/">ReplyToggle</a></dt>
+          <dd>A Thunderbird extension to let you toggle between reply types (Reply, Reply All, and Reply to Group).</dd>
+          <dt><a href="http://hg.mozilla.org/users/bwinton_latte.ca/bmode/">B-Mode</a></dt>
+          <dd>The start of a Thunderbird extension to provide a "Group by subject, order by date" view in the message list.</dd>
+        </dl>
+      </div>
+
+      <h2 class="subtitle">Really old projects</h2>
+      <div>
+        Writing a <a href="http://palmblosxom.latte.ca/">Palm
+        Conduit</a> to post memos from my <a
+        href="http://www.palmsource.com">Palm</a> into my <a
+        href="http://pyblosxom.sourceforge.net/">weblog</a>.
+      </div>
+      <div>
+        Writing another <a href="http://pedit.latte.ca/">Palm
+        Conduit</a> to transfer my <a
+        href="http://www.paulcomputing.com/">pEdit32/pEditPro</a>
+        memos onto my desktop.
+      </div>
+      <div>
+        Getting <a href="http://www.diabloii.net/">Diablo II</a>
+        <a href="http://www.latte.ca/D2LOD/">working</a> under <a
+        href="http://www.winehq.org">Wine</a>.
+      </div>
+      <div>
+        Getting <a href=
+        "http://www.lemburg.com/files/python/SoftwareDescriptions.html#py2html.py"
+        >syntax highlighting </a> working for the <a
+        href="http://www.latte.ca/cgi-bin/daily.py?name=Source">daily.py</a>.
+      </div>
+      <div>
+        Getting <a href="xml/urls.xml">xml</a>/<a
+        href="xml/urls-html.xsl">xsl</a> processing happening <a
+        href="http://xml.apache.org/cocoon/index.html">automatically</a>.
+      </div>
+      <div>
+        Learning about <a
+        href="http://www.w3schools.com/css/">Cascading Style Sheets</a>,
+        and applying <a href="styles/base.css">them</a> to my pages.
+      </div>
+    </div>
+
+    <div id="nav" class="well sidebar-nav">
+      <ul class="nav nav-list">
+        <li class="nav-header">Other Pages</li>
+        <li><a href="calendar.html">My Calendar</a></li>
+        <li><a href="resume.html">My Resume</a></li>
+        <li><a href="http://delicious.com/bwinton">Bookmarks</a></li>
+        <li><a href="http://www.flickr.com/people/blakewinton">Recent digital pictures</a></li>
+        <li><a href="camera/">Digital pictures from an earlier era</a></li>
+        <li><a href="http://www.goodreads.com/user/show/7296874-bwinton">Books I’ve read recently</a></li>
+        <li><a href="books.html">Books I read a long, long time ago</a></li>
+        <li><a class="headerfile" href="stdclaim.html">Standard Disclaimer</a></li>
+      </ul>
     </div>
 
     <!-- Placed at the end of the document so the pages load faster -->
