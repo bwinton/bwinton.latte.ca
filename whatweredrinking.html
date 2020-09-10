@@ -31,7 +31,6 @@
           background: #F3F1F2;
       }
       h2 {
-          background: #6AA6CA;
           text-transform: uppercase;
           font-size: 4em;
           margin-top: 0;
@@ -55,9 +54,35 @@
       h3 {
         text-transform: uppercase;
         font-weight: 100;
-
       }
 
+      .adventure {
+        text-transform: uppercase;
+        font-weight: 100;
+        color: #BFBFBF;
+        margin: auto;
+        margin-bottom: 2em;
+        border-bottom: 1px solid #BFBFBF;
+        max-width: fit-content;
+      }
+
+      .adventure > div {
+        display: inline-block;
+        vertical-align: middle;
+        background: #BFBFBF;
+        min-width: 2em;
+        min-height: 2em;
+        border-radius: 50%;
+      }
+
+
+      .adventure > div:first-of-type {
+        margin-inline-start: 1em;
+      }
+
+      .adventure > div:last-of-type {
+        margin-inline-end: 1em;
+      }
 
     </style>
     <title>What we’re drinking.</title>
@@ -69,13 +94,23 @@
         <div class="tasting_notes"></div>
         <div class="description"><h3></h3>
         <span></span></div>
-        <div class="adventure"></div>
+        <div class="adventure">
+          Classic
+          <div class="number_1"></div>
+          <div class="number_2"></div>
+          <div class="number_3"></div>
+          <div class="number_4"></div>
+          <div class="number_5"></div>
+          <div class="number_6"></div>
+          <div class="number_7"></div>
+          Adventurous
+        </div>
     </div>
   </body>
   <script type="text/javascript">
     let current = "monument";
     let coffees = {"monument": {
-        colour: "#6AA6CA",
+        color: "#6AA6CA",
         vendor: "Pilot Coffee Roasters",
         name: "Monument",
         tasting_notes: "molasses chocolate & full body",
@@ -91,6 +126,6 @@
     document.querySelector(".tasting_notes").textContent = coffee.tasting_notes;
     document.querySelector(".description > h3").textContent = coffee.description_title;
     document.querySelector(".description > span").textContent = coffee.description;
-    // document.querySelector(".adventure").textContent = coffee.description;
+    document.querySelector(".adventure > .number_" + coffee.adventure).style.background = coffee.color;
   </script>
 </html>
