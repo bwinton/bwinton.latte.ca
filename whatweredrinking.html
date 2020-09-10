@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What coffee we're drinking.">
+    <meta name="author" content="Blake Winton">
+
+    <!-- Styles. -->
+    <link href="https://fonts.googleapis.com/css2?family=Charm&family=Overpass:wghtt@100;700&display=swap" rel="stylesheet"> 
+    <style type="text/css">
+      body {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-gap: .5em 3em;
+        font-family: 'Overpass', 'Arial', sans-serif;
+        text-align: center;
+        background: #383A35;
+      }
+
+      h1 {
+        grid-column: 2;
+        color: #F3F1F2;
+        text-transform: uppercase;
+      }
+
+      #info {
+          grid-column: 2;
+          background: #F3F1F2;
+      }
+      h2 {
+          background: #6AA6CA;
+          text-transform: uppercase;
+          font-size: 4em;
+          margin-top: 0;
+          padding: 1.5em;
+      }
+
+      .tasting_notes {
+        font-family: 'Charm', 'Times New Roman', Times, cursive, serif;
+        font-size: 2em;
+        font-weight: 100;
+        margin: auto;
+        margin-bottom: 2em;
+        max-width: 5em;
+      }
+
+      .description {
+        font-weight: 100;
+        margin-bottom: 2em;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-weight: 100;
+
+      }
+
+
+    </style>
+    <title>What we’re drinking.</title>
+  </head>
+  <body>
+    <h1>Pilot Coffee Roasters</h1>
+    <div id="info">
+        <h2>Monument</h2>
+        <div class="tasting_notes">molasses chocolate & full body</div>
+        <div class="description"><h3>The Stronghold</h3>
+        Our formidable ode to the dark roast done right.</div>
+        <div class="adventure"></div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    let current = "monument";
+    let coffees = {"monument": {
+        colour: "#6AA6CA",
+        vendor: "Pilot Coffee Roasters",
+        name: "Monument",
+        tasting_notes: "molasses chocolate & full body",
+        description_title: "The Stronghold",
+        description: "Our formidable ode to the dark roast done right.",
+        adventure: 1,
+    }};
+
+  </script>
+</html>
