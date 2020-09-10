@@ -63,12 +63,12 @@
     <title>What we’re drinking.</title>
   </head>
   <body>
-    <h1>Pilot Coffee Roasters</h1>
+    <h1></h1>
     <div id="info">
-        <h2>Monument</h2>
-        <div class="tasting_notes">molasses chocolate & full body</div>
-        <div class="description"><h3>The Stronghold</h3>
-        Our formidable ode to the dark roast done right.</div>
+        <h2></h2>
+        <div class="tasting_notes"></div>
+        <div class="description"><h3></h3>
+        <span></span></div>
         <div class="adventure"></div>
     </div>
   </body>
@@ -83,6 +83,14 @@
         description: "Our formidable ode to the dark roast done right.",
         adventure: 1,
     }};
-
+    let coffee = coffees[current];
+    document.querySelector("h1").textContent = coffee.vendor;
+    let name = document.querySelector("#info > h2");
+    name.textContent = coffee.name;
+    name.style.background = coffee.color;
+    document.querySelector(".tasting_notes").textContent = coffee.tasting_notes;
+    document.querySelector(".description > h3").textContent = coffee.description_title;
+    document.querySelector(".description > span").textContent = coffee.description;
+    // document.querySelector(".adventure").textContent = coffee.description;
   </script>
 </html>
