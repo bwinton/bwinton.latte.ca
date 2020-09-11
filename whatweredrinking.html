@@ -63,28 +63,41 @@
         color: #BFBFBF;
         margin: auto;
         margin-bottom: 2em;
-        border-bottom: 1px solid #BFBFBF;
         width: min-content;
         white-space: nowrap;
         padding-bottom: 0.5em;
       }
 
-      .adventure > div {
+      .adventure div {
         display: inline-block;
+      }
+
+      .adventure > .label {
+        width: 7em;
+      }
+
+      .adventure > .label:first-of-type {
+        text-align: end;
+      }
+
+      .adventure > .label:last-of-type {
+        text-align: start;
+      }
+
+      .scale {
+        border-bottom: 1px solid #BFBFBF;
+        padding: 0 0 .5em;
+        margin: 0;
+        margin-inline-start: 1em;
+        margin-inline-end: 1em;
+      }
+
+      .scale > div {
         vertical-align: middle;
         background: #BFBFBF;
         min-width: 2em;
         min-height: 2em;
         border-radius: 50%;
-      }
-
-
-      .adventure > div:first-of-type {
-        margin-inline-start: 1em;
-      }
-
-      .adventure > div:last-of-type {
-        margin-inline-end: 1em;
       }
 
       @media (max-width: 50rem) {
@@ -104,7 +117,7 @@
           font-size: 0.8em;
         }
 
-        .adventure > div {
+        .scale > div {
           min-width: 1.5em;
           min-height: 1.5em;
         }
@@ -122,37 +135,67 @@
         <div class="description"><h3></h3>
         <span></span></div>
         <div class="adventure">
-          Classic
-          <div class="number_1"></div>
-          <div class="number_2"></div>
-          <div class="number_3"></div>
-          <div class="number_4"></div>
-          <div class="number_5"></div>
-          <div class="number_6"></div>
-          <div class="number_7"></div>
-          Adventurous
+          <div class="label">Classic</div>
+          <div class="scale">
+            <div class="number_1"></div>
+            <div class="number_2"></div>
+            <div class="number_3"></div>
+            <div class="number_4"></div>
+            <div class="number_5"></div>
+            <div class="number_6"></div>
+            <div class="number_7"></div>
+          </div>
+          <div class="label">Adventurous</div>
         </div>
     </div>
   </body>
   <script type="text/javascript">
-    let current = "monument";
+    let populate = (coffee) => {
+      document.querySelector("h1").textContent = coffee.vendor;
+      let name = document.querySelector("#info > h2");
+      name.textContent = coffee.name;
+      name.style.background = coffee.color;
+      let tasting_notes = "";
+      for (const index in coffee.tasting_notes) {
+        let note = coffee.tasting_notes[index];
+        if (index == coffee.tasting_notes.length - 1) {
+          tasting_notes += "& ";
+        }
+        tasting_notes += note.replaceAll(" ", "&nbsp;") + " ";
+      }
+      document.querySelector(".tasting_notes").innerHTML = tasting_notes;
+      document.querySelector(".description > h3").textContent = coffee.description_title;
+      document.querySelector(".description > span").textContent = coffee.description;
+      document.querySelector(".scale > .number_" + coffee.adventure).style.background = coffee.color;
+    };
     let coffees = {"monument": {
         color: "#6AA6CA",
         vendor: "Pilot Coffee Roasters",
         name: "Monument",
-        tasting_notes: "molasses chocolate & full body",
+        tasting_notes: ["molasses", "chocolate", "full body"],
         description_title: "The Stronghold",
         description: "Our formidable ode to the dark roast done right.",
         adventure: 1,
-    }};
-    let coffee = coffees[current];
-    document.querySelector("h1").textContent = coffee.vendor;
-    let name = document.querySelector("#info > h2");
-    name.textContent = coffee.name;
-    name.style.background = coffee.color;
-    document.querySelector(".tasting_notes").textContent = coffee.tasting_notes;
-    document.querySelector(".description > h3").textContent = coffee.description_title;
-    document.querySelector(".description > span").textContent = coffee.description;
-    document.querySelector(".adventure > .number_" + coffee.adventure).style.background = coffee.color;
+      },
+      "heritage": {
+        color: "#DACA38",
+        vendor: "Pilot Coffee Roasters",
+        name: "Heritage",
+        tasting_notes: ["toffee", "milk chocolate", "creamy"],
+        description_title: "The Steadfast",
+        description: "There from the start, it stays true to its roots and keeps us grounded.",
+        adventure: 2,
+      },
+      "el_quizarra": {
+        color: "#D7DC75",
+        vendor: "Pilot Coffee Roasters",
+        name: "El Quizarra",
+        tasting_notes: ["grapefruit", "floral", "creamy"],
+        description_title: "Costa Rica",
+        description: "LOT LIMÓN",
+        adventure: 4,
+      },
+    };
+    populate(coffees["monument"]);
   </script>
 </html>
