@@ -168,14 +168,15 @@
       document.querySelector(".description > span").textContent = coffee.description;
       document.querySelector(".scale > .number_" + coffee.adventure).style.background = coffee.color;
     };
-    let coffees = {"monument": {
-        color: "#6AA6CA",
+    let coffees = {
+      "el_quizarra": {
+        color: "#D7DC75",
         vendor: "Pilot Coffee Roasters",
-        name: "Monument",
-        tasting_notes: ["molasses", "chocolate", "full body"],
-        description_title: "The Stronghold",
-        description: "Our formidable ode to the dark roast done right.",
-        adventure: 1,
+        name: "El Quizarra",
+        tasting_notes: ["grapefruit", "floral", "creamy"],
+        description_title: "Costa Rica",
+        description: "LOT LIMÓN",
+        adventure: 4,
       },
       "heritage": {
         color: "#DACA38",
@@ -186,16 +187,17 @@
         description: "There from the start, it stays true to its roots and keeps us grounded.",
         adventure: 2,
       },
-      "el_quizarra": {
-        color: "#D7DC75",
+      "monument": {
+        color: "#6AA6CA",
         vendor: "Pilot Coffee Roasters",
-        name: "El Quizarra",
-        tasting_notes: ["grapefruit", "floral", "creamy"],
-        description_title: "Costa Rica",
-        description: "LOT LIMÓN",
-        adventure: 4,
+        name: "Monument",
+        tasting_notes: ["molasses", "chocolate", "full body"],
+        description_title: "The Stronghold",
+        description: "Our formidable ode to the dark roast done right.",
+        adventure: 1,
       },
+
     };
-    populate(coffees["monument"]);
+    populate(coffees["el_quizarra"]);
   </script>
 </html>
