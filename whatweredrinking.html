@@ -31,11 +31,22 @@
           grid-column: 2;
           background: #F3F1F2;
       }
+      .location {
+          text-transform: uppercase;
+          font-size: 2em;
+          margin-top: 0;
+          padding-top: 3em;
+      }
       h2 {
           text-transform: uppercase;
           font-size: 4em;
+          margin: 0 auto;
+      }
+      .lot {
+          text-transform: uppercase;
+          font-size: 2em;
           margin-top: 0;
-          padding: 1.5em;
+          padding-bottom: 3em;
       }
 
       .tasting_notes {
@@ -130,7 +141,9 @@
   <body>
     <h1></h1>
     <div id="info">
+        <div class="location"></div>
         <h2></h2>
+        <div class="lot"></div>
         <div class="tasting_notes"></div>
         <div class="description"><h3></h3>
         <span></span></div>
@@ -152,9 +165,15 @@
   <script type="text/javascript">
     let populate = (coffee) => {
       document.querySelector("h1").textContent = coffee.vendor;
+      let location = document.querySelector(".location");
+      location.textContent = coffee.location;
+      location.style.background = coffee.color;
       let name = document.querySelector("#info > h2");
       name.textContent = coffee.name;
       name.style.background = coffee.color;
+      let lot = document.querySelector(".lot");
+      lot.textContent = coffee.lot;
+      lot.style.background = coffee.color;
       let tasting_notes = "";
       for (const index in coffee.tasting_notes) {
         let note = coffee.tasting_notes[index];
@@ -172,16 +191,31 @@
       "el_quizarra": {
         color: "#D7DC75",
         vendor: "Pilot Coffee Roasters",
+        location: "Costa Rica",
         name: "El Quizarra",
+        lot: "Lot Limón",
         tasting_notes: ["grapefruit", "floral", "creamy"],
-        description_title: "Costa Rica",
-        description: "LOT LIMÓN",
+        description_title: "",
+        description: "",
+        adventure: 4,
+      },
+      "el_retiro": {
+        color: "#4EADD5",
+        vendor: "Pilot Coffee Roasters",
+        location: "El Salvador",
+        name: "El Ritero",
+        lot: "",
+        tasting_notes: ["baking spices", "citrus", "syrupy"],
+        description_title: "",
+        description: "",
         adventure: 4,
       },
       "heritage": {
         color: "#DACA38",
         vendor: "Pilot Coffee Roasters",
+        location: "",
         name: "Heritage",
+        lot: "",
         tasting_notes: ["toffee", "milk chocolate", "creamy"],
         description_title: "The Steadfast",
         description: "There from the start, it stays true to its roots and keeps us grounded.",
@@ -190,7 +224,9 @@
       "monument": {
         color: "#6AA6CA",
         vendor: "Pilot Coffee Roasters",
+        location: "",
         name: "Monument",
+        lot: "",
         tasting_notes: ["molasses", "chocolate", "full body"],
         description_title: "The Stronghold",
         description: "Our formidable ode to the dark roast done right.",
@@ -198,6 +234,6 @@
       },
 
     };
-    populate(coffees["el_quizarra"]);
+    populate(coffees["el_retiro"]);
   </script>
 </html>
