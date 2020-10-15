@@ -185,7 +185,11 @@
       document.querySelector(".tasting_notes").innerHTML = tasting_notes;
       document.querySelector(".description > h3").textContent = coffee.description_title;
       document.querySelector(".description > span").textContent = coffee.description;
-      document.querySelector(".scale > .number_" + coffee.adventure).style.background = coffee.color;
+      if (coffee.adventure >= 0) {
+        document.querySelector(".scale > .number_" + coffee.adventure).style.background = coffee.color;
+      } else {
+        document.querySelector('.adventure').style.display = "none";
+      }
     };
     let coffees = {
       "brazil_matuto": {
@@ -197,7 +201,6 @@
         tasting_notes: ["roasted almond", "peanut cookie", "brownie"],
         description_title: "",
         description: "",
-        adventure: 4,
       },
       "dancing_goats": {
         color: "#72DCE9",
@@ -267,6 +270,6 @@
       },
 
     };
-    populate(coffees["monument"]);
+    populate(coffees["brazil_matuto"]);
   </script>
 </html>
