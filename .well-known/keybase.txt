@@ -4,62 +4,49 @@ https://keybase.io/bwinton
 
 I hereby claim:
 
-  * I am an admin of http://bwinton.latte.ca
+  * I am an admin of https://bwinton.latte.ca
   * I am bwinton (https://keybase.io/bwinton) on keybase.
-  * I have a public key with fingerprint 3106 808C EBA3 0AA9 7B28  B60D C464 8048 6BF9 4B63
+  * I have a public key ASC6ZSFpnltQ8JUGUEGo5BVKHT7wOkYitLB7FrwG7UcN_Qo
 
-To claim this, I am signing this object:
+To do so, I am signing this object:
 
 {
-    "body": {
-        "key": {
-            "fingerprint": "3106808ceba30aa97b28b60dc46480486bf94b63",
-            "host": "keybase.io",
-            "key_id": "C46480486BF94B63",
-            "uid": "63a80d118684345e16567d8ce31d7c00",
-            "username": "bwinton"
-        },
-        "service": {
-            "hostname": "bwinton.latte.ca",
-            "protocol": "http:"
-        },
-        "type": "web_service_binding",
-        "version": 1
+  "body": {
+    "key": {
+      "eldest_kid": "0101197490cb3835a423fecb7c23155bdaccba34f780a37b19fe1b820b2407e0dd4e0a",
+      "host": "keybase.io",
+      "kid": "0120ba6521699e5b50f095065041a8e4154a1d3ef03a4622b4b07b16bc06ed470dfd0a",
+      "uid": "63a80d118684345e16567d8ce31d7c00",
+      "username": "bwinton"
     },
-    "ctime": 1395949721,
-    "expire_in": 157680000,
-    "prev": "1f20b353b187df3b8e11b691f29578b324168148ab7af7009d675e2805f35ea7",
-    "seqno": 4,
-    "tag": "signature"
+    "merkle_root": {
+      "ctime": 1647354323,
+      "hash": "ea04f001f59ab23b1e2a47fc62c848636d414f3a96aca61ca345a1cc86760e62cec4f12bf1751f09ea1a016436b7d68d1d6a5cb8773f42e977d58bbf5e30615e",
+      "hash_meta": "ccb41b1102063465128ed2fc31965350f045a917273e6ad3daf5440140099fe9",
+      "seqno": 22086666
+    },
+    "service": {
+      "entropy": "nhAXNW6nanmwjX4g86mla7AV",
+      "hostname": "bwinton.latte.ca",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.9.2"
+  },
+  "ctime": 1647354377,
+  "expire_in": 504576000,
+  "prev": "aed3fc3ddfde5432933f3347ecd4984a650dbbddbc6424c95bff620d5a1025ef",
+  "seqno": 198,
+  "tag": "signature"
 }
 
-with the aforementioned key, yielding the PGP signature:
+which yields the signature:
 
------BEGIN PGP MESSAGE-----
-Version: GnuPG v1
-
-owGbwMvMwMS4O1rJvfrjiXeMpw98SWIINmmYWa2UlJ9SqWRVrZSdCqbSMvPSU4sK
-ijLzSpSslIwNDcwsDCySU5MSjQ0SEy3Nk4wskswMUpJNzEwsDEwszJLSLE2SzIyV
-dJQy8otBOoDGJCUWp+pl5gPFgJz4zBSgqDNMvZObpYkTWH0pWMLMONHCIMXQ0MLM
-wsTYxDTV0MzUzDwFaKGxYYp5soEBSGFxalFeYm4qUHVSOdBZ+XlKtTpKQMGyzORU
-kJNBNqMq0MtJLClJ1UtOBGovKMovyU/OzwHKZpSUFFiBNJdUFoBUl6cmxUPNiU/K
-zEsBeh2ooSy1qDgTaImVIVBlckkmyGBDY0tTSxNLcyNDHaXUioLMotT4TJAKU3Ng
-8AAByJrUMqCRhmlGBknGpsZJhhbmKWnGSRaphoZJZpZAYUtTc4skYyMTQzMLQxOL
-xCTzxDRzAwPLFDNz01QjCwPTNGPT1ERzJZDPCvPylaxMgM5MTAcaWZyZnpdYUlqU
-qlTbySTDwsDIxMDGygSKPAYuTgFYlK5+LMAwm/l9x4ENZwWOSRj6n2uYU/Jl0pUj
-liLs8v1B8b92fbXmFWbx6zb2+5Aex8io/DAoXO26734Z394DTf4GPfpf0jf3zSi/
-z32YuStepPNVqVWBUPBspt9JqdqnrxZEHzu1Y/7fkMnrT+h8+Gvpl3O//YvQjKUt
-U1cvt2m6Ip7Ozy55YqmqnbiQoOET6cwpTZ8ZD4keEpizj/GcysL1Tkrb5Z/4lGk2
-CPWs5g/8Xi9/60ZXHrsmq1GSI8eRhEDBx5l7Nlzof/ViXXD/KRXOX4uz77HzyUz6
-EHP2X5ecb3fkrhxZvYxQhUc9X14zXltcsz3i+8nd1VPMvJ6miVl//9cuKSy5tJd3
-lzbbresHztT8mvjpyhfDALNrjv+3Ljuy03xhg6Kx25NH2XOVj+anvWNS+n8pRGjD
-k97CPSeCGQ39Hiqu4ZqnkWk3e3FSiI3Ij6dbxGLdbnV8dra8d2ktS8+DsDW5pw9O
-k7jq7MZmojZdK+fj/UlHpGbcNwpwX7eclZnvgcTTL7OiQnIvydz3ePV53wbNGz/Y
-+yfcTc9qfqL98+rTEs8bunMWVzlVrBO7z8bwXsTXRF9FOZyJVU7ONuqj2EVnlb2G
-G1/aX3ozO292jt5M/8dLZiYt3MahG6MafXrqwb11ziExbNnteTXFGVO+5FdVz+o1
-enxP94N1TAr3GfvM15Mag7t9Iw132i5jvBgrkB/bI+DxaM2p0wA=
-=GZBd
------END PGP MESSAGE-----
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgumUhaZ5bUPCVBlBBqOQVSh0+8DpGIrSwexa8Bu1HDf0Kp3BheWxvYWTES5cCzMbEIK7T/D3f3lQykz8zR+zUmEplDbvdvGQkyVv/Yg1aECXvxCDwftAQ2EC0NB52GKZXdvgynsciI+Df3qc5bgL78jYHqwIBwqNzaWfEQPGJcLF+hEQKw8BaanAJxB1r4M8dPbadcKbZ7KfxvPKUJlDtmNqKGWt45m0coePgH+XwTLjL47pvm5X4cwQyugOoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCDu5wugzfaj4TRIKsfNiDOEMIyiBWCKjI1xZgC9e7akYKN0YWfNAgKndmVyc2lvbgE=
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
