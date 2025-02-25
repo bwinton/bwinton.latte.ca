@@ -17,7 +17,8 @@
 .subtitle {font-size:12pt;font-family:Verdana;font-weight:600}
 .smalltitle {font-size:10pt;font-family:Verdana;font-weight:600;font-style:italic}
 .instruction {font-size:10pt;font-family:Verdana;font-weight:600}
-.body  {background-color:#ffffff;color:#0C0C0C;font-size:11pt;font-family:Verdana}
+body  {background-color:#ffffff;color:#0C0C0C;font-size:11pt;font-family:Verdana}
+th, td {padding: .25em}
 .info {font-size:10pt;font-family:Verdana}
 .label {font-size:10pt;font-family:Verdana;font-weight:900}
 .links {font-size:10pt;font-family:Verdana}
